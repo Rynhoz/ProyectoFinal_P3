@@ -7,6 +7,8 @@ public class Usuario
     public string Contrasena { get; set; } 
     public string Rol { get; set; }
 
+    public Usuario(){ }
+
     public Usuario(int idUsuario, string nombreUsuario, string contrasena, string rol)
 	{
         this.IdUsuario = idUsuario;

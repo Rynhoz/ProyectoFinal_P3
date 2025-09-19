@@ -6,6 +6,7 @@ public class Administrador : Usuario
 
     public Administrador()
 	{
+		this.IdUsuario = 01;
 		this.Rol = "Administrador";
 		this.PermisosEspeciales = new List<string>();
 	}
