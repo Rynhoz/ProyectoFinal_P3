@@ -28,18 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            label3 = new Label();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 18F, FontStyle.Bold);
+            label1.Location = new Point(168, 9);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(198, 29);
+            label1.TabIndex = 0;
+            label1.Text = "Inicio de Sesión";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 10F);
+            label2.Location = new Point(22, 74);
+            label2.Name = "label2";
+            label2.Size = new Size(132, 16);
+            label2.TabIndex = 1;
+            label2.Text = "Nombre de Usuario:";
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(22, 99);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "(Ej: Tony)";
+            textBox1.Size = new Size(206, 22);
+            textBox1.TabIndex = 3;
+            // 
+            // textBox2
+            // 
+            textBox2.Font = new Font("Arial", 10F);
+            textBox2.Location = new Point(22, 170);
+            textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
+            textBox2.PlaceholderText = "Contraseña";
+            textBox2.Size = new Size(206, 23);
+            textBox2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 10F);
+            label3.Location = new Point(22, 145);
+            label3.Name = "label3";
+            label3.Size = new Size(85, 16);
+            label3.TabIndex = 4;
+            label3.Text = "Contraseña:";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Arial", 10F);
+            linkLabel1.Location = new Point(43, 215);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(158, 16);
+            linkLabel1.TabIndex = 6;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "¿Olvido su contraseña?";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(501, 259);
+            ClientSize = new Size(544, 291);
+            Controls.Add(linkLabel1);
+            Controls.Add(textBox2);
+            Controls.Add(label3);
+            Controls.Add(textBox1);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Font = new Font("Arial", 9F);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Inicio de Sesión";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private Label label2;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label3;
+        private LinkLabel linkLabel1;
     }
 }

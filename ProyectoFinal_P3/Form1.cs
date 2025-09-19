@@ -6,5 +6,10 @@ namespace ProyectoFinal_P3
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Cominiquese con Administración");
+        }
     }
 }
