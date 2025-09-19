@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinal_P3
 {
-    partial class Form1
+    partial class FrmLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -34,6 +34,7 @@
             textBox2 = new TextBox();
             label3 = new Label();
             linkLabel1 = new LinkLabel();
+            btnLogin = new Button();
             SuspendLayout();
             // 
             // label1
@@ -99,11 +100,23 @@
             linkLabel1.Text = "¿Olvido su contraseña?";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // Form1
+            // btnLogin
+            // 
+            btnLogin.Font = new Font("Arial", 10F);
+            btnLogin.Location = new Point(168, 239);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(202, 40);
+            btnLogin.TabIndex = 7;
+            btnLogin.Text = "Iniciar Sesión";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(544, 291);
+            Controls.Add(btnLogin);
             Controls.Add(linkLabel1);
             Controls.Add(textBox2);
             Controls.Add(label3);
@@ -112,7 +125,8 @@
             Controls.Add(label1);
             Font = new Font("Arial", 9F);
             Margin = new Padding(2, 3, 2, 3);
-            Name = "Form1";
+            Name = "FrmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio de Sesión";
             ResumeLayout(false);
             PerformLayout();
@@ -126,5 +140,6 @@
         private TextBox textBox2;
         private Label label3;
         private LinkLabel linkLabel1;
+        private Button btnLogin;
     }
 }

@@ -16,5 +16,10 @@ namespace ProyectoFinal_P3
         {
             InitializeComponent();
         }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

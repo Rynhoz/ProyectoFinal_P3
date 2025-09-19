@@ -37,6 +37,7 @@
             ClientSize = new Size(624, 316);
             Font = new Font("Segoe UI", 10F);
             Name = "FrmInicio";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio";
             ResumeLayout(false);
         }
