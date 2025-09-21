@@ -167,6 +167,7 @@
             btnGuardarRepuesto.TabIndex = 13;
             btnGuardarRepuesto.Text = "Guardar";
             btnGuardarRepuesto.UseVisualStyleBackColor = true;
+            btnGuardarRepuesto.Click += btnGuardarRepuesto_Click;
             // 
             // listRepuestosInfo
             // 

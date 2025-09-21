@@ -19,5 +19,13 @@ public class Equipo
         this.NumeroDeSerie = numeroDeSerie;
         this.DescripcionDelProblema = descripcionDelProblema;
         this.HistorialFotografico = new List<string>();
+
 	}
+
+    public static Equipo RegistrarEquipo(int idEquipo, int idCliente, string tipo, string modelo, string numeroSerie, string descripcion)
+    {
+        Equipo nuevo = new Equipo(idEquipo, idCliente, tipo, modelo, numeroSerie, descripcion);
+        MessageBox.Show("Equipo registrado correctamente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        return nuevo;
+    }
 }

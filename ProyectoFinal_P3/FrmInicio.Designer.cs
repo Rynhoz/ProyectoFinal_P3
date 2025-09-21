@@ -67,6 +67,7 @@
             equpoToolStripMenuItem.Name = "equpoToolStripMenuItem";
             equpoToolStripMenuItem.Size = new Size(70, 24);
             equpoToolStripMenuItem.Text = "Equipo";
+            equpoToolStripMenuItem.Click += equpoToolStripMenuItem_Click;
             // 
             // inventarioToolStripMenuItem
             // 
@@ -79,6 +80,7 @@
             repuestoToolStripMenuItem.Name = "repuestoToolStripMenuItem";
             repuestoToolStripMenuItem.Size = new Size(85, 24);
             repuestoToolStripMenuItem.Text = "Repuesto";
+            repuestoToolStripMenuItem.Click += repuestoToolStripMenuItem_Click;
             // 
             // inventarioToolStripMenuItem1
             // 

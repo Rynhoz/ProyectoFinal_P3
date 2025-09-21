@@ -176,6 +176,7 @@
             btnRegistrarEquipo.TabIndex = 16;
             btnRegistrarEquipo.Text = "Registar Equipo";
             btnRegistrarEquipo.UseVisualStyleBackColor = true;
+            btnRegistrarEquipo.Click += btnRegistrarEquipo_Click;
             // 
             // listRegistroEquipos
             // 

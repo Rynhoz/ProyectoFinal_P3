@@ -21,5 +21,17 @@ namespace ProyectoFinal_P3
         {
 
         }
+
+        private void equpoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEquipo formEquipo = new FormEquipo();
+            formEquipo.Show();
+        }
+
+        private void repuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRepuesto formRepuesto = new FormRepuesto();
+            formRepuesto.Show();
+        }
     }
 }

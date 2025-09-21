@@ -18,4 +18,10 @@ public class Repuesto
         this.Stock = stock;
         this.PrecioUnitario = precioUnitario;
 	}
+    public static Repuesto RegistrarRepuesto(int idRepuesto, string nombre, string descripcion, string familia, int stock, decimal precioUnitario)
+    {
+        Repuesto nuevo = new Repuesto(idRepuesto, nombre, descripcion, familia, stock, precioUnitario);
+        MessageBox.Show("Repuesto registrado correctamente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        return nuevo;
+    }
 }
