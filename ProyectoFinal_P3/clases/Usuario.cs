@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Text.Json;
+using ProyectoFinal_P3.clases;
 
-public class Usuario
+public class Usuario : IAuntenticable
 {
     public int IdUsuario { get; set; }
     public string NombreUsuario { get; set; }
@@ -28,5 +30,10 @@ public class Usuario
             return true;
         else
             return false;
+    }
+
+    public bool ValidarContrasena(string usuario, string contrasena)
+    {
+        throw new NotImplementedException();
     }
 }

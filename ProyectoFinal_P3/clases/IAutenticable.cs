@@ -1,10 +1,11 @@
 using System;
+using System.Text.Json;
 
 namespace ProyectoFinal_P3.clases
 {
-	internal interface IAuntenticable
+	public interface IAuntenticable
 	{
-		bool ValidarContrasena(string contrasena);
+		bool ValidarContrasena(string usuario, string contrasena);
 		bool TienePermiso(string permiso);
 	}
 }
