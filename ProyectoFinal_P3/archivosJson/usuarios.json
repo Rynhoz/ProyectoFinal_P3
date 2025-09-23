@@ -9,12 +9,12 @@
         "IdUsuario": 2,
         "NombreUsuario": "Maria",
         "Contrasena": "abcde",
-        "Rol": "Usuario"
+        "Rol": "Cajero"
     },
     {
         "IdUsuario": 3,
         "NombreUsuario": "Pedro",
         "Contrasena": "qwerty",
-        "Rol": "Usuario"
+        "Rol": "Tecnico"
     }
 ]

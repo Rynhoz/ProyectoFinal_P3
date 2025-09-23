@@ -8,9 +8,12 @@ public class Cliente
     public string Telefono { get; set; }
     public string Email { get; set; }
 
-    public Cliente(int idCliente, string nombre, string direccion, string telefono, string email)
+    private int NumeroIdCliente = 4;
+
+    public Cliente(string nombre, string direccion, string telefono, string email)
 	{
-        this.IdCliente = idCliente;
+        NumeroIdCliente++;
+        this.IdCliente = NumeroIdCliente;
         this.Nombre = nombre;   
         this.Direccion = direccion;
         this.Telefono = telefono;

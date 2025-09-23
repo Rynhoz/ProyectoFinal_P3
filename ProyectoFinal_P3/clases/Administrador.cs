@@ -4,10 +4,11 @@ public class Administrador : Usuario
 {
     public List<string> PermisosEspeciales { get; set; }
 
-    public Administrador()
+    public Administrador(string nombre, string contrasena, string rol)
 	{
-		this.IdUsuario = 01;
-		this.Rol = "Administrador";
+		NumeroIdUsuario++;
+		IdUsuario = NumeroIdUsuario;
+		Rol = rol;
 		this.PermisosEspeciales = new List<string>();
 	}
 }

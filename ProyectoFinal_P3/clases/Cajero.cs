@@ -4,8 +4,13 @@ public class Cajero : Usuario
 {
     public int NumeroDeCaja { get; set; }
 
-    public Cajero(int numeroDeCaja)
+    public Cajero(string nombre, string contrasena, string rol, int numeroCaja)
 	{
-        this.NumeroDeCaja = numeroDeCaja;
+        NumeroIdUsuario++;
+        IdUsuario = NumeroIdUsuario;
+        NombreUsuario = nombre;
+        Contrasena = contrasena;
+        Rol = rol;
+        NumeroDeCaja = numeroCaja;
 	}
 }
