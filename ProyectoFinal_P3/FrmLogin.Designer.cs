@@ -30,8 +30,8 @@
         {
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUsuario = new TextBox();
+            txtContrasena = new TextBox();
             label3 = new Label();
             linkLabel1 = new LinkLabel();
             btnLogin = new Button();
@@ -59,24 +59,24 @@
             label2.TabIndex = 1;
             label2.Text = "Nombre de Usuario:";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(22, 99);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "(Ej: Tony)";
-            textBox1.Size = new Size(206, 22);
-            textBox1.TabIndex = 3;
+            txtUsuario.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsuario.Location = new Point(22, 99);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.PlaceholderText = "(Ej: Tony)";
+            txtUsuario.Size = new Size(206, 22);
+            txtUsuario.TabIndex = 3;
             // 
-            // textBox2
+            // txtContrasena
             // 
-            textBox2.Font = new Font("Arial", 10F);
-            textBox2.Location = new Point(22, 170);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.PlaceholderText = "Contraseña";
-            textBox2.Size = new Size(206, 23);
-            textBox2.TabIndex = 5;
+            txtContrasena.Font = new Font("Arial", 10F);
+            txtContrasena.Location = new Point(22, 170);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.PasswordChar = '*';
+            txtContrasena.PlaceholderText = "Contraseña";
+            txtContrasena.Size = new Size(206, 23);
+            txtContrasena.TabIndex = 5;
             // 
             // label3
             // 
@@ -118,9 +118,9 @@
             ClientSize = new Size(544, 291);
             Controls.Add(btnLogin);
             Controls.Add(linkLabel1);
-            Controls.Add(textBox2);
+            Controls.Add(txtContrasena);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Arial", 9F);
@@ -136,8 +136,8 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsuario;
+        private TextBox txtContrasena;
         private Label label3;
         private LinkLabel linkLabel1;
         private Button btnLogin;
