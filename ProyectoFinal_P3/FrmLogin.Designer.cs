@@ -64,7 +64,7 @@
             txtUsuario.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsuario.Location = new Point(22, 99);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.PlaceholderText = "(Ej: Tony)";
+            txtUsuario.PlaceholderText = "(Ej: Juan)";
             txtUsuario.Size = new Size(206, 22);
             txtUsuario.TabIndex = 3;
             // 
@@ -74,7 +74,7 @@
             txtContrasena.Location = new Point(22, 170);
             txtContrasena.Name = "txtContrasena";
             txtContrasena.PasswordChar = '*';
-            txtContrasena.PlaceholderText = "Contraseña";
+            txtContrasena.PlaceholderText = "Contraseña(12345)";
             txtContrasena.Size = new Size(206, 23);
             txtContrasena.TabIndex = 5;
             // 

@@ -7,7 +7,7 @@ using ProyectoFinal_P3.clases;
 
 namespace ProyectoFinal_P3.clases
 {
-    public class ItemFactura
+    public class ItemFactura //clase innecesaria
     {
         public string Nombre { get; set; }
         public int Cantidad { get; set; }

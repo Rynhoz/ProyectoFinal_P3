@@ -45,58 +45,58 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { administradorToolStripMenuItem, clienteToolStripMenuItem, equpoToolStripMenuItem, inventarioToolStripMenuItem, repuestoToolStripMenuItem, inventarioToolStripMenuItem1, facturaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(897, 28);
+            menuStrip1.Size = new Size(897, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // administradorToolStripMenuItem
             // 
             administradorToolStripMenuItem.Name = "administradorToolStripMenuItem";
-            administradorToolStripMenuItem.Size = new Size(118, 24);
+            administradorToolStripMenuItem.Size = new Size(95, 20);
             administradorToolStripMenuItem.Text = "Administrador";
             administradorToolStripMenuItem.Visible = false;
             // 
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(69, 24);
+            clienteToolStripMenuItem.Size = new Size(56, 20);
             clienteToolStripMenuItem.Text = "Cliente";
             // 
             // equpoToolStripMenuItem
             // 
             equpoToolStripMenuItem.Name = "equpoToolStripMenuItem";
-            equpoToolStripMenuItem.Size = new Size(70, 24);
+            equpoToolStripMenuItem.Size = new Size(56, 20);
             equpoToolStripMenuItem.Text = "Equipo";
             equpoToolStripMenuItem.Click += equpoToolStripMenuItem_Click;
             // 
             // inventarioToolStripMenuItem
             // 
             inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            inventarioToolStripMenuItem.Size = new Size(139, 24);
+            inventarioToolStripMenuItem.Size = new Size(109, 20);
             inventarioToolStripMenuItem.Text = "Orden de Trabajo";
             // 
             // repuestoToolStripMenuItem
             // 
             repuestoToolStripMenuItem.Name = "repuestoToolStripMenuItem";
-            repuestoToolStripMenuItem.Size = new Size(85, 24);
+            repuestoToolStripMenuItem.Size = new Size(68, 20);
             repuestoToolStripMenuItem.Text = "Repuesto";
             repuestoToolStripMenuItem.Click += repuestoToolStripMenuItem_Click;
             // 
             // inventarioToolStripMenuItem1
             // 
             inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-            inventarioToolStripMenuItem1.Size = new Size(89, 24);
+            inventarioToolStripMenuItem1.Size = new Size(72, 20);
             inventarioToolStripMenuItem1.Text = "Inventario";
             // 
             // facturaToolStripMenuItem
             // 
             facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            facturaToolStripMenuItem.Size = new Size(70, 24);
+            facturaToolStripMenuItem.Size = new Size(58, 20);
             facturaToolStripMenuItem.Text = "Factura";
             // 
             // FrmInicio
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(897, 616);
             Controls.Add(menuStrip1);

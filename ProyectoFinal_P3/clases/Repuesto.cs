@@ -8,15 +8,16 @@ public class Repuesto
     public string Familia { get; set; }
     public int Stock { get; set; }
     public decimal PrecioUnitario { get; set; }
+    public decimal PrecioVenta { get; set; }
 
     public Repuesto(int idRepuesto, string nombre, string descripcion, string familia, int stock, decimal precioUnitario)
 	{
-        this.IdRepuesto = idRepuesto;
-        this.Nombre = nombre;   
-        this.Descripcion = descripcion;
-        this.Familia = familia;
-        this.Stock = stock;
-        this.PrecioUnitario = precioUnitario;
+        IdRepuesto = idRepuesto;
+        Nombre = nombre;   
+        Descripcion = descripcion;
+        Familia = familia;
+        Stock = stock;
+        PrecioUnitario = precioUnitario;
 	}
     public static Repuesto RegistrarRepuesto(int idRepuesto, string nombre, string descripcion, string familia, int stock, decimal precioUnitario)
     {

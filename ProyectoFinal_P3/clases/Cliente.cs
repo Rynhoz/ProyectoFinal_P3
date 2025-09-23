@@ -7,6 +7,8 @@ public class Cliente
     public string Direccion { get; set; }
     public string Telefono { get; set; }
     public string Email { get; set; }
+    public Equipo Equipo { get; set; }
+    //Nueva propiedad para la interfaz
 
     private int NumeroIdCliente = 4;
 

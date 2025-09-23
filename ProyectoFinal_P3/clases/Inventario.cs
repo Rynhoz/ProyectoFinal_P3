@@ -6,6 +6,6 @@ public class Inventario
 
 	public Inventario()
 	{
-		this.StockRepuestos = new List<Repuesto>();
+		StockRepuestos = new List<Repuesto>();
 	}
 }
