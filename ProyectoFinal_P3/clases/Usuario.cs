@@ -4,6 +4,7 @@ using ProyectoFinal_P3.clases;
 
 public class Usuario : IAuntenticable
 {
+    private string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "usuarios.json");
     public int IdUsuario { get; set; }
     public string NombreUsuario { get; set; }
     public string Contrasena { get; set; } 
@@ -19,11 +20,6 @@ public class Usuario : IAuntenticable
         this.Rol = rol;
 	}
 
-    public bool ValidarContrasena(string contrasena)
-    {
-        return Contrasena == contrasena;
-    }
-
     public bool TienePermiso(string permiso)
     {
         if (Rol == "Administrador") 
@@ -34,6 +30,26 @@ public class Usuario : IAuntenticable
 
     public bool ValidarContrasena(string usuario, string contrasena)
     {
-        throw new NotImplementedException();
+        if (!File.Exists(rutaArchivo))
+        {
+            throw new FileNotFoundException($"No se encontró el archivo en {rutaArchivo}");
+        }
+
+        string json = File.ReadAllText(rutaArchivo);
+
+        List<Usuario> usuarios = JsonSerializer.Deserialize<List<Usuario>>(json);
+
+        if (usuarios == null) return false;
+
+        foreach (var u in usuarios)
+        {
+            if (u.NombreUsuario.Equals(usuario, StringComparison.OrdinalIgnoreCase) &&
+                u.Contrasena == contrasena)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

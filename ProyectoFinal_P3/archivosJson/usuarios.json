@@ -1,0 +1,20 @@
+﻿[
+    {
+        "IdUsuario": 1,
+        "NombreUsuario": "Juan",
+        "Contrasena": "12345",
+        "Rol": "Administrador"
+    },
+    {
+        "IdUsuario": 2,
+        "NombreUsuario": "Maria",
+        "Contrasena": "abcde",
+        "Rol": "Usuario"
+    },
+    {
+        "IdUsuario": 3,
+        "NombreUsuario": "Pedro",
+        "Contrasena": "qwerty",
+        "Rol": "Usuario"
+    }
+]
