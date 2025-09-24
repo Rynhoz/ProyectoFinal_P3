@@ -43,6 +43,7 @@
             label4 = new Label();
             btnGuardarRepuesto = new Button();
             listRepuestosInfo = new ListBox();
+            btnEliminarRepuesto = new Button();
             SuspendLayout();
             // 
             // label1
@@ -179,11 +180,23 @@
             listRepuestosInfo.Size = new Size(401, 349);
             listRepuestosInfo.TabIndex = 14;
             // 
+            // btnEliminarRepuesto
+            // 
+            btnEliminarRepuesto.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEliminarRepuesto.Location = new Point(531, 475);
+            btnEliminarRepuesto.Name = "btnEliminarRepuesto";
+            btnEliminarRepuesto.Size = new Size(142, 46);
+            btnEliminarRepuesto.TabIndex = 15;
+            btnEliminarRepuesto.Text = "Eliminar";
+            btnEliminarRepuesto.UseVisualStyleBackColor = true;
+            btnEliminarRepuesto.Click += btnEliminarRepuesto_Click;
+            // 
             // FormRepuesto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(841, 580);
+            Controls.Add(btnEliminarRepuesto);
             Controls.Add(listRepuestosInfo);
             Controls.Add(btnGuardarRepuesto);
             Controls.Add(label4);
@@ -222,5 +235,6 @@
         private Label label4;
         private Button btnGuardarRepuesto;
         private ListBox listRepuestosInfo;
+        private Button btnEliminarRepuesto;
     }
 }
