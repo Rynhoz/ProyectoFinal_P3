@@ -151,6 +151,7 @@
             // txtFactura
             // 
             txtFactura.Enabled = false;
+            txtFactura.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFactura.Location = new Point(390, 92);
             txtFactura.Multiline = true;
             txtFactura.Name = "txtFactura";
