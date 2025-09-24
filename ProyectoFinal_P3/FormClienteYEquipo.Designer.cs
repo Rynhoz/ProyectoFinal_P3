@@ -44,24 +44,24 @@ namespace ProyectoFinal_P3
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            txtNombreCliente = new TextBox();
+            txtDireccionCliente = new TextBox();
+            txtTelefonoCliente = new TextBox();
+            txtEmailCliente = new TextBox();
+            btnRegistrarCliente = new Button();
+            btnRegistrarEquipo = new Button();
+            txtNumeroDESerieEquipo = new TextBox();
+            txtModeloEquipo = new TextBox();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
-            comboBox4 = new ComboBox();
-            textBox7 = new TextBox();
-            dataGridView1 = new DataGridView();
+            cboxTipoDEEquipo = new ComboBox();
+            txtDescripcionDelProblemaEquipo = new TextBox();
+            dgvMostrarClientesYEquipos = new DataGridView();
             label3 = new Label();
-            textBox8 = new TextBox();
-            ((ISupportInitialize)dataGridView1).BeginInit();
+            txtEquipo = new TextBox();
+            ((ISupportInitialize)dgvMostrarClientesYEquipos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -125,83 +125,83 @@ namespace ProyectoFinal_P3
             label7.TabIndex = 7;
             label7.Text = "EMAIL:";
             // 
-            // textBox1
+            // txtNombreCliente
             // 
-            textBox1.Font = new Font("Arial", 10F);
-            textBox1.Location = new Point(34, 114);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(217, 27);
-            textBox1.TabIndex = 10;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtNombreCliente.Font = new Font("Arial", 10F);
+            txtNombreCliente.Location = new Point(34, 114);
+            txtNombreCliente.Margin = new Padding(3, 2, 3, 2);
+            txtNombreCliente.Name = "txtNombreCliente";
+            txtNombreCliente.Size = new Size(217, 27);
+            txtNombreCliente.TabIndex = 10;
+            txtNombreCliente.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // txtDireccionCliente
             // 
-            textBox2.Font = new Font("Arial", 10F);
-            textBox2.Location = new Point(34, 188);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(217, 27);
-            textBox2.TabIndex = 11;
+            txtDireccionCliente.Font = new Font("Arial", 10F);
+            txtDireccionCliente.Location = new Point(34, 188);
+            txtDireccionCliente.Margin = new Padding(3, 2, 3, 2);
+            txtDireccionCliente.Name = "txtDireccionCliente";
+            txtDireccionCliente.Size = new Size(217, 27);
+            txtDireccionCliente.TabIndex = 11;
             // 
-            // textBox3
+            // txtTelefonoCliente
             // 
-            textBox3.Font = new Font("Arial", 10F);
-            textBox3.Location = new Point(34, 262);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(217, 27);
-            textBox3.TabIndex = 12;
+            txtTelefonoCliente.Font = new Font("Arial", 10F);
+            txtTelefonoCliente.Location = new Point(34, 262);
+            txtTelefonoCliente.Margin = new Padding(3, 2, 3, 2);
+            txtTelefonoCliente.Name = "txtTelefonoCliente";
+            txtTelefonoCliente.Size = new Size(217, 27);
+            txtTelefonoCliente.TabIndex = 12;
             // 
-            // textBox4
+            // txtEmailCliente
             // 
-            textBox4.Font = new Font("Arial", 10F);
-            textBox4.Location = new Point(34, 335);
-            textBox4.Margin = new Padding(3, 2, 3, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(217, 27);
-            textBox4.TabIndex = 13;
+            txtEmailCliente.Font = new Font("Arial", 10F);
+            txtEmailCliente.Location = new Point(34, 335);
+            txtEmailCliente.Margin = new Padding(3, 2, 3, 2);
+            txtEmailCliente.Name = "txtEmailCliente";
+            txtEmailCliente.Size = new Size(217, 27);
+            txtEmailCliente.TabIndex = 13;
             // 
-            // button1
+            // btnRegistrarCliente
             // 
-            button1.Enabled = false;
-            button1.Font = new Font("Arial", 10F);
-            button1.Location = new Point(45, 518);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(174, 46);
-            button1.TabIndex = 14;
-            button1.Text = "REGISTRAR CLIENTE";
-            button1.UseVisualStyleBackColor = true;
+            btnRegistrarCliente.Enabled = false;
+            btnRegistrarCliente.Font = new Font("Arial", 10F);
+            btnRegistrarCliente.Location = new Point(45, 518);
+            btnRegistrarCliente.Margin = new Padding(3, 2, 3, 2);
+            btnRegistrarCliente.Name = "btnRegistrarCliente";
+            btnRegistrarCliente.Size = new Size(174, 46);
+            btnRegistrarCliente.TabIndex = 14;
+            btnRegistrarCliente.Text = "REGISTRAR CLIENTE";
+            btnRegistrarCliente.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRegistrarEquipo
             // 
-            button2.Font = new Font("Arial", 10F);
-            button2.Location = new Point(337, 518);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(174, 46);
-            button2.TabIndex = 27;
-            button2.Text = "REGISTRAR EQUIPO";
-            button2.UseVisualStyleBackColor = true;
+            btnRegistrarEquipo.Font = new Font("Arial", 10F);
+            btnRegistrarEquipo.Location = new Point(337, 518);
+            btnRegistrarEquipo.Margin = new Padding(3, 2, 3, 2);
+            btnRegistrarEquipo.Name = "btnRegistrarEquipo";
+            btnRegistrarEquipo.Size = new Size(174, 46);
+            btnRegistrarEquipo.TabIndex = 27;
+            btnRegistrarEquipo.Text = "REGISTRAR EQUIPO";
+            btnRegistrarEquipo.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtNumeroDESerieEquipo
             // 
-            textBox5.Font = new Font("Arial", 10F);
-            textBox5.Location = new Point(294, 262);
-            textBox5.Margin = new Padding(3, 2, 3, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(257, 27);
-            textBox5.TabIndex = 26;
+            txtNumeroDESerieEquipo.Font = new Font("Arial", 10F);
+            txtNumeroDESerieEquipo.Location = new Point(294, 262);
+            txtNumeroDESerieEquipo.Margin = new Padding(3, 2, 3, 2);
+            txtNumeroDESerieEquipo.Name = "txtNumeroDESerieEquipo";
+            txtNumeroDESerieEquipo.Size = new Size(257, 27);
+            txtNumeroDESerieEquipo.TabIndex = 26;
             // 
-            // textBox6
+            // txtModeloEquipo
             // 
-            textBox6.Font = new Font("Arial", 10F);
-            textBox6.Location = new Point(294, 188);
-            textBox6.Margin = new Padding(3, 2, 3, 2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(257, 27);
-            textBox6.TabIndex = 25;
+            txtModeloEquipo.Font = new Font("Arial", 10F);
+            txtModeloEquipo.Location = new Point(294, 188);
+            txtModeloEquipo.Margin = new Padding(3, 2, 3, 2);
+            txtModeloEquipo.Name = "txtModeloEquipo";
+            txtModeloEquipo.Size = new Size(257, 27);
+            txtModeloEquipo.TabIndex = 25;
             // 
             // label9
             // 
@@ -244,41 +244,41 @@ namespace ProyectoFinal_P3
             label12.TabIndex = 18;
             label12.Text = "TIPO DE EQUIPO:";
             // 
-            // comboBox4
+            // cboxTipoDEEquipo
             // 
-            comboBox4.Font = new Font("Arial", 10F);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(289, 114);
-            comboBox4.Margin = new Padding(3, 2, 3, 2);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(257, 27);
-            comboBox4.TabIndex = 31;
+            cboxTipoDEEquipo.Font = new Font("Arial", 10F);
+            cboxTipoDEEquipo.FormattingEnabled = true;
+            cboxTipoDEEquipo.Location = new Point(289, 114);
+            cboxTipoDEEquipo.Margin = new Padding(3, 2, 3, 2);
+            cboxTipoDEEquipo.Name = "cboxTipoDEEquipo";
+            cboxTipoDEEquipo.Size = new Size(257, 27);
+            cboxTipoDEEquipo.TabIndex = 31;
             // 
-            // textBox7
+            // txtDescripcionDelProblemaEquipo
             // 
-            textBox7.Font = new Font("Arial", 10F);
-            textBox7.Location = new Point(294, 332);
-            textBox7.Margin = new Padding(3, 2, 3, 2);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(257, 166);
-            textBox7.TabIndex = 32;
-            textBox7.TextChanged += textBox7_TextChanged;
+            txtDescripcionDelProblemaEquipo.Font = new Font("Arial", 10F);
+            txtDescripcionDelProblemaEquipo.Location = new Point(294, 332);
+            txtDescripcionDelProblemaEquipo.Margin = new Padding(3, 2, 3, 2);
+            txtDescripcionDelProblemaEquipo.Multiline = true;
+            txtDescripcionDelProblemaEquipo.Name = "txtDescripcionDelProblemaEquipo";
+            txtDescripcionDelProblemaEquipo.Size = new Size(257, 166);
+            txtDescripcionDelProblemaEquipo.TabIndex = 32;
+            txtDescripcionDelProblemaEquipo.TextChanged += textBox7_TextChanged;
             // 
-            // dataGridView1
+            // dgvMostrarClientesYEquipos
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = Color.LightGray;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = Color.DimGray;
-            dataGridView1.Location = new Point(609, 82);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(415, 458);
-            dataGridView1.TabIndex = 34;
+            dgvMostrarClientesYEquipos.AllowUserToAddRows = false;
+            dgvMostrarClientesYEquipos.AllowUserToDeleteRows = false;
+            dgvMostrarClientesYEquipos.BackgroundColor = Color.LightGray;
+            dgvMostrarClientesYEquipos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMostrarClientesYEquipos.GridColor = Color.DimGray;
+            dgvMostrarClientesYEquipos.Location = new Point(609, 82);
+            dgvMostrarClientesYEquipos.Margin = new Padding(3, 2, 3, 2);
+            dgvMostrarClientesYEquipos.Name = "dgvMostrarClientesYEquipos";
+            dgvMostrarClientesYEquipos.ReadOnly = true;
+            dgvMostrarClientesYEquipos.RowHeadersWidth = 51;
+            dgvMostrarClientesYEquipos.Size = new Size(415, 458);
+            dgvMostrarClientesYEquipos.TabIndex = 34;
             // 
             // label3
             // 
@@ -290,37 +290,37 @@ namespace ProyectoFinal_P3
             label3.TabIndex = 35;
             label3.Text = "EQUIPO:";
             // 
-            // textBox8
+            // txtEquipo
             // 
-            textBox8.Font = new Font("Arial", 10F);
-            textBox8.Location = new Point(34, 415);
-            textBox8.Margin = new Padding(3, 2, 3, 2);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(217, 27);
-            textBox8.TabIndex = 36;
+            txtEquipo.Font = new Font("Arial", 10F);
+            txtEquipo.Location = new Point(34, 415);
+            txtEquipo.Margin = new Padding(3, 2, 3, 2);
+            txtEquipo.Name = "txtEquipo";
+            txtEquipo.Size = new Size(217, 27);
+            txtEquipo.TabIndex = 36;
             // 
             // FormClienteYEquipo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1058, 626);
-            Controls.Add(textBox8);
+            Controls.Add(txtEquipo);
             Controls.Add(label3);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox7);
-            Controls.Add(comboBox4);
-            Controls.Add(button2);
-            Controls.Add(textBox5);
-            Controls.Add(textBox6);
+            Controls.Add(dgvMostrarClientesYEquipos);
+            Controls.Add(txtDescripcionDelProblemaEquipo);
+            Controls.Add(cboxTipoDEEquipo);
+            Controls.Add(btnRegistrarEquipo);
+            Controls.Add(txtNumeroDESerieEquipo);
+            Controls.Add(txtModeloEquipo);
             Controls.Add(label9);
             Controls.Add(label10);
             Controls.Add(label11);
             Controls.Add(label12);
-            Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(btnRegistrarCliente);
+            Controls.Add(txtEmailCliente);
+            Controls.Add(txtTelefonoCliente);
+            Controls.Add(txtDireccionCliente);
+            Controls.Add(txtNombreCliente);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -330,7 +330,7 @@ namespace ProyectoFinal_P3
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormClienteYEquipo";
             Text = "FormClienteYEquipo";
-            ((ISupportInitialize)dataGridView1).EndInit();
+            ((ISupportInitialize)dgvMostrarClientesYEquipos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -363,22 +363,22 @@ namespace ProyectoFinal_P3
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Button button1;
-        private Button button2;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox txtNombreCliente;
+        private TextBox txtDireccionCliente;
+        private TextBox txtTelefonoCliente;
+        private TextBox txtEmailCliente;
+        private Button btnRegistrarCliente;
+        private Button btnRegistrarEquipo;
+        private TextBox txtNumeroDESerieEquipo;
+        private TextBox txtModeloEquipo;
         private Label label9;
         private Label label10;
         private Label label11;
         private Label label12;
-        private ComboBox comboBox4;
-        private TextBox textBox7;
-        private DataGridView dataGridView1;
+        private ComboBox cboxTipoDEEquipo;
+        private TextBox txtDescripcionDelProblemaEquipo;
+        private DataGridView dgvMostrarClientesYEquipos;
         private Label label3;
-        private TextBox textBox8;
+        private TextBox txtEquipo;
     }
 }
