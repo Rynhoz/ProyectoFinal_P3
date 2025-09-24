@@ -74,5 +74,26 @@ public class Usuario : IAuntenticable
         return (user.Rol == "Administrador" || user.Rol == "Cajero" || user.Rol == "Técnico") ? user.Rol: "Rol no válido";
     }
 
+    public static List<Usuario> CargarUsuarios()
+    {
+        //    Construimos la ruta completa del archivo "usuarios.json
+        //    usando la carpeta "archivosJson" dentro del directorio base de la aplicación.
+        string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "usuarios.json");
+
+
+        //  Preguntamos si el archivo existe en esa ruta
+        if (!File.Exists(rutaArchivo))
+        {   
+         // Si no existe devolvemos una lista vacia
+            return new List<Usuario>(); 
+        }
+
+        // Leemos el contenido del archivo JSON como texto
+        string json = File.ReadAllText(rutaArchivo);
+
+        //   
+        // Deserializamos el JSON y lo convertimos en una lista de objetos Usuario, si devuelve null devolvemos una lista vacia
+        return JsonSerializer.Deserialize<List<Usuario>>(json) ?? new List<Usuario>();
+    }
 
 }

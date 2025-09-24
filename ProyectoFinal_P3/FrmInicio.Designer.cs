@@ -60,6 +60,7 @@
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             clienteToolStripMenuItem.Size = new Size(131, 24);
             clienteToolStripMenuItem.Text = "Cliente y Equipo";
+            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // inventarioToolStripMenuItem
             // 

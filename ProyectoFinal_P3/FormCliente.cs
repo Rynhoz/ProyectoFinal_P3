@@ -16,5 +16,21 @@ namespace ProyectoFinal_P3
         {
             InitializeComponent();
         }
+
+        private void cboxNombreCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+            // Llamamos al método que carga los usuarios desde el JSON
+            List<Usuario> usuarios = Usuario.CargarUsuarios();
+
+            // Recorremos la lista y agregamos solo los nombres de usuario
+            foreach (var user in usuarios)
+            {
+                cboxNombreCliente.Items.Add(user.NombreUsuario);
+            }
+        }
     }
 }

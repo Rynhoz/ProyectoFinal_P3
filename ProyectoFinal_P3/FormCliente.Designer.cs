@@ -41,6 +41,7 @@
             label6 = new Label();
             btnRegistrarCliente = new Button();
             listClientesRegistrados = new ListBox();
+            cboxNombreCliente = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -158,11 +159,21 @@
             listClientesRegistrados.Size = new Size(468, 303);
             listClientesRegistrados.TabIndex = 12;
             // 
+            // cboxNombreCliente
+            // 
+            cboxNombreCliente.FormattingEnabled = true;
+            cboxNombreCliente.Location = new Point(528, 431);
+            cboxNombreCliente.Name = "cboxNombreCliente";
+            cboxNombreCliente.Size = new Size(253, 28);
+            cboxNombreCliente.TabIndex = 13;
+            cboxNombreCliente.SelectedIndexChanged += cboxNombreCliente_SelectedIndexChanged;
+            // 
             // FormCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(887, 527);
+            Controls.Add(cboxNombreCliente);
             Controls.Add(listClientesRegistrados);
             Controls.Add(btnRegistrarCliente);
             Controls.Add(label6);
@@ -178,6 +189,7 @@
             Controls.Add(label1);
             Name = "FormCliente";
             Text = "FormCliente";
+            Load += FormCliente_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,5 +209,6 @@
         private Label label6;
         private Button btnRegistrarCliente;
         private ListBox listClientesRegistrados;
+        private ComboBox cboxNombreCliente;
     }
 }

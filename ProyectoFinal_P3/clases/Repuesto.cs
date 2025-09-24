@@ -1,4 +1,5 @@
 ﻿using System;
+using ProyectoFinal_P3.clases;
 
 public sealed class Repuesto
 {
@@ -60,7 +61,9 @@ public sealed class Repuesto
         Repuesto repuesto = ListaRepuestos.Find(id => id.IdRepuesto == idRepuesto);
 
         if (repuesto != null)
-        {
+        {   
+            // Guarda el repuesto a eliminar 
+            Registro nuevoRegistro = new Registro(repuesto);
             // Si lo encuentra, lo elimina e indica que se eliminó
             ListaRepuestos.Remove(repuesto);
             MessageBox.Show("Repuesto eliminado correctamente", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,7 +74,7 @@ public sealed class Repuesto
             MessageBox.Show("No se encontró el repuesto con ese Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false; 
         }
-    }
+    }   
 }
 
 

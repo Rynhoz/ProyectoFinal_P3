@@ -33,5 +33,11 @@ namespace ProyectoFinal_P3
             FormRepuesto formRepuesto = new FormRepuesto();
             formRepuesto.Show();
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCliente formCliente = new FormCliente();
+            formCliente.Show();
+        }
     }
 }
