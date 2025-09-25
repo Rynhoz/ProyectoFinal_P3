@@ -26,7 +26,7 @@ namespace ProyectoFinal_P3
             string numeroSerie = txtNumeroDESerie.Text;
             string descripcion = txtDescripcionProblema.Text;
 
-            Equipo equipoRegistrado = Equipo.RegistrarEquipo(idEquipo, idCliente, tipo, modelo, numeroSerie, descripcion);
+            Equipo equipoRegistrado = Equipo.RegistrarEquipo(tipo, modelo, numeroSerie, descripcion);
 
             listRegistroEquipos.Items.Add("------ Equipo registrado ------");
             listRegistroEquipos.Items.Add("Cliente: " + equipoRegistrado.IdCliente);

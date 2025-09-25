@@ -8,7 +8,7 @@ public sealed class Repuesto
     public string Nombre { get; set; }
     public string Descripcion { get; set; }
     public string Familia { get; set; }
-    public int Stock { get; set; }
+    public decimal Stock { get; set; }
     public decimal PrecioUnitario { get; set; }
     public decimal PrecioVenta { get; set; }
 
@@ -23,7 +23,7 @@ public sealed class Repuesto
     /// <param name="familia">Familia a la que pertenece el repuesto.</param>
     /// <param name="stock">Existencias disponibles del repuesto.</param>
     /// <param name="precioUnitario">Precio unitario del repuesto.</param>
-    public Repuesto(string nombre, string descripcion, string familia, int stock, decimal precioUnitario)
+    public Repuesto(string nombre, string descripcion, string familia, decimal stock, decimal precioUnitario)
 	{
         contadorId++;
         IdRepuesto = contadorId;
@@ -42,7 +42,7 @@ public sealed class Repuesto
     /// <param name="stock">Existencias disponibles del repuesto.</param>
     /// <param name="precioUnitario">Precio unitario del repuesto.</param>
     /// <returns></returns>
-    public static Repuesto RegistrarRepuesto(string nombre, string descripcion, string familia, int stock, decimal precioUnitario)
+    public static Repuesto RegistrarRepuesto(string nombre, string descripcion, string familia, decimal stock, decimal precioUnitario)
     {
         // nuevo es una instancia de la clase Repuesto almacenada en una variable local dentro del método.
         Repuesto nuevo = new Repuesto(nombre, descripcion, familia, stock, precioUnitario);

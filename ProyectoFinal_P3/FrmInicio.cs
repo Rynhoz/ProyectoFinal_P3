@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -65,6 +66,7 @@ namespace ProyectoFinal_P3
             txtModeloEquipo.Clear();
             txtNumeroDESerieEquipo.Clear();
             txtDescripcionDelProblemaEquipo.Clear();
+
         }
 
         private void btnRegistrarCliente_Click(object sender, EventArgs e)
@@ -79,13 +81,18 @@ namespace ProyectoFinal_P3
             Equipo equipoSeleccionado = (Equipo)cboxEquipoCliente.SelectedItem;
 
             // Registrar el cliente
-            Cliente clienteRegistrado = Cliente.RegistrarCliente(nombre, direccion, telefono, correo);
+            Cliente clienteRegistrado = Cliente.RegistrarCliente(nombre, direccion, telefono, correo, equipoSeleccionado);
 
             // Limpiar los TextBox
             txtNombreCliente.Clear();
             txtDireccionCliente.Clear();
             txtTelefonoCliente.Clear();
             txtEmailCliente.Clear();
+
+            // Refrescar ComboBox de clientes en Facturas
+            cboxClienteFactura.DataSource = null;                     // Reiniciamos
+            cboxClienteFactura.DataSource = Cliente.ListaClientes;    // Asignamos la lista completa
+            cboxClienteFactura.DisplayMember = "Nombre";      // Propiedad a mostrar
         }
 
         private void bntAnadirUsuario_Click(object sender, EventArgs e)
@@ -110,7 +117,7 @@ namespace ProyectoFinal_P3
             }
         }
 
-        
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -168,6 +175,49 @@ namespace ProyectoFinal_P3
                 btnGuardar.Visible = false;
                 btnModificarUsuario.Enabled = false;
             }
+        }
+
+        private void btnEmitirFactura_Click(object sender, EventArgs e)
+        {
+            // Obtenenemos cliente y equipo completos
+            Cliente clienteSeleccionado = (Cliente)cboxClienteFactura.SelectedItem;
+
+            Equipo equipo = clienteSeleccionado.Equipo;
+
+            // Obtenemos repuesto, fecha y precio
+            string repuesto = txtRepuestoFactura.Text;
+            DateTime fecha = dtpFechaFactura.Value;
+            decimal total = numericTotal.Value;
+
+            // Hacemos la estructura de la factura
+            string factura = $"--- FACTURA ---\r\n\r\n" +
+                              $"Cliente: {clienteSeleccionado.Nombre} {clienteSeleccionado.Direccion}\r\n" +
+                              $"Dirección: {clienteSeleccionado.Direccion}\r\n" +
+                              $"Teléfono: {clienteSeleccionado.Telefono}\r\n" +
+                              $"Correo: {clienteSeleccionado.Email}\r\n\r\n" +
+                              $"Equipo asignado:\r\n" +
+                              $"Tipo: {equipo.TipoDeEquipo}\r\n" +
+                              $"Modelo: {equipo.Modelo}\r\n" +
+                              $"Número de Serie: {equipo.NumeroDeSerie}\r\n" +
+                              $"Descripción: {equipo.DescripcionDelProblema}\r\n\r\n" +
+                              $"Repuestos:\r\n" +
+                              $"Nombre: {repuesto}\r\n" +
+                              $"Cantidad: {repuesto}\r\n\r\n" +
+                              $"Fecha de Factura: {fecha.ToShortDateString()}\r\n" +
+                              $"Total: {total}";
+            txtFactura.Text = factura;
+        }
+
+        private void btnGuardarRepuestos_Click(object sender, EventArgs e)
+        {
+            // Leer los datos de los TextBox
+            string nombre = txtNombreRepuesto.Text;
+            string descripcion = txtDescripcionRepuesto.Text;
+            string familia = cboxFamiliaRepuesto.Text;
+            decimal stock = numericStock.Value;
+            decimal precioUnitario = numericPrecio.Value;
+
+            Repuesto repuestoRegistrado = Repuesto.RegistrarRepuesto(nombre, descripcion, familia, stock, precioUnitario);
         }
     }
 }
