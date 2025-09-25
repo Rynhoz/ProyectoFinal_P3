@@ -1,54 +1,58 @@
-﻿using System;
+﻿using System.Text.Json;
 
 public class Equipo
 {
-    // Propiedades de la clase Equipo
+    private static string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "equipos.json");
+
     public int IdEquipo { get; set; }
-    //public int IdCliente { get; set; }
-    public string Cliente { get; set; } //Este puede ser de tipo string o tipo cliente 
     public string TipoDeEquipo { get; set; }
     public string Modelo { get; set; }
     public string NumeroDeSerie { get; set; }
     public string DescripcionDelProblema { get; set; }
-    public List<string> HistorialFotografico { get; set; }
 
     public static int NumeroIdEquipo = 0;
     public static List<Equipo> ListaEquipos = new List<Equipo>();
 
- //   public Equipo(string tipoDeEquipo, string modelo, string numeroDeSerie, string descripcionDelProblema)
-	//{
- //       TipoDeEquipo = tipoDeEquipo;
- //       Modelo = modelo;
- //       NumeroDeSerie = numeroDeSerie;
- //       DescripcionDelProblema = descripcionDelProblema;
- //       HistorialFotografico = new List<string>();
-	//}
+    public string InformacionEquipo => $"{TipoDeEquipo} - {Modelo} ({NumeroDeSerie})";
 
-    //Nuevo constructor para clase Equipo
-    //
-    public Equipo(string tipoDeEquipo, string modelo, string numeroDeSerie, string descripcionDelProblema)
+    public Equipo() { }
+
+    public Equipo(string tipo, string modelo, string numeroSerie, string descripcion)
     {
-        NumeroIdEquipo++;
-        IdEquipo = NumeroIdEquipo;
-        TipoDeEquipo = tipoDeEquipo;
+        IdEquipo = ++NumeroIdEquipo;
+        TipoDeEquipo = tipo;
         Modelo = modelo;
-        NumeroDeSerie = numeroDeSerie;
-        DescripcionDelProblema = descripcionDelProblema;
-        HistorialFotografico = new List<string>();
+        NumeroDeSerie = numeroSerie;
+        DescripcionDelProblema = descripcion;
     }
-    /// <summary>
-    /// Método que sirve para registrar un equipo con sus respectivos datos. 
-    /// </summary>
-    /// <param name="tipo">Tipo de Equipo</param>
-    /// <param name="modelo">Modelo del Equipo</param>
-    /// <param name="numeroSerie">Numero de Serie del Equipo</param>
-    /// <param name="descripcion">Descripcion del Equipo</param>
-    /// <returns></returns>
+
+    // 🔹 Registrar y guardar en JSON
     public static Equipo RegistrarEquipo(string tipo, string modelo, string numeroSerie, string descripcion)
     {
-        Equipo nuevo = new Equipo(tipo, modelo, numeroSerie, descripcion);
+        ListaEquipos = CargarEquipos();
+        int nuevoId = ListaEquipos.Any() ? ListaEquipos.Max(e => e.IdEquipo) + 1 : 1;
+
+        Equipo nuevo = new Equipo(tipo, modelo, numeroSerie, descripcion)
+        {
+            IdEquipo = nuevoId
+        };
+
         ListaEquipos.Add(nuevo);
-        MessageBox.Show("Equipo registrado correctamente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        GuardarEquipos(ListaEquipos);
+
         return nuevo;
+    }
+
+    public static List<Equipo> CargarEquipos()
+    {
+        if (!File.Exists(rutaArchivo)) return new List<Equipo>();
+        string json = File.ReadAllText(rutaArchivo);
+        return JsonSerializer.Deserialize<List<Equipo>>(json) ?? new List<Equipo>();
+    }
+
+    public static void GuardarEquipos(List<Equipo> equipos)
+    {
+        string json = JsonSerializer.Serialize(equipos, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(rutaArchivo, json);
     }
 }

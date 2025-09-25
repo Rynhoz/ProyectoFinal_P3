@@ -1,40 +1,50 @@
-﻿using System;
+﻿using System.Text.Json;
 
 public class Cliente
 {
+    private static string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "clientes.json");
+
     public int IdCliente { get; set; }
     public string Nombre { get; set; }
     public string Direccion { get; set; }
     public string Telefono { get; set; }
     public string Email { get; set; }
     public Equipo Equipo { get; set; }
-    //Nueva propiedad para la interfaz
 
-    private int NumeroIdCliente = 0;
+    public static int NumeroIdCliente = 0;
     public static List<Cliente> ListaClientes = new List<Cliente>();
 
-    public Cliente(string nombre, string direccion, string telefono, string email, Equipo equipo)
-	{
-        NumeroIdCliente++;
-        this.IdCliente = NumeroIdCliente;
-        this.Nombre = nombre;   
-        this.Direccion = direccion;
-        this.Telefono = telefono;
-        this.Email = email; 
-        this.Equipo = equipo;
-	}
-
-    public static Cliente RegistrarCliente(string nombre, string direccion, string telefono, string correo, Equipo equipo)
+    public static Cliente RegistrarCliente(string nombre, string direccion, string telefono, string email, Equipo equipo)
     {
-        Cliente nuevo = new Cliente(nombre, direccion, telefono, correo, equipo);
+        ListaClientes = CargarClientes();
+        int nuevoId = ListaClientes.Any() ? ListaClientes.Max(c => c.IdCliente) + 1 : 1;
+
+        Cliente nuevo = new Cliente
+        {
+            IdCliente = nuevoId,
+            Nombre = nombre,
+            Direccion = direccion,
+            Telefono = telefono,
+            Email = email,
+            Equipo = equipo
+        };
+
         ListaClientes.Add(nuevo);
-        MessageBox.Show("Cliente registrado correctamente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        GuardarClientes(ListaClientes);
+
         return nuevo;
     }
 
-    public static Cliente operator +(Cliente cliente, Equipo equipo)
+    public static List<Cliente> CargarClientes()
     {
-        cliente.Equipo = equipo;
-        return cliente;
+        if (!File.Exists(rutaArchivo)) return new List<Cliente>();
+        string json = File.ReadAllText(rutaArchivo);
+        return JsonSerializer.Deserialize<List<Cliente>>(json) ?? new List<Cliente>();
+    }
+
+    public static void GuardarClientes(List<Cliente> clientes)
+    {
+        string json = JsonSerializer.Serialize(clientes, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(rutaArchivo, json);
     }
 }

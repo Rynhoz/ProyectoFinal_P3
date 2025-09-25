@@ -19,12 +19,42 @@ namespace ProyectoFinal_P3
 
                 if (esValido)
                 {
-                    MessageBox.Show("¡Bienvenido!");
+                    // Obtener el rol del usuario ingresado
+                    string rol = usuario.ObtenerRolUsuario(txtUsuario.Text.Trim(), txtContrasena.Text.Trim());
+
+                    MessageBox.Show($"¡Bienvenido {rol}!");
+
                     this.Hide();
 
-                    FrmInicio frmInicio = new FrmInicio();
-                    frmInicio.FormClosed += (s, args) => this.Close();
-                    frmInicio.Show();
+                    Form ventana = null;
+
+                    // Abrir ventana según el rol
+                    switch (rol)
+                    {
+                        case "Administrador":
+                            ventana = new FrmInicio(rol); 
+                            break;
+
+                        case "Tecnico":
+                            ventana = new FrmInicio(rol); 
+                            break;
+
+                        case "Cajero":
+                            ventana = new FrmInicio(rol); 
+                            break;
+
+                        default:
+                            MessageBox.Show("Rol no reconocido, contacte con el administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.Show();
+                            return;
+                    }
+
+                    // Manejo de cierre
+                    if (ventana != null)
+                    {
+                        ventana.FormClosed += (s, args) => this.Close();
+                        ventana.Show();
+                    }
                 }
                 else
                 {

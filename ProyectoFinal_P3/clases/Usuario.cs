@@ -1,10 +1,10 @@
-﻿using System;
-using System.Text.Json;
+﻿using System.Text.Json;
 using ProyectoFinal_P3.clases;
 
 public class Usuario : IAuntenticable
 {
-    private string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "usuarios.json");
+    private static string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "usuarios.json");
+
     public int IdUsuario { get; set; }
     public string NombreUsuario { get; set; }
     public string Contrasena { get; set; }
@@ -14,105 +14,128 @@ public class Usuario : IAuntenticable
 
     public Usuario() { }
 
-    /// <summary>
-    /// Metodo que verifica si el usuario existe y si ingreso bien sus datos para ingresar a la aplicacion
-    /// </summary>
+    // 🔹 Comparaciones de usuarios
+    public static bool operator ==(Usuario u1, Usuario u2)
+    {
+        if (ReferenceEquals(u1, null) && ReferenceEquals(u2, null)) return true;
+        if (ReferenceEquals(u1, null) || ReferenceEquals(u2, null)) return false;
+        return u1.IdUsuario == u2.IdUsuario;
+    }
+    public static bool operator !=(Usuario u1, Usuario u2) => !(u1 == u2);
+
+    public override bool Equals(object obj)
+    {
+        return obj is Usuario usuario && this == usuario;
+    }
+
+    public override int GetHashCode()
+    {
+        return IdUsuario.GetHashCode();
+    }
+
+    // 🔹 Validación de login
     public bool ValidarContrasena(string usuario, string contrasena)
     {
-        if (!File.Exists(rutaArchivo))
-        {
-            throw new FileNotFoundException($"No se encontró el archivo en {rutaArchivo}");
-        }
-
-        string json = File.ReadAllText(rutaArchivo);
-
-        List<Usuario> usuarios = JsonSerializer.Deserialize<List<Usuario>>(json) ?? new List<Usuario>();
-
+        List<Usuario> usuarios = CargarUsuarios();
         return usuarios.Exists(u =>
-            u.NombreUsuario.Equals(usuario, StringComparison.OrdinalIgnoreCase) &&
-            u.Contrasena == contrasena
+            u.NombreUsuario.Equals(usuario.Trim(), StringComparison.OrdinalIgnoreCase) &&
+            u.Contrasena == contrasena.Trim()
         );
     }
 
-    /// <summary>
-    /// Metodo que Obtiene el rol del usuario para verfificar que permisos tiene en la aplicacion
-    /// </summary>
+    // 🔹 Obtener Rol
     public string ObtenerRolUsuario(string usuario, string contrasena)
     {
-        if (!File.Exists(rutaArchivo))
-        {
-            throw new FileNotFoundException($"No se encontró el archivo en {rutaArchivo}");
-        }
-
-        string json = File.ReadAllText(rutaArchivo);
-
-        List<Usuario> usuarios = JsonSerializer.Deserialize<List<Usuario>>(json) ?? new List<Usuario>();
-
-        Usuario user = usuarios.Find(u => u.NombreUsuario.Equals(usuario, StringComparison.OrdinalIgnoreCase) && u.Contrasena == contrasena);
-
-        if (user == null)
-        {
-            return "Usuario o contraseña incorrectos";
-        }
-
-        return (user.Rol == "Administrador" || user.Rol == "Cajero" || user.Rol == "Técnico") ? user.Rol : "Rol no válido";
+        List<Usuario> usuarios = CargarUsuarios();
+        Usuario user = usuarios.Find(u => u.NombreUsuario.Equals(usuario.Trim(), StringComparison.OrdinalIgnoreCase) && u.Contrasena == contrasena.Trim());
+        return user != null ? user.Rol : "Usuario o contraseña incorrectos";
     }
 
-    /// <summary>
-    /// Metodo que carga todos los usuarios desde el archivo JSON
-    /// </summary>
+    // 🔹 Cargar y Guardar
     public static List<Usuario> CargarUsuarios()
     {
-        string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "usuarios.json");
-
-        if (!File.Exists(rutaArchivo))
-        {
-            return new List<Usuario>();
-        }
-
+        if (!File.Exists(rutaArchivo)) return new List<Usuario>();
         string json = File.ReadAllText(rutaArchivo);
-
         return JsonSerializer.Deserialize<List<Usuario>>(json) ?? new List<Usuario>();
     }
 
-    /// <summary>
-    /// Metodo que guarda la lista de usuarios en el archivo JSON
-    /// </summary>
     public static void GuardarUsuarios(List<Usuario> usuarios)
     {
-        string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "usuarios.json");
         string json = JsonSerializer.Serialize(usuarios, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(rutaArchivo, json);
     }
 
-    /// <summary>
-    /// Metodo que añade un nuevo usuario al archivo JSON
-    /// </summary>
-    public static void AgregarUsuario(string nombre, string contrasena, string rol)
+    // 🔹 Agregar usuario genérico (por parámetros separados)
+    public static void AgregarUsuario(string nombre, string contrasena, string rol, string especialidad = null, int numeroCaja = 0)
     {
         List<Usuario> usuarios = CargarUsuarios();
 
-        Usuario nuevo = new Usuario
+        // Calcular el nuevo Id
+        int nuevoId = usuarios.Any() ? usuarios.Max(u => u.IdUsuario) + 1 : 1;
+
+        Usuario nuevoUsuario;
+
+        switch (rol)
         {
-            IdUsuario = usuarios.Count > 0 ? usuarios.Max(u => u.IdUsuario) + 1 : 1,
-            NombreUsuario = nombre,
-            Contrasena = contrasena,
-            Rol = rol
-        };
+            case "Administrador":
+                nuevoUsuario = new Administrador
+                {
+                    IdUsuario = nuevoId,
+                    NombreUsuario = nombre.Trim(),
+                    Contrasena = contrasena.Trim(),
+                    Rol = rol
+                };
+                break;
 
-        usuarios.Add(nuevo);
+            case "Cajero":
+                nuevoUsuario = new Cajero
+                {
+                    IdUsuario = nuevoId,
+                    NombreUsuario = nombre.Trim(),
+                    Contrasena = contrasena.Trim(),
+                    Rol = rol,
+                    NumeroDeCaja = numeroCaja
+                };
+                break;
 
+            case "Tecnico":
+                nuevoUsuario = new Tecnico
+                {
+                    IdUsuario = nuevoId,
+                    NombreUsuario = nombre.Trim(),
+                    Contrasena = contrasena.Trim(),
+                    Rol = rol,
+                    Especialidad = especialidad
+                };
+                break;
+
+            default:
+                throw new ArgumentException("Rol no válido");
+        }
+
+        usuarios.Add(nuevoUsuario);
         GuardarUsuarios(usuarios);
     }
 
-    public static void AgregarUsuario(string nombre, string contrasena, string rol, int numeroCaja)
+    
+    public static void AgregarUsuario(Usuario nuevo)
     {
+        if (nuevo == null) throw new ArgumentNullException(nameof(nuevo));
+
         List<Usuario> usuarios = CargarUsuarios();
 
-        Cajero nuevo = new Cajero(nombre, contrasena, rol, numeroCaja);
+        // Asignar Id único
+        int nuevoId = usuarios.Any() ? usuarios.Max(u => u.IdUsuario) + 1 : 1;
+        nuevo.IdUsuario = nuevoId;
 
         usuarios.Add(nuevo);
 
-        GuardarUsuarios(usuarios);
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
+        };
+
+        File.WriteAllText(rutaArchivo, JsonSerializer.Serialize(usuarios, options));
     }
 }

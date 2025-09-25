@@ -29,7 +29,7 @@ namespace ProyectoFinal_P3
             Equipo equipoRegistrado = Equipo.RegistrarEquipo(tipo, modelo, numeroSerie, descripcion);
 
             listRegistroEquipos.Items.Add("------ Equipo registrado ------");
-            listRegistroEquipos.Items.Add("Cliente: " + equipoRegistrado.IdCliente);
+            //listRegistroEquipos.Items.Add("Cliente: " + equipoRegistrado.IdCliente);
             listRegistroEquipos.Items.Add("Modelo: " + equipoRegistrado.Modelo);
             listRegistroEquipos.Items.Add("Descripción: " + equipoRegistrado.DescripcionDelProblema);
             listRegistroEquipos.Items.Add("--------------------------------------------------");

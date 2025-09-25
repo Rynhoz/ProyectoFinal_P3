@@ -84,7 +84,6 @@
             txtEspecialidad = new TextBox();
             lblEspecialidad = new Label();
             btnGuardar = new Button();
-            btnModificarUsuario = new Button();
             bntAnadirUsuario = new Button();
             cboxRolUsuario = new ComboBox();
             txtContrasenaUsuario = new TextBox();
@@ -133,15 +132,16 @@
             // 
             // txtRepuestoFactura
             // 
-            txtRepuestoFactura.Location = new Point(132, 227);
+            txtRepuestoFactura.Location = new Point(132, 214);
+            txtRepuestoFactura.Multiline = true;
             txtRepuestoFactura.Name = "txtRepuestoFactura";
-            txtRepuestoFactura.Size = new Size(300, 23);
+            txtRepuestoFactura.Size = new Size(300, 76);
             txtRepuestoFactura.TabIndex = 27;
             // 
             // numericTotal
             // 
             numericTotal.DecimalPlaces = 2;
-            numericTotal.Location = new Point(132, 362);
+            numericTotal.Location = new Point(132, 401);
             numericTotal.Name = "numericTotal";
             numericTotal.Size = new Size(300, 23);
             numericTotal.TabIndex = 26;
@@ -166,6 +166,7 @@
             btnExportarFactura.TabIndex = 24;
             btnExportarFactura.Text = "EXPORTAR FACTURA";
             btnExportarFactura.UseVisualStyleBackColor = true;
+            btnExportarFactura.Click += btnExportarFactura_Click;
             // 
             // btnEmitirFactura
             // 
@@ -181,7 +182,7 @@
             // dtpFechaFactura
             // 
             dtpFechaFactura.Font = new Font("Arial", 10.2F);
-            dtpFechaFactura.Location = new Point(132, 289);
+            dtpFechaFactura.Location = new Point(132, 328);
             dtpFechaFactura.Name = "dtpFechaFactura";
             dtpFechaFactura.Size = new Size(300, 23);
             dtpFechaFactura.TabIndex = 21;
@@ -201,7 +202,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 10F);
-            label8.Location = new Point(132, 340);
+            label8.Location = new Point(132, 379);
             label8.Name = "label8";
             label8.Size = new Size(122, 16);
             label8.TabIndex = 18;
@@ -211,7 +212,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Arial", 10F);
-            label13.Location = new Point(132, 266);
+            label13.Location = new Point(132, 305);
             label13.Name = "label13";
             label13.Size = new Size(138, 16);
             label13.TabIndex = 17;
@@ -463,6 +464,7 @@
             dgvMostrarClientesYEquipos.RowHeadersWidth = 51;
             dgvMostrarClientesYEquipos.Size = new Size(354, 494);
             dgvMostrarClientesYEquipos.TabIndex = 57;
+            dgvMostrarClientesYEquipos.CellEndEdit += dgvMostrarClientesYEquipos_CellEndEdit;
             // 
             // txtDescripcionDelProblemaEquipo
             // 
@@ -558,6 +560,7 @@
             // 
             // btnRegistrarCliente
             // 
+            btnRegistrarCliente.Enabled = false;
             btnRegistrarCliente.Font = new Font("Arial", 10F);
             btnRegistrarCliente.Location = new Point(83, 515);
             btnRegistrarCliente.Margin = new Padding(3, 2, 3, 2);
@@ -669,7 +672,6 @@
             tpAdministrador.Controls.Add(txtEspecialidad);
             tpAdministrador.Controls.Add(lblEspecialidad);
             tpAdministrador.Controls.Add(btnGuardar);
-            tpAdministrador.Controls.Add(btnModificarUsuario);
             tpAdministrador.Controls.Add(bntAnadirUsuario);
             tpAdministrador.Controls.Add(cboxRolUsuario);
             tpAdministrador.Controls.Add(txtContrasenaUsuario);
@@ -691,6 +693,7 @@
             // 
             // txtEspecialidad
             // 
+            txtEspecialidad.Enabled = false;
             txtEspecialidad.Location = new Point(398, 217);
             txtEspecialidad.Name = "txtEspecialidad";
             txtEspecialidad.Size = new Size(256, 23);
@@ -699,6 +702,7 @@
             // lblEspecialidad
             // 
             lblEspecialidad.AutoSize = true;
+            lblEspecialidad.Enabled = false;
             lblEspecialidad.Location = new Point(394, 195);
             lblEspecialidad.Name = "lblEspecialidad";
             lblEspecialidad.Size = new Size(105, 16);
@@ -707,22 +711,14 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(834, 312);
+            btnGuardar.Location = new Point(615, 308);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(168, 46);
             btnGuardar.TabIndex = 11;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Visible = false;
-            // 
-            // btnModificarUsuario
-            // 
-            btnModificarUsuario.Location = new Point(626, 312);
-            btnModificarUsuario.Name = "btnModificarUsuario";
-            btnModificarUsuario.Size = new Size(171, 46);
-            btnModificarUsuario.TabIndex = 10;
-            btnModificarUsuario.Text = "MODIFICAR";
-            btnModificarUsuario.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click_1;
             // 
             // bntAnadirUsuario
             // 
@@ -795,6 +791,7 @@
             dgvVerUsuarios.RowHeadersWidth = 51;
             dgvVerUsuarios.Size = new Size(940, 263);
             dgvVerUsuarios.TabIndex = 2;
+            dgvVerUsuarios.SelectionChanged += dgvVerUsuarios_SelectionChanged;
             // 
             // label18
             // 
@@ -929,7 +926,6 @@
         private ComboBox cboxEquipoCliente;
         private ToolStripMenuItem administradorToolStripMenuItem;
         private TabPage tabPage1;
-        private Button btnModificarUsuario;
         private TextBox txtRepuestoFactura;
         private TextBox txtEspecialidad;
         private Label lblEspecialidad;
