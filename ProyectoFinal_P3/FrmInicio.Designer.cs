@@ -44,9 +44,9 @@
             tpInventario = new TabPage();
             numericPrecio = new NumericUpDown();
             numericStock = new NumericUpDown();
-            btnModificarRepuestos = new Button();
-            dgvRepuestos = new DataGridView();
             btnGuardarRepuestos = new Button();
+            dgvRepuestos = new DataGridView();
+            btnAgregarRepuestos = new Button();
             label27 = new Label();
             cboxFamiliaRepuesto = new ComboBox();
             txtDescripcionRepuesto = new TextBox();
@@ -57,6 +57,7 @@
             label23 = new Label();
             label22 = new Label();
             tpClienteYEquipo = new TabPage();
+            btnGuardarCambios = new Button();
             cboxEquipoCliente = new ComboBox();
             label3 = new Label();
             dgvMostrarClientesYEquipos = new DataGridView();
@@ -95,6 +96,7 @@
             label18 = new Label();
             label17 = new Label();
             tabInicio = new TabControl();
+            numericCantidadFactura = new NumericUpDown();
             tpFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericTotal).BeginInit();
             tpInventario.SuspendLayout();
@@ -106,10 +108,12 @@
             tpAdministrador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVerUsuarios).BeginInit();
             tabInicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericCantidadFactura).BeginInit();
             SuspendLayout();
             // 
             // tpFactura
             // 
+            tpFactura.Controls.Add(numericCantidadFactura);
             tpFactura.Controls.Add(txtRepuestoFactura);
             tpFactura.Controls.Add(numericTotal);
             tpFactura.Controls.Add(txtFactura);
@@ -141,7 +145,7 @@
             // numericTotal
             // 
             numericTotal.DecimalPlaces = 2;
-            numericTotal.Location = new Point(132, 401);
+            numericTotal.Location = new Point(131, 436);
             numericTotal.Name = "numericTotal";
             numericTotal.Size = new Size(300, 23);
             numericTotal.TabIndex = 26;
@@ -171,7 +175,7 @@
             // btnEmitirFactura
             // 
             btnEmitirFactura.Font = new Font("Arial", 10F);
-            btnEmitirFactura.Location = new Point(187, 430);
+            btnEmitirFactura.Location = new Point(186, 465);
             btnEmitirFactura.Name = "btnEmitirFactura";
             btnEmitirFactura.Size = new Size(193, 46);
             btnEmitirFactura.TabIndex = 23;
@@ -182,7 +186,7 @@
             // dtpFechaFactura
             // 
             dtpFechaFactura.Font = new Font("Arial", 10.2F);
-            dtpFechaFactura.Location = new Point(132, 328);
+            dtpFechaFactura.Location = new Point(131, 363);
             dtpFechaFactura.Name = "dtpFechaFactura";
             dtpFechaFactura.Size = new Size(300, 23);
             dtpFechaFactura.TabIndex = 21;
@@ -202,7 +206,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 10F);
-            label8.Location = new Point(132, 379);
+            label8.Location = new Point(131, 414);
             label8.Name = "label8";
             label8.Size = new Size(122, 16);
             label8.TabIndex = 18;
@@ -212,7 +216,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Arial", 10F);
-            label13.Location = new Point(132, 305);
+            label13.Location = new Point(131, 340);
             label13.Name = "label13";
             label13.Size = new Size(138, 16);
             label13.TabIndex = 17;
@@ -252,9 +256,9 @@
             // 
             tpInventario.Controls.Add(numericPrecio);
             tpInventario.Controls.Add(numericStock);
-            tpInventario.Controls.Add(btnModificarRepuestos);
-            tpInventario.Controls.Add(dgvRepuestos);
             tpInventario.Controls.Add(btnGuardarRepuestos);
+            tpInventario.Controls.Add(dgvRepuestos);
+            tpInventario.Controls.Add(btnAgregarRepuestos);
             tpInventario.Controls.Add(label27);
             tpInventario.Controls.Add(cboxFamiliaRepuesto);
             tpInventario.Controls.Add(txtDescripcionRepuesto);
@@ -287,14 +291,16 @@
             numericStock.Size = new Size(259, 23);
             numericStock.TabIndex = 14;
             // 
-            // btnModificarRepuestos
+            // btnGuardarRepuestos
             // 
-            btnModificarRepuestos.Location = new Point(277, 539);
-            btnModificarRepuestos.Name = "btnModificarRepuestos";
-            btnModificarRepuestos.Size = new Size(163, 48);
-            btnModificarRepuestos.TabIndex = 13;
-            btnModificarRepuestos.Text = "MODIFICAR";
-            btnModificarRepuestos.UseVisualStyleBackColor = true;
+            btnGuardarRepuestos.Enabled = false;
+            btnGuardarRepuestos.Location = new Point(277, 539);
+            btnGuardarRepuestos.Name = "btnGuardarRepuestos";
+            btnGuardarRepuestos.Size = new Size(163, 48);
+            btnGuardarRepuestos.TabIndex = 13;
+            btnGuardarRepuestos.Text = "GUARDAR";
+            btnGuardarRepuestos.UseVisualStyleBackColor = true;
+            btnGuardarRepuestos.Click += btnGuardarRepuestos_Click_1;
             // 
             // dgvRepuestos
             // 
@@ -308,16 +314,17 @@
             dgvRepuestos.RowHeadersWidth = 51;
             dgvRepuestos.Size = new Size(487, 499);
             dgvRepuestos.TabIndex = 12;
+            dgvRepuestos.SelectionChanged += dgvRepuestos_SelectionChanged;
             // 
-            // btnGuardarRepuestos
+            // btnAgregarRepuestos
             // 
-            btnGuardarRepuestos.Location = new Point(74, 539);
-            btnGuardarRepuestos.Name = "btnGuardarRepuestos";
-            btnGuardarRepuestos.Size = new Size(148, 48);
-            btnGuardarRepuestos.TabIndex = 11;
-            btnGuardarRepuestos.Text = "GUARDAR";
-            btnGuardarRepuestos.UseVisualStyleBackColor = true;
-            btnGuardarRepuestos.Click += btnGuardarRepuestos_Click;
+            btnAgregarRepuestos.Location = new Point(74, 539);
+            btnAgregarRepuestos.Name = "btnAgregarRepuestos";
+            btnAgregarRepuestos.Size = new Size(148, 48);
+            btnAgregarRepuestos.TabIndex = 11;
+            btnAgregarRepuestos.Text = "AGREGAR";
+            btnAgregarRepuestos.UseVisualStyleBackColor = true;
+            btnAgregarRepuestos.Click += btnAgregarRepuestos_Click;
             // 
             // label27
             // 
@@ -332,6 +339,7 @@
             // 
             cboxFamiliaRepuesto.DropDownStyle = ComboBoxStyle.DropDownList;
             cboxFamiliaRepuesto.FormattingEnabled = true;
+            cboxFamiliaRepuesto.Items.AddRange(new object[] { "Electronica", "Mecanica", "Sistemas de Potencia", "Consumibles" });
             cboxFamiliaRepuesto.Location = new Point(134, 327);
             cboxFamiliaRepuesto.Name = "cboxFamiliaRepuesto";
             cboxFamiliaRepuesto.Size = new Size(259, 24);
@@ -400,6 +408,7 @@
             // 
             // tpClienteYEquipo
             // 
+            tpClienteYEquipo.Controls.Add(btnGuardarCambios);
             tpClienteYEquipo.Controls.Add(cboxEquipoCliente);
             tpClienteYEquipo.Controls.Add(label3);
             tpClienteYEquipo.Controls.Add(dgvMostrarClientesYEquipos);
@@ -431,6 +440,18 @@
             tpClienteYEquipo.TabIndex = 1;
             tpClienteYEquipo.Text = "Cliente y Equipo";
             tpClienteYEquipo.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardarCambios
+            // 
+            btnGuardarCambios.Font = new Font("Arial", 10F);
+            btnGuardarCambios.Location = new Point(658, 579);
+            btnGuardarCambios.Margin = new Padding(3, 2, 3, 2);
+            btnGuardarCambios.Name = "btnGuardarCambios";
+            btnGuardarCambios.Size = new Size(179, 58);
+            btnGuardarCambios.TabIndex = 59;
+            btnGuardarCambios.Text = "GUARDAR";
+            btnGuardarCambios.UseVisualStyleBackColor = true;
+            btnGuardarCambios.Click += btnGuardarCambios_Click;
             // 
             // cboxEquipoCliente
             // 
@@ -464,7 +485,7 @@
             dgvMostrarClientesYEquipos.RowHeadersWidth = 51;
             dgvMostrarClientesYEquipos.Size = new Size(354, 494);
             dgvMostrarClientesYEquipos.TabIndex = 57;
-            dgvMostrarClientesYEquipos.CellEndEdit += dgvMostrarClientesYEquipos_CellEndEdit;
+            dgvMostrarClientesYEquipos.SelectionChanged += dgvMostrarClientesYEquipos_SelectionChanged;
             // 
             // txtDescripcionDelProblemaEquipo
             // 
@@ -828,6 +849,13 @@
             tabInicio.Size = new Size(1069, 693);
             tabInicio.TabIndex = 1;
             // 
+            // numericCantidadFactura
+            // 
+            numericCantidadFactura.Location = new Point(132, 296);
+            numericCantidadFactura.Name = "numericCantidadFactura";
+            numericCantidadFactura.Size = new Size(300, 23);
+            numericCantidadFactura.TabIndex = 28;
+            // 
             // FrmInicio
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
@@ -855,6 +883,7 @@
             tpAdministrador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVerUsuarios).EndInit();
             tabInicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numericCantidadFactura).EndInit();
             ResumeLayout(false);
         }
 
@@ -916,9 +945,9 @@
         private TextBox txtNombreRepuesto;
         private Label label27;
         private ComboBox cboxFamiliaRepuesto;
-        private Button btnGuardarRepuestos;
+        private Button btnAgregarRepuestos;
         private DataGridView dgvRepuestos;
-        private Button btnModificarRepuestos;
+        private Button btnGuardarRepuestos;
         private Button btnGuardar;
         private NumericUpDown numericPrecio;
         private NumericUpDown numericStock;
@@ -929,5 +958,7 @@
         private TextBox txtRepuestoFactura;
         private TextBox txtEspecialidad;
         private Label lblEspecialidad;
+        private Button btnGuardarCambios;
+        private NumericUpDown numericCantidadFactura;
     }
 }

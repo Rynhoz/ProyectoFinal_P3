@@ -48,58 +48,58 @@ namespace ProyectoFinal_P3
 
         private void btnEliminarRepuesto_Click(object sender, EventArgs e)
         {
-            // Validar ID
-            if (!int.TryParse(txtIDRepuesto.Text, out int idRepuesto))
-            {
-                MessageBox.Show("Ingrese un ID válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //    // Validar ID
+            //    if (!int.TryParse(txtIDRepuesto.Text, out int idRepuesto))
+            //    {
+            //        MessageBox.Show("Ingrese un ID válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
 
-            // Eliminar de la lista estática
-            bool eliminado = Repuesto.EliminarRepuesto(idRepuesto);
+            //    // Eliminar de la lista estática
+            //    //bool eliminado = Repuesto.EliminarRepuesto(idRepuesto);
 
-            if (eliminado)
-            {
-                int indexInicio = -1;
-                int indexFin = -1;
+            //    if (eliminado)
+            //    {
+            //        int indexInicio = -1;
+            //        int indexFin = -1;
 
-                // Buscar dentro del ListBox dónde está el bloque
-                for (int inicio = 0; inicio < listRepuestosInfo.Items.Count; inicio++)
-                {
-                    string itemTexto = listRepuestosInfo.Items[inicio].ToString();
+            //        // Buscar dentro del ListBox dónde está el bloque
+            //        for (int inicio = 0; inicio < listRepuestosInfo.Items.Count; inicio++)
+            //        {
+            //            string itemTexto = listRepuestosInfo.Items[inicio].ToString();
 
-                    if (itemTexto.StartsWith("------ Repuesto registrado ------"))
-                    {
-                        indexInicio = inicio; // inicio del bloque
-                    }
+            //            if (itemTexto.StartsWith("------ Repuesto registrado ------"))
+            //            {
+            //                indexInicio = inicio; // inicio del bloque
+            //            }
 
-                    if (itemTexto.Contains($"ID del repuesto: {idRepuesto}"))
-                    {
-                        // seguimos hasta encontrar el fin
-                        for (int fin = inicio; fin < listRepuestosInfo.Items.Count; fin++)
-                        {
-                            if (listRepuestosInfo.Items[fin].ToString().StartsWith("--------------------------------------------------"))
-                            {
-                                indexFin = fin;
-                                break;
-                            }
-                        }
-                        break;
-                    }
-                }
+            //            if (itemTexto.Contains($"ID del repuesto: {idRepuesto}"))
+            //            {
+            //                // seguimos hasta encontrar el fin
+            //                for (int fin = inicio; fin < listRepuestosInfo.Items.Count; fin++)
+            //                {
+            //                    if (listRepuestosInfo.Items[fin].ToString().StartsWith("--------------------------------------------------"))
+            //                    {
+            //                        indexFin = fin;
+            //                        break;
+            //                    }
+            //                }
+            //                break;
+            //            }
+            //        }
 
-                // Si encontró el bloque, lo borra
-                if (indexInicio != -1 && indexFin != -1)
-                {
-                    for (int recorrido = indexFin; recorrido >= indexInicio; recorrido--)
-                    {
-                        listRepuestosInfo.Items.RemoveAt(recorrido);
-                    }
-                }
-            }
+            //        // Si encontró el bloque, lo borra
+            //        if (indexInicio != -1 && indexFin != -1)
+            //        {
+            //            for (int recorrido = indexFin; recorrido >= indexInicio; recorrido--)
+            //            {
+            //                listRepuestosInfo.Items.RemoveAt(recorrido);
+            //            }
+            //        }
+            //    }
 
-            // Limpiar TextBox
-            txtIDRepuesto.Clear();
+            //    // Limpiar TextBox
+            //    txtIDRepuesto.Clear();
         }
     }
 }

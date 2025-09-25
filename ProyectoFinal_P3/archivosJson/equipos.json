@@ -1,0 +1,42 @@
+[
+  {
+    "IdEquipo": 1,
+    "TipoDeEquipo": "Heladera",
+    "Modelo": "Samsung RT38",
+    "NumeroDeSerie": "HR12345",
+    "DescripcionDelProblema": "No enfria correctamente",
+    "InformacionEquipo": "Heladera - Samsung RT38 (HR12345)"
+  },
+  {
+    "IdEquipo": 2,
+    "TipoDeEquipo": "Lavadora",
+    "Modelo": "LG TurboWash",
+    "NumeroDeSerie": "LV67890",
+    "DescripcionDelProblema": "Hace ruido al centrifugar",
+    "InformacionEquipo": "Lavadora - LG TurboWash (LV67890)"
+  },
+  {
+    "IdEquipo": 3,
+    "TipoDeEquipo": "Cocina",
+    "Modelo": "Patrick 4 hornallas",
+    "NumeroDeSerie": "CK54321",
+    "DescripcionDelProblema": "Horno no calienta",
+    "InformacionEquipo": "Cocina - Patrick 4 hornallas (CK54321)"
+  },
+  {
+    "IdEquipo": 4,
+    "TipoDeEquipo": "Lavadora",
+    "Modelo": "Samsung",
+    "NumeroDeSerie": "HT445D",
+    "DescripcionDelProblema": "No prende",
+    "InformacionEquipo": "Lavadora - Samsung (HT445D)"
+  },
+  {
+    "IdEquipo": 5,
+    "TipoDeEquipo": "Lavadora",
+    "Modelo": "Honor",
+    "NumeroDeSerie": "HGGD5",
+    "DescripcionDelProblema": "No prende",
+    "InformacionEquipo": "Lavadora - Honor (HGGD5)"
+  }
+]

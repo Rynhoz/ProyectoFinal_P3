@@ -1,20 +1,44 @@
-﻿[
-    {
-        "IdUsuario": 1,
-        "NombreUsuario": "Juan",
-        "Contrasena": "12345",
-        "Rol": "Administrador"
-    },
-    {
-        "IdUsuario": 2,
-        "NombreUsuario": "Maria",
-        "Contrasena": "abcde",
-        "Rol": "Cajero"
-    },
-    {
-        "IdUsuario": 3,
-        "NombreUsuario": "Pedro",
-        "Contrasena": "qwerty",
-        "Rol": "Tecnico"
-    }
+[
+  {
+    "IdUsuario": 1,
+    "NombreUsuario": "Juan",
+    "Contrasena": "12345",
+    "Rol": "Administrador"
+  },
+  {
+    "IdUsuario": 2,
+    "NombreUsuario": "Mari",
+    "Contrasena": "abcd",
+    "Rol": "Cajero"
+  },
+  {
+    "IdUsuario": 3,
+    "NombreUsuario": "Pedro",
+    "Contrasena": "qwert",
+    "Rol": "Tecnico"
+  },
+  {
+    "IdUsuario": 4,
+    "NombreUsuario": "Karol",
+    "Contrasena": "1234",
+    "Rol": "Administrador"
+  },
+  {
+    "IdUsuario": 5,
+    "NombreUsuario": "Lucero",
+    "Contrasena": "1234",
+    "Rol": "Tecnico"
+  },
+  {
+    "IdUsuario": 6,
+    "NombreUsuario": "milo",
+    "Contrasena": "1234",
+    "Rol": "Cajero"
+  },
+  {
+    "IdUsuario": 7,
+    "NombreUsuario": "shu",
+    "Contrasena": "122",
+    "Rol": "Tecnico"
+  }
 ]

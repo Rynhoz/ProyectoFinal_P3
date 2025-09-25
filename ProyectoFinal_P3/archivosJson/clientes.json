@@ -1,0 +1,70 @@
+[
+  {
+    "IdCliente": 1,
+    "Nombre": "Carlos Gomez",
+    "Direccion": "Calle Central 123",
+    "Telefono": "555-1010",
+    "Email": "carlos.gomez@email.com",
+    "Equipo": {
+      "IdEquipo": 1,
+      "TipoDeEquipo": "Heladera",
+      "Modelo": "Samsung RT38",
+      "NumeroDeSerie": "HR12345",
+      "DescripcionDelProblema": "No enfria correctamente",
+      "InformacionEquipo": "Heladera - Samsung RT38 (HR12345)"
+    }
+  },
+  {
+    "IdCliente": 2,
+    "Nombre": "Anita",
+    "Direccion": "Av. Libertad 456",
+    "Telefono": "555-2020",
+    "Email": "ana.martinez@email.com",
+    "Equipo": {
+      "IdEquipo": 5,
+      "TipoDeEquipo": "Lavadora",
+      "Modelo": "Honor",
+      "NumeroDeSerie": "HGGD5",
+      "DescripcionDelProblema": "No prende",
+      "InformacionEquipo": "Lavadora - Honor (HGGD5)"
+    }
+  },
+  {
+    "IdCliente": 3,
+    "Nombre": "Jose Fernandez",
+    "Direccion": "Barrio Norte 789",
+    "Telefono": "555-3030",
+    "Email": "jose.fernandez@email.com",
+    "Equipo": {
+      "IdEquipo": 3,
+      "TipoDeEquipo": "Cocina",
+      "Modelo": "Patrick 4 hornallas",
+      "NumeroDeSerie": "CK54321",
+      "DescripcionDelProblema": "Horno no calienta",
+      "InformacionEquipo": "Cocina - Patrick 4 hornallas (CK54321)"
+    }
+  },
+  {
+    "IdCliente": 4,
+    "Nombre": "Erik",
+    "Direccion": "Barrio",
+    "Telefono": "4551-4444",
+    "Email": "ASDD@phgg",
+    "Equipo": {
+      "IdEquipo": 1,
+      "TipoDeEquipo": "Heladera",
+      "Modelo": "Samsung RT38",
+      "NumeroDeSerie": "HR12345",
+      "DescripcionDelProblema": "No enfria correctamente",
+      "InformacionEquipo": "Heladera - Samsung RT38 (HR12345)"
+    }
+  },
+  {
+    "IdCliente": 5,
+    "Nombre": "Nombre",
+    "Direccion": "casita",
+    "Telefono": "455555-44",
+    "Email": "shhd@dj",
+    "Equipo": null
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "IdRepuesto": 1,
+    "Nombre": "Motor Heladera",
+    "Descripcion": "Motor para heladera marca H-2500",
+    "Familia": "Heladeras",
+    "Stock": 5,
+    "PrecioUnitario": 250,
+    "PrecioVenta": 300
+  },
+  {
+    "IdRepuesto": 2,
+    "Nombre": "Bomba Lavadora",
+    "Descripcion": "Bomba para lavadora L-500",
+    "Familia": "Lavadoras",
+    "Stock": 3,
+    "PrecioUnitario": 150,
+    "PrecioVenta": 200
+  },
+  {
+    "IdRepuesto": 3,
+    "Nombre": "Quemador Cocina",
+    "Descripcion": "Quemador original para cocina C-800",
+    "Familia": "Cocinas",
+    "Stock": 10,
+    "PrecioUnitario": 50,
+    "PrecioVenta": 70
+  },
+  {
+    "IdRepuesto": 4,
+    "Nombre": "Resistencia",
+    "Descripcion": "Resisitencia de 9999 voltios de la marca duracell",
+    "Familia": "Electronica",
+    "Stock": 2,
+    "PrecioUnitario": 100,
+    "PrecioVenta": 120.0
+  }
+]
