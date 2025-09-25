@@ -219,5 +219,54 @@ namespace ProyectoFinal_P3
 
             Repuesto repuestoRegistrado = Repuesto.RegistrarRepuesto(nombre, descripcion, familia, stock, precioUnitario);
         }
+
+        //REGISTRO DE USUARIOS
+
+        private void bntAnadirUsuario_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboxRolUsuario.SelectedIndex == 0)
+                {
+                    Administrador admin = new Administrador();
+                }
+                else if (cboxRolUsuario.SelectedIndex == 1)
+                {
+                    lblEspecialidad.Enabled = true;
+                    txtEspecialidad.Enabled = true;
+                    lblEspecialidad.Text = "NÚMERO DE CAJA";
+                }
+                else if (cboxRolUsuario.SelectedIndex == 2)
+                {
+                    lblEspecialidad.Enabled = false;
+                    txtEspecialidad.Enabled = false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Usuario no registrado aun");
+            }
+        }
+
+        private void cboxRolUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboxRolUsuario.SelectedIndex == 1)
+            {
+                lblEspecialidad.Enabled = true;
+                txtEspecialidad.Enabled = true;
+                lblEspecialidad.Text = "ESPECIALIDAD";
+            }
+            else if (cboxRolUsuario.SelectedIndex == 2)
+            {
+                lblEspecialidad.Enabled = true;
+                txtEspecialidad.Enabled = true;
+                lblEspecialidad.Text = "NÚMERO DE CAJA";
+            }
+            else
+            {
+                lblEspecialidad.Enabled = false;
+                txtEspecialidad.Enabled = false;
+            }
+        }
     }
 }

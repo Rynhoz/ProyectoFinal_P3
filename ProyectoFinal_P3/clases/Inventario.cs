@@ -2,10 +2,15 @@
 
 public class Inventario
 {
-	public List<Repuesto> StockRepuestos {  get; set; }
+	public static List<Repuesto> StockRepuestos {  get; set; }
 
 	public Inventario()
 	{
 		StockRepuestos = new List<Repuesto>();
+	}
+
+	public Inventario(Repuesto repuesto)
+	{
+		StockRepuestos.Add(repuesto);
 	}
 }

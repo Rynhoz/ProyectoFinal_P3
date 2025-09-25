@@ -104,4 +104,15 @@ public class Usuario : IAuntenticable
 
         GuardarUsuarios(usuarios);
     }
+
+    public static void AgregarUsuario(string nombre, string contrasena, string rol, int numeroCaja)
+    {
+        List<Usuario> usuarios = CargarUsuarios();
+
+        Cajero nuevo = new Cajero(nombre, contrasena, rol, numeroCaja);
+
+        usuarios.Add(nuevo);
+
+        GuardarUsuarios(usuarios);
+    }
 }

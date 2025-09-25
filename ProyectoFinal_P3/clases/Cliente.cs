@@ -10,7 +10,7 @@ public class Cliente
     public Equipo Equipo { get; set; }
     //Nueva propiedad para la interfaz
 
-    private int NumeroIdCliente = 4;
+    private int NumeroIdCliente = 0;
     public static List<Cliente> ListaClientes = new List<Cliente>();
 
     public Cliente(string nombre, string direccion, string telefono, string email, Equipo equipo)
@@ -30,5 +30,11 @@ public class Cliente
         ListaClientes.Add(nuevo);
         MessageBox.Show("Cliente registrado correctamente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
         return nuevo;
+    }
+
+    public static Cliente operator +(Cliente cliente, Equipo equipo)
+    {
+        cliente.Equipo = equipo;
+        return cliente;
     }
 }

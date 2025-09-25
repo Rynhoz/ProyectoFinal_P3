@@ -5,17 +5,18 @@ using ProyectoFinal_P3.clases;
 public class Factura
 {
 	public int IdFactura { get; set; }
-	public int IdOrden { get; set; }
+	public Cliente Cliente { get; set; }
 	public DateTime FechaDeEmision { get; set; }
-	public List<ItemFactura> Items { get; set; } //posiblemente se elimine porque no apporta en nada
 	public decimal MontoTotal { get; set; }
+    private int IdNFactura = 0;
 
-	public Factura(int idFactura, int idOrden, DateTime fechaDeEmision, decimal montoTotal)
-	{
-		this.IdFactura = idFactura;
-		this.IdOrden = idOrden; 
-		this.FechaDeEmision = fechaDeEmision;
-		this.Items = new List<ItemFactura>();
-		this.MontoTotal = montoTotal;
-	}
+    public Factura(Cliente cliente, DateTime fechaDeEmision, decimal montoTotal)
+    {
+        IdNFactura++;
+        this.IdFactura = IdNFactura;
+        this.Cliente = cliente;
+        this.FechaDeEmision = fechaDeEmision;
+        this.MontoTotal = montoTotal;
+    }
+
 }

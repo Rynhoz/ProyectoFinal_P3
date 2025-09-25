@@ -15,6 +15,9 @@ public sealed class Repuesto
     public static List<Repuesto> ListaRepuestos = new List<Repuesto>();
 
     private static int contadorId = 0;
+
+    public Repuesto() { }
+
     /// <summary>
     /// Constructo de la Clase Repuesto.
     /// </summary>

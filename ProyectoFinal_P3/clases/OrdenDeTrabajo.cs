@@ -6,21 +6,24 @@ public class OrdenDeTrabajo
     public DateTime FechaCreacion { get; set; }
     public string Estado { get; set; }
     public decimal CostoTotal { get; set; }
-    public int IdCliente { get; set; }
-    public int IdEquipo { get; set; }
-    public int IdTecnicoAsignado { get; set; }
+    public Cliente Cliente { get; set; }
+    public Equipo Equipo { get; set; }
+    public Tecnico TecnicoAsignado { get; set; }
     public List<Repuesto> RepuestosUtilizados { get; set; }
     public string Notas { get; set; }
-    
-    public OrdenDeTrabajo(int idOrden, DateTime fechaCreacion, string estado, decimal costoTotal, int idCliente, int idEquipo, int idTecnicoAsignado, string notas)
+
+    private static int NumeroOrden = 0;
+
+    public OrdenDeTrabajo(DateTime fechaCreacion, string estado, decimal costoTotal, Cliente cliente, Equipo equipo, Tecnico tecnicoAsignado, string notas)
 	{
-        this.IdOrden = idOrden;
+        NumeroOrden++;
+        this.IdOrden = NumeroOrden;
         this.FechaCreacion = fechaCreacion;
         this.Estado = estado;   
         this.CostoTotal = costoTotal;
-        this.IdCliente = idCliente;
-        this.IdEquipo = idEquipo;
-        this.IdTecnicoAsignado = idTecnicoAsignado;
+        this.Cliente = cliente;
+        this.Equipo = equipo;
+        this.TecnicoAsignado = tecnicoAsignado;
         this.RepuestosUtilizados = new List<Repuesto>();
         this.Notas = notas;
 	}

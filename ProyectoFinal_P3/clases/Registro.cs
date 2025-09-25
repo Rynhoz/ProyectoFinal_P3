@@ -13,6 +13,8 @@ namespace ProyectoFinal_P3.clases
         public Repuesto RepuestoEliminado { get; set; }
         public DateTime Fecha { get; set; }
 
+        private int NRegistro = 0;
+
         public static List<Registro> ListaRegistros = new List<Registro>();
 
         /// <summary>
@@ -21,6 +23,8 @@ namespace ProyectoFinal_P3.clases
         /// <param name="repuesto"></param>
         public Registro(Repuesto repuesto)
         {
+            NRegistro++;
+            IdRegistro = NRegistro;
             RepuestoEliminado = repuesto;
             Fecha = DateTime.Now;
             ListaRegistros.Add(this);
