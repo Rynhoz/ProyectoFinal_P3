@@ -11,6 +11,7 @@ public class Cliente
     //Nueva propiedad para la interfaz
 
     private int NumeroIdCliente = 4;
+    public static List<Cliente> ListaClientes = new List<Cliente>();
 
     public Cliente(string nombre, string direccion, string telefono, string email)
 	{
@@ -21,4 +22,12 @@ public class Cliente
         this.Telefono = telefono;
         this.Email = email; 
 	}
+
+    public static Cliente RegistrarCliente(string nombre, string direccion, string telefono, string correo)
+    {
+        Cliente nuevo = new Cliente(nombre, direccion, telefono, correo);
+        ListaClientes.Add(nuevo);
+        MessageBox.Show("Cliente registrado correctamente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        return nuevo;
+    }
 }

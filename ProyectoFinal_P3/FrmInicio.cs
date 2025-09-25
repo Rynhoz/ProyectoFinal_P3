@@ -38,8 +38,54 @@ namespace ProyectoFinal_P3
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCliente formCliente = new FormCliente();
-            formCliente.Show();
+            //FormCliente formCliente = new FormCliente();
+            //formCliente.Show();
+
+            FormClienteYEquipo formClienteYEquipo = new FormClienteYEquipo();
+            formClienteYEquipo.Show();
+        }
+
+        private void btnRegistrarEquipo_Click(object sender, EventArgs e)
+        {
+            // Leee los datos ingresados 
+            string tipo = cboxTipoDEEquipo.Text;
+            string modelo = txtModeloEquipo.Text;
+            string numeroSerie = txtNumeroDESerieEquipo.Text;
+            string descripcion = txtDescripcionDelProblemaEquipo.Text;
+
+            // Registrar nuevo equipo
+            Equipo equipoRegistrado = Equipo.RegistrarEquipo(tipo, modelo, numeroSerie, descripcion);
+
+            // Refrescar ComboBox con todos los equipos registrados
+            cboxEquipoCliente.DataSource = null;  //  Reiniciamos
+            cboxEquipoCliente.DataSource = Equipo.ListaEquipos; //  Le dicimos al ComboBox de donde tomar los items
+            cboxEquipoCliente.DisplayMember = "Modelo";   // Lo que se muestra en la lista
+
+            // Limpia los TextBox
+            txtModeloEquipo.Clear();
+            txtNumeroDESerieEquipo.Clear();
+            txtDescripcionDelProblemaEquipo.Clear();
+        }
+
+        private void btnRegistrarCliente_Click(object sender, EventArgs e)
+        {
+            // Leer los datos de los TextBox
+            string nombre = txtNombreCliente.Text;
+            string direccion = txtDireccionCliente.Text;
+            string telefono = txtTelefonoCliente.Text;
+            string correo = txtEmailCliente.Text;
+
+            // Toma el equipo completo seleccionado
+            Equipo equipoSeleccionado = (Equipo)cboxEquipoCliente.SelectedItem;
+
+            // Registrar el cliente
+            Cliente clienteRegistrado = Cliente.RegistrarCliente(nombre, direccion, telefono, correo);
+
+            // Limpiar los TextBox
+            txtNombreCliente.Clear();
+            txtDireccionCliente.Clear();
+            txtTelefonoCliente.Clear();
+            txtEmailCliente.Clear();
         }
 
         private void bntAnadirUsuario_Click(object sender, EventArgs e)

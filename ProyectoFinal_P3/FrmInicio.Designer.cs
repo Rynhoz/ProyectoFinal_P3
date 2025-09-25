@@ -133,7 +133,7 @@
             // 
             numericTotal.Location = new Point(132, 362);
             numericTotal.Name = "numericTotal";
-            numericTotal.Size = new Size(300, 23);
+            numericTotal.Size = new Size(300, 27);
             numericTotal.TabIndex = 26;
             // 
             // txtFactura
@@ -172,7 +172,7 @@
             dtpFechaFactura.Font = new Font("Arial", 10.2F);
             dtpFechaFactura.Location = new Point(132, 289);
             dtpFechaFactura.Name = "dtpFechaFactura";
-            dtpFechaFactura.Size = new Size(300, 23);
+            dtpFechaFactura.Size = new Size(300, 27);
             dtpFechaFactura.TabIndex = 21;
             // 
             // cboxEquipoFactura
@@ -181,7 +181,7 @@
             cboxEquipoFactura.FormattingEnabled = true;
             cboxEquipoFactura.Location = new Point(132, 218);
             cboxEquipoFactura.Name = "cboxEquipoFactura";
-            cboxEquipoFactura.Size = new Size(300, 24);
+            cboxEquipoFactura.Size = new Size(300, 27);
             cboxEquipoFactura.TabIndex = 20;
             // 
             // cboxClienteFactura
@@ -191,7 +191,7 @@
             cboxClienteFactura.FormattingEnabled = true;
             cboxClienteFactura.Location = new Point(132, 148);
             cboxClienteFactura.Name = "cboxClienteFactura";
-            cboxClienteFactura.Size = new Size(300, 24);
+            cboxClienteFactura.Size = new Size(300, 27);
             cboxClienteFactura.TabIndex = 19;
             // 
             // label8
@@ -200,7 +200,7 @@
             label8.Font = new Font("Arial", 10F);
             label8.Location = new Point(132, 340);
             label8.Name = "label8";
-            label8.Size = new Size(122, 16);
+            label8.Size = new Size(140, 19);
             label8.TabIndex = 18;
             label8.Text = "IMPORTE TOTAL:";
             // 
@@ -210,7 +210,7 @@
             label13.Font = new Font("Arial", 10F);
             label13.Location = new Point(132, 266);
             label13.Name = "label13";
-            label13.Size = new Size(138, 16);
+            label13.Size = new Size(169, 19);
             label13.TabIndex = 17;
             label13.Text = "FECHA DE EMISIÓN:";
             // 
@@ -220,7 +220,7 @@
             label14.Font = new Font("Arial", 10F);
             label14.Location = new Point(132, 195);
             label14.Name = "label14";
-            label14.Size = new Size(63, 16);
+            label14.Size = new Size(76, 19);
             label14.TabIndex = 16;
             label14.Text = "EQUIPO:";
             // 
@@ -230,7 +230,7 @@
             label15.Font = new Font("Arial", 10F);
             label15.Location = new Point(132, 125);
             label15.Name = "label15";
-            label15.Size = new Size(68, 16);
+            label15.Size = new Size(82, 19);
             label15.TabIndex = 15;
             label15.Text = "CLIENTE:";
             // 
@@ -240,7 +240,7 @@
             label16.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label16.Location = new Point(455, 62);
             label16.Name = "label16";
-            label16.Size = new Size(100, 22);
+            label16.Size = new Size(125, 27);
             label16.TabIndex = 14;
             label16.Text = "FACTURA";
             // 
@@ -267,130 +267,6 @@
             tpInventario.TabIndex = 2;
             tpInventario.Text = "Inventario";
             tpInventario.UseVisualStyleBackColor = true;
-            // 
-            // numericPrecio
-            // 
-            numericPrecio.DecimalPlaces = 2;
-            numericPrecio.Location = new Point(134, 459);
-            numericPrecio.Name = "numericPrecio";
-            numericPrecio.Size = new Size(261, 23);
-            numericPrecio.TabIndex = 15;
-            // 
-            // numericStock
-            // 
-            numericStock.Location = new Point(136, 396);
-            numericStock.Name = "numericStock";
-            numericStock.Size = new Size(259, 23);
-            numericStock.TabIndex = 14;
-            // 
-            // btnModificarRepuestos
-            // 
-            btnModificarRepuestos.Location = new Point(277, 539);
-            btnModificarRepuestos.Name = "btnModificarRepuestos";
-            btnModificarRepuestos.Size = new Size(163, 48);
-            btnModificarRepuestos.TabIndex = 13;
-            btnModificarRepuestos.Text = "MODIFICAR";
-            btnModificarRepuestos.UseVisualStyleBackColor = true;
-            // 
-            // dgvRepuestos
-            // 
-            dgvRepuestos.AllowUserToAddRows = false;
-            dgvRepuestos.AllowUserToDeleteRows = false;
-            dgvRepuestos.BackgroundColor = Color.Gainsboro;
-            dgvRepuestos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRepuestos.Location = new Point(497, 78);
-            dgvRepuestos.Name = "dgvRepuestos";
-            dgvRepuestos.ReadOnly = true;
-            dgvRepuestos.RowHeadersWidth = 51;
-            dgvRepuestos.Size = new Size(487, 499);
-            dgvRepuestos.TabIndex = 12;
-            // 
-            // btnGuardarRepuestos
-            // 
-            btnGuardarRepuestos.Location = new Point(74, 539);
-            btnGuardarRepuestos.Name = "btnGuardarRepuestos";
-            btnGuardarRepuestos.Size = new Size(148, 48);
-            btnGuardarRepuestos.TabIndex = 11;
-            btnGuardarRepuestos.Text = "GUARDAR";
-            btnGuardarRepuestos.UseVisualStyleBackColor = true;
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(134, 437);
-            label27.Name = "label27";
-            label27.Size = new Size(129, 16);
-            label27.TabIndex = 10;
-            label27.Text = "PRECIO UNITARIO:";
-            // 
-            // cboxFamiliaRepuesto
-            // 
-            cboxFamiliaRepuesto.FormattingEnabled = true;
-            cboxFamiliaRepuesto.Location = new Point(134, 327);
-            cboxFamiliaRepuesto.Name = "cboxFamiliaRepuesto";
-            cboxFamiliaRepuesto.Size = new Size(259, 24);
-            cboxFamiliaRepuesto.TabIndex = 9;
-            // 
-            // txtDescripcionRepuesto
-            // 
-            txtDescripcionRepuesto.Location = new Point(134, 163);
-            txtDescripcionRepuesto.Multiline = true;
-            txtDescripcionRepuesto.Name = "txtDescripcionRepuesto";
-            txtDescripcionRepuesto.Size = new Size(261, 122);
-            txtDescripcionRepuesto.TabIndex = 6;
-            // 
-            // txtNombreRepuesto
-            // 
-            txtNombreRepuesto.Location = new Point(134, 100);
-            txtNombreRepuesto.Name = "txtNombreRepuesto";
-            txtNombreRepuesto.Size = new Size(261, 23);
-            txtNombreRepuesto.TabIndex = 5;
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(132, 374);
-            label26.Name = "label26";
-            label26.Size = new Size(63, 16);
-            label26.TabIndex = 4;
-            label26.Text = "STOCK: ";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new Point(132, 305);
-            label25.Name = "label25";
-            label25.Size = new Size(66, 16);
-            label25.TabIndex = 3;
-            label25.Text = "FAMILIA: ";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new Point(134, 141);
-            label24.Name = "label24";
-            label24.Size = new Size(104, 16);
-            label24.TabIndex = 2;
-            label24.Text = "DESCRIPCIÓN:";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(134, 78);
-            label23.Name = "label23";
-            label23.Size = new Size(74, 16);
-            label23.TabIndex = 1;
-            label23.Text = "NOMBRE: ";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label22.Location = new Point(460, 21);
-            label22.Name = "label22";
-            label22.Size = new Size(129, 22);
-            label22.TabIndex = 0;
-            label22.Text = "REPUESTOS";
             // 
             // tpClienteYEquipo
             // 
@@ -428,11 +304,26 @@
             // 
             // cboxEquipoCliente
             // 
-            cboxEquipoCliente.FormattingEnabled = true;
-            cboxEquipoCliente.Location = new Point(83, 416);
-            cboxEquipoCliente.Name = "cboxEquipoCliente";
-            cboxEquipoCliente.Size = new Size(151, 24);
-            cboxEquipoCliente.TabIndex = 60;
+            tpAdministrador.Controls.Add(btnGuardar);
+            tpAdministrador.Controls.Add(btnModificarUsuario);
+            tpAdministrador.Controls.Add(bntAnadirUsuario);
+            tpAdministrador.Controls.Add(cboxRolUsuario);
+            tpAdministrador.Controls.Add(txtContrasenaUsuario);
+            tpAdministrador.Controls.Add(txtNombreUsuario);
+            tpAdministrador.Controls.Add(label21);
+            tpAdministrador.Controls.Add(label20);
+            tpAdministrador.Controls.Add(label19);
+            tpAdministrador.Controls.Add(dgvVerUsuarios);
+            tpAdministrador.Controls.Add(label18);
+            tpAdministrador.Controls.Add(label17);
+            tpAdministrador.Location = new Point(4, 28);
+            tpAdministrador.Margin = new Padding(3, 2, 3, 2);
+            tpAdministrador.Name = "tpAdministrador";
+            tpAdministrador.Padding = new Padding(3, 2, 3, 2);
+            tpAdministrador.Size = new Size(1061, 661);
+            tpAdministrador.TabIndex = 0;
+            tpAdministrador.Text = "Administrador";
+            tpAdministrador.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -489,6 +380,7 @@
             btnRegistrarEquipo.TabIndex = 54;
             btnRegistrarEquipo.Text = "REGISTRAR EQUIPO";
             btnRegistrarEquipo.UseVisualStyleBackColor = true;
+            btnRegistrarEquipo.Click += btnRegistrarEquipo_Click;
             // 
             // txtNumeroDESerieEquipo
             // 
@@ -559,6 +451,7 @@
             btnRegistrarCliente.TabIndex = 47;
             btnRegistrarCliente.Text = "REGISTRAR CLIENTE";
             btnRegistrarCliente.UseVisualStyleBackColor = true;
+            btnRegistrarCliente.Click += btnRegistrarCliente_Click;
             // 
             // txtEmailCliente
             // 
@@ -658,129 +551,111 @@
             // 
             // tpAdministrador
             // 
-            tpAdministrador.Controls.Add(btnGuardar);
-            tpAdministrador.Controls.Add(btnModificarUsuario);
-            tpAdministrador.Controls.Add(bntAnadirUsuario);
-            tpAdministrador.Controls.Add(cboxRolUsuario);
-            tpAdministrador.Controls.Add(txtContrasenaUsuario);
-            tpAdministrador.Controls.Add(txtNombreUsuario);
-            tpAdministrador.Controls.Add(label21);
-            tpAdministrador.Controls.Add(label20);
-            tpAdministrador.Controls.Add(label19);
-            tpAdministrador.Controls.Add(dgvVerUsuarios);
-            tpAdministrador.Controls.Add(label18);
-            tpAdministrador.Controls.Add(label17);
-            tpAdministrador.Location = new Point(4, 25);
-            tpAdministrador.Margin = new Padding(3, 2, 3, 2);
-            tpAdministrador.Name = "tpAdministrador";
-            tpAdministrador.Padding = new Padding(3, 2, 3, 2);
-            tpAdministrador.Size = new Size(1061, 664);
-            tpAdministrador.TabIndex = 0;
-            tpAdministrador.Text = "Administrador";
-            tpAdministrador.UseVisualStyleBackColor = true;
+            txtFactura.Enabled = false;
+            txtFactura.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtFactura.Location = new Point(501, 131);
+            txtFactura.Multiline = true;
+            txtFactura.Name = "txtFactura";
+            txtFactura.Size = new Size(392, 336);
+            txtFactura.TabIndex = 25;
             // 
-            // btnGuardar
+            // btnExportarFactura
             // 
-            btnGuardar.Location = new Point(118, 418);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(189, 46);
-            btnGuardar.TabIndex = 11;
-            btnGuardar.Text = "GUARDAR";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Visible = false;
-            btnGuardar.Click += btnGuardar_Click;
+            btnExportarFactura.Enabled = false;
+            btnExportarFactura.Font = new Font("Arial", 10F);
+            btnExportarFactura.Location = new Point(585, 484);
+            btnExportarFactura.Name = "btnExportarFactura";
+            btnExportarFactura.Size = new Size(210, 46);
+            btnExportarFactura.TabIndex = 24;
+            btnExportarFactura.Text = "EXPORTAR FACTURA";
+            btnExportarFactura.UseVisualStyleBackColor = true;
             // 
-            // btnModificarUsuario
+            // btnEmitirFactura
             // 
-            btnModificarUsuario.Enabled = false;
-            btnModificarUsuario.Location = new Point(118, 490);
-            btnModificarUsuario.Name = "btnModificarUsuario";
-            btnModificarUsuario.Size = new Size(189, 46);
-            btnModificarUsuario.TabIndex = 10;
-            btnModificarUsuario.Text = "MODIFICAR";
-            btnModificarUsuario.UseVisualStyleBackColor = true;
+            btnEmitirFactura.Font = new Font("Arial", 10F);
+            btnEmitirFactura.Location = new Point(187, 430);
+            btnEmitirFactura.Name = "btnEmitirFactura";
+            btnEmitirFactura.Size = new Size(193, 46);
+            btnEmitirFactura.TabIndex = 23;
+            btnEmitirFactura.Text = "EMITIR FACTURA";
+            btnEmitirFactura.UseVisualStyleBackColor = true;
             // 
-            // bntAnadirUsuario
+            // dtpFechaFactura
             // 
-            bntAnadirUsuario.Location = new Point(118, 341);
-            bntAnadirUsuario.Name = "bntAnadirUsuario";
-            bntAnadirUsuario.Size = new Size(189, 49);
-            bntAnadirUsuario.TabIndex = 9;
-            bntAnadirUsuario.Text = "AÑADIR USUARIO";
-            bntAnadirUsuario.UseVisualStyleBackColor = true;
-            bntAnadirUsuario.Click += bntAnadirUsuario_Click;
+            dtpFechaFactura.Font = new Font("Arial", 10.2F);
+            dtpFechaFactura.Location = new Point(132, 289);
+            dtpFechaFactura.Name = "dtpFechaFactura";
+            dtpFechaFactura.Size = new Size(300, 27);
+            dtpFechaFactura.TabIndex = 21;
             // 
-            // cboxRolUsuario
+            // cboxEquipoFactura
             // 
-            cboxRolUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboxRolUsuario.FormattingEnabled = true;
-            cboxRolUsuario.Items.AddRange(new object[] { "Administrador", "Cajero", "Tecnico" });
-            cboxRolUsuario.Location = new Point(83, 266);
-            cboxRolUsuario.Name = "cboxRolUsuario";
-            cboxRolUsuario.Size = new Size(256, 24);
-            cboxRolUsuario.TabIndex = 8;
+            cboxEquipoFactura.Font = new Font("Arial", 10.2F);
+            cboxEquipoFactura.FormattingEnabled = true;
+            cboxEquipoFactura.Location = new Point(132, 218);
+            cboxEquipoFactura.Name = "cboxEquipoFactura";
+            cboxEquipoFactura.Size = new Size(300, 27);
+            cboxEquipoFactura.TabIndex = 20;
             // 
-            // txtContrasenaUsuario
+            // cboxClienteFactura
             // 
-            txtContrasenaUsuario.Location = new Point(83, 202);
-            txtContrasenaUsuario.Name = "txtContrasenaUsuario";
-            txtContrasenaUsuario.Size = new Size(256, 23);
-            txtContrasenaUsuario.TabIndex = 7;
+            cboxClienteFactura.BackColor = SystemColors.Window;
+            cboxClienteFactura.Font = new Font("Arial", 10.2F);
+            cboxClienteFactura.FormattingEnabled = true;
+            cboxClienteFactura.Location = new Point(132, 148);
+            cboxClienteFactura.Name = "cboxClienteFactura";
+            cboxClienteFactura.Size = new Size(300, 27);
+            cboxClienteFactura.TabIndex = 19;
             // 
-            // txtNombreUsuario
+            // label8
             // 
-            txtNombreUsuario.Location = new Point(79, 134);
-            txtNombreUsuario.Name = "txtNombreUsuario";
-            txtNombreUsuario.Size = new Size(260, 23);
-            txtNombreUsuario.TabIndex = 6;
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial", 10F);
+            label8.Location = new Point(132, 340);
+            label8.Name = "label8";
+            label8.Size = new Size(140, 19);
+            label8.TabIndex = 18;
+            label8.Text = "IMPORTE TOTAL:";
             // 
-            // label21
+            // label13
             // 
-            label21.AutoSize = true;
-            label21.Location = new Point(83, 244);
-            label21.Name = "label21";
-            label21.Size = new Size(44, 16);
-            label21.TabIndex = 5;
-            label21.Text = "ROL: ";
+            label13.AutoSize = true;
+            label13.Font = new Font("Arial", 10F);
+            label13.Location = new Point(132, 266);
+            label13.Name = "label13";
+            label13.Size = new Size(169, 19);
+            label13.TabIndex = 17;
+            label13.Text = "FECHA DE EMISIÓN:";
             // 
-            // label20
+            // label14
             // 
-            label20.AutoSize = true;
-            label20.Location = new Point(79, 180);
-            label20.Name = "label20";
-            label20.Size = new Size(110, 16);
-            label20.TabIndex = 4;
-            label20.Text = "CONTRASEÑA: ";
+            label14.AutoSize = true;
+            label14.Font = new Font("Arial", 10F);
+            label14.Location = new Point(132, 195);
+            label14.Name = "label14";
+            label14.Size = new Size(76, 19);
+            label14.TabIndex = 16;
+            label14.Text = "EQUIPO:";
             // 
-            // label19
+            // label15
             // 
-            label19.AutoSize = true;
-            label19.Location = new Point(79, 112);
-            label19.Name = "label19";
-            label19.Size = new Size(161, 16);
-            label19.TabIndex = 3;
-            label19.Text = "NOMBRE DE USUARIO: ";
+            label15.AutoSize = true;
+            label15.Font = new Font("Arial", 10F);
+            label15.Location = new Point(132, 125);
+            label15.Name = "label15";
+            label15.Size = new Size(82, 19);
+            label15.TabIndex = 15;
+            label15.Text = "CLIENTE:";
             // 
-            // dgvVerUsuarios
+            // label16
             // 
-            dgvVerUsuarios.BackgroundColor = Color.LightGray;
-            dgvVerUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVerUsuarios.Location = new Point(420, 143);
-            dgvVerUsuarios.Name = "dgvVerUsuarios";
-            dgvVerUsuarios.RowHeadersWidth = 51;
-            dgvVerUsuarios.Size = new Size(536, 463);
-            dgvVerUsuarios.TabIndex = 2;
-            dgvVerUsuarios.SelectionChanged += dgvVerUsuarios_SelectionChanged_1;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Arial", 13.8F, FontStyle.Bold);
-            label18.Location = new Point(567, 89);
-            label18.Name = "label18";
-            label18.Size = new Size(152, 22);
-            label18.TabIndex = 1;
-            label18.Text = "VER USUARIOS";
+            label16.AutoSize = true;
+            label16.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(455, 62);
+            label16.Name = "label16";
+            label16.Size = new Size(125, 27);
+            label16.TabIndex = 14;
+            label16.Text = "FACTURA";
             // 
             // label17
             // 
@@ -788,9 +663,237 @@
             label17.Font = new Font("Arial", 13.8F, FontStyle.Bold);
             label17.Location = new Point(394, 25);
             label17.Name = "label17";
-            label17.Size = new Size(171, 22);
+            label17.Size = new Size(214, 27);
             label17.TabIndex = 0;
             label17.Text = "AÑADIR USUARIO";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Arial", 13.8F, FontStyle.Bold);
+            label18.Location = new Point(62, 319);
+            label18.Name = "label18";
+            label18.Size = new Size(186, 27);
+            label18.TabIndex = 1;
+            label18.Text = "VER USUARIOS";
+            // 
+            // dgvVerUsuarios
+            // 
+            dgvVerUsuarios.BackgroundColor = Color.LightGray;
+            dgvVerUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvVerUsuarios.Location = new Point(62, 365);
+            dgvVerUsuarios.Name = "dgvVerUsuarios";
+            dgvVerUsuarios.RowHeadersWidth = 51;
+            dgvVerUsuarios.Size = new Size(940, 263);
+            dgvVerUsuarios.TabIndex = 2;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(243, 88);
+            label19.Name = "label19";
+            label19.Size = new Size(193, 19);
+            label19.TabIndex = 3;
+            label19.Text = "NOMBRE DE USUARIO: ";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(243, 156);
+            label20.Name = "label20";
+            label20.Size = new Size(129, 19);
+            label20.TabIndex = 4;
+            label20.Text = "CONTRASEÑA: ";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(247, 220);
+            label21.Name = "label21";
+            label21.Size = new Size(51, 19);
+            label21.TabIndex = 5;
+            label21.Text = "ROL: ";
+            // 
+            // txtNombreUsuario
+            // 
+            txtNombreUsuario.Location = new Point(243, 110);
+            txtNombreUsuario.Name = "txtNombreUsuario";
+            txtNombreUsuario.Size = new Size(260, 27);
+            txtNombreUsuario.TabIndex = 6;
+            // 
+            // txtContrasenaUsuario
+            // 
+            txtContrasenaUsuario.Location = new Point(247, 178);
+            txtContrasenaUsuario.Name = "txtContrasenaUsuario";
+            txtContrasenaUsuario.Size = new Size(256, 27);
+            txtContrasenaUsuario.TabIndex = 7;
+            // 
+            // cboxRolUsuario
+            // 
+            cboxRolUsuario.FormattingEnabled = true;
+            cboxRolUsuario.Location = new Point(247, 242);
+            cboxRolUsuario.Name = "cboxRolUsuario";
+            cboxRolUsuario.Size = new Size(256, 27);
+            cboxRolUsuario.TabIndex = 8;
+            // 
+            // bntAnadirUsuario
+            // 
+            bntAnadirUsuario.Location = new Point(572, 166);
+            bntAnadirUsuario.Name = "bntAnadirUsuario";
+            bntAnadirUsuario.Size = new Size(189, 49);
+            bntAnadirUsuario.TabIndex = 9;
+            bntAnadirUsuario.Text = "AÑADIR USUARIO";
+            bntAnadirUsuario.UseVisualStyleBackColor = true;
+            // 
+            // btnModificarUsuario
+            // 
+            btnModificarUsuario.Location = new Point(626, 312);
+            btnModificarUsuario.Name = "btnModificarUsuario";
+            btnModificarUsuario.Size = new Size(171, 46);
+            btnModificarUsuario.TabIndex = 10;
+            btnModificarUsuario.Text = "MODIFICAR";
+            btnModificarUsuario.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.Location = new Point(460, 21);
+            label22.Name = "label22";
+            label22.Size = new Size(154, 27);
+            label22.TabIndex = 0;
+            label22.Text = "REPUESTOS";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(134, 78);
+            label23.Name = "label23";
+            label23.Size = new Size(88, 19);
+            label23.TabIndex = 1;
+            label23.Text = "NOMBRE: ";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(134, 141);
+            label24.Name = "label24";
+            label24.Size = new Size(127, 19);
+            label24.TabIndex = 2;
+            label24.Text = "DESCRIPCIÓN:";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(132, 305);
+            label25.Name = "label25";
+            label25.Size = new Size(82, 19);
+            label25.TabIndex = 3;
+            label25.Text = "FAMILIA: ";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(132, 374);
+            label26.Name = "label26";
+            label26.Size = new Size(74, 19);
+            label26.TabIndex = 4;
+            label26.Text = "STOCK: ";
+            // 
+            // txtNombreRepuesto
+            // 
+            txtNombreRepuesto.Location = new Point(134, 100);
+            txtNombreRepuesto.Name = "txtNombreRepuesto";
+            txtNombreRepuesto.Size = new Size(261, 27);
+            txtNombreRepuesto.TabIndex = 5;
+            // 
+            // txtDescripcionRepuesto
+            // 
+            txtDescripcionRepuesto.Location = new Point(134, 163);
+            txtDescripcionRepuesto.Multiline = true;
+            txtDescripcionRepuesto.Name = "txtDescripcionRepuesto";
+            txtDescripcionRepuesto.Size = new Size(261, 122);
+            txtDescripcionRepuesto.TabIndex = 6;
+            // 
+            // cboxFamiliaRepuesto
+            // 
+            cboxFamiliaRepuesto.FormattingEnabled = true;
+            cboxFamiliaRepuesto.Location = new Point(134, 327);
+            cboxFamiliaRepuesto.Name = "cboxFamiliaRepuesto";
+            cboxFamiliaRepuesto.Size = new Size(259, 27);
+            cboxFamiliaRepuesto.TabIndex = 9;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(134, 437);
+            label27.Name = "label27";
+            label27.Size = new Size(155, 19);
+            label27.TabIndex = 10;
+            label27.Text = "PRECIO UNITARIO:";
+            // 
+            // btnGuardarRepuestos
+            // 
+            btnGuardarRepuestos.Location = new Point(74, 539);
+            btnGuardarRepuestos.Name = "btnGuardarRepuestos";
+            btnGuardarRepuestos.Size = new Size(148, 48);
+            btnGuardarRepuestos.TabIndex = 11;
+            btnGuardarRepuestos.Text = "GUARDAR";
+            btnGuardarRepuestos.UseVisualStyleBackColor = true;
+            // 
+            // dgvRepuestos
+            // 
+            dgvRepuestos.AllowUserToAddRows = false;
+            dgvRepuestos.AllowUserToDeleteRows = false;
+            dgvRepuestos.BackgroundColor = Color.Gainsboro;
+            dgvRepuestos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRepuestos.Location = new Point(497, 78);
+            dgvRepuestos.Name = "dgvRepuestos";
+            dgvRepuestos.ReadOnly = true;
+            dgvRepuestos.RowHeadersWidth = 51;
+            dgvRepuestos.Size = new Size(487, 499);
+            dgvRepuestos.TabIndex = 12;
+            // 
+            // btnModificarRepuestos
+            // 
+            btnModificarRepuestos.Location = new Point(277, 539);
+            btnModificarRepuestos.Name = "btnModificarRepuestos";
+            btnModificarRepuestos.Size = new Size(163, 48);
+            btnModificarRepuestos.TabIndex = 13;
+            btnModificarRepuestos.Text = "MODIFICAR";
+            btnModificarRepuestos.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(834, 312);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(168, 46);
+            btnGuardar.TabIndex = 11;
+            btnGuardar.Text = "GUARDAR";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Visible = false;
+            // 
+            // numericStock
+            // 
+            numericStock.Location = new Point(136, 396);
+            numericStock.Name = "numericStock";
+            numericStock.Size = new Size(259, 27);
+            numericStock.TabIndex = 14;
+            // 
+            // numericPrecio
+            // 
+            numericPrecio.DecimalPlaces = 2;
+            numericPrecio.Location = new Point(134, 459);
+            numericPrecio.Name = "numericPrecio";
+            numericPrecio.Size = new Size(261, 27);
+            numericPrecio.TabIndex = 15;
+            // 
+            // label17
+            // 
+            numericTotal.Location = new Point(132, 362);
+            numericTotal.Name = "numericTotal";
+            numericTotal.Size = new Size(300, 27);
+            numericTotal.TabIndex = 26;
             // 
             // tabInicio
             // 
