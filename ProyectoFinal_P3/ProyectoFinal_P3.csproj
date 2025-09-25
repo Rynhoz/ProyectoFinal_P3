@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <None Update="archivosJson\usuarios.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

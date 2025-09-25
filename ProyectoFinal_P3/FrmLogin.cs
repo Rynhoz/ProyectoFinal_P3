@@ -7,6 +7,7 @@ namespace ProyectoFinal_P3
         public FrmLogin()
         {
             InitializeComponent();
+            this.AcceptButton = btnLogin;
         }
 
         public void AbrirVentana()
@@ -14,7 +15,7 @@ namespace ProyectoFinal_P3
             try
             {
                 Usuario usuario = new Usuario();
-                bool esValido = usuario.ValidarContrasena(txtUsuario.Text, txtContrasena.Text);
+                bool esValido = usuario.ValidarContrasena(txtUsuario.Text.Trim(), txtContrasena.Text.Trim());
 
                 if (esValido)
                 {
@@ -48,7 +49,15 @@ namespace ProyectoFinal_P3
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            AbrirVentana();
+            if (txtUsuario.Text != "" && txtContrasena.Text != "")
+            {
+                AbrirVentana();
+            }
+            else
+            {
+                MessageBox.Show("Rellene los campos de texto para ingresar");
+            }
+
         }
     }
 }
