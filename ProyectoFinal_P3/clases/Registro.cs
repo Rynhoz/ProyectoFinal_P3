@@ -24,6 +24,6 @@ namespace ProyectoFinal_P3.clases
             RepuestoEliminado = repuesto;
             Fecha = DateTime.Now;
             ListaRegistros.Add(this);
-        }
+        }   
     }
 }
