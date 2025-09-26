@@ -1,9 +1,14 @@
 ﻿using System.Text.Json;
 
+/// <summary>
+/// 
+/// </summary>
 public class Equipo
 {
+    //Ruta archivo
     private static string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "equipos.json");
 
+    //Propiedades
     public int IdEquipo { get; set; }
     public string TipoDeEquipo { get; set; }
     public string Modelo { get; set; }
@@ -15,8 +20,18 @@ public class Equipo
 
     public string InformacionEquipo => $"{TipoDeEquipo} - {Modelo} ({NumeroDeSerie})";
 
+    /// <summary>
+    /// 
+    /// </summary>
     public Equipo() { }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="tipo"></param>
+    /// <param name="modelo"></param>
+    /// <param name="numeroSerie"></param>
+    /// <param name="descripcion"></param>
     public Equipo(string tipo, string modelo, string numeroSerie, string descripcion)
     {
         IdEquipo = ++NumeroIdEquipo;
@@ -26,7 +41,14 @@ public class Equipo
         DescripcionDelProblema = descripcion;
     }
 
-    // 🔹 Registrar y guardar en JSON
+    /// <summary>
+    /// Registrar y guardar en JSON
+    /// </summary>
+    /// <param name="tipo"></param>
+    /// <param name="modelo"></param>
+    /// <param name="numeroSerie"></param>
+    /// <param name="descripcion"></param>
+    /// <returns></returns>
     public static Equipo RegistrarEquipo(string tipo, string modelo, string numeroSerie, string descripcion)
     {
         ListaEquipos = CargarEquipos();
@@ -43,6 +65,10 @@ public class Equipo
         return nuevo;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public static List<Equipo> CargarEquipos()
     {
         if (!File.Exists(rutaArchivo)) return new List<Equipo>();
@@ -50,6 +76,10 @@ public class Equipo
         return JsonSerializer.Deserialize<List<Equipo>>(json) ?? new List<Equipo>();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="equipos"></param>
     public static void GuardarEquipos(List<Equipo> equipos)
     {
         string json = JsonSerializer.Serialize(equipos, new JsonSerializerOptions { WriteIndented = true });

@@ -3,6 +3,7 @@ using ProyectoFinal_P3.clases;
 
 public class Usuario : IAuntenticable
 {
+    //Propiedades
     private static string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "usuarios.json");
 
     public int IdUsuario { get; set; }
@@ -12,9 +13,17 @@ public class Usuario : IAuntenticable
 
     public static int NumeroIdUsuario = 0;
 
+    /// <summary>
+    /// 
+    /// </summary>
     public Usuario() { }
 
-    // 🔹 Comparaciones de usuarios
+    /// <summary>
+    /// Comparaciones de usuarios
+    /// </summary>
+    /// <param name="u1"></param>
+    /// <param name="u2"></param>
+    /// <returns></returns>
     public static bool operator ==(Usuario u1, Usuario u2)
     {
         if (ReferenceEquals(u1, null) && ReferenceEquals(u2, null)) return true;
@@ -33,7 +42,12 @@ public class Usuario : IAuntenticable
         return IdUsuario.GetHashCode();
     }
 
-    // 🔹 Validación de login
+    /// <summary>
+    /// Validación de login
+    /// </summary>
+    /// <param name="usuario"></param>
+    /// <param name="contrasena"></param>
+    /// <returns></returns>
     public bool ValidarContrasena(string usuario, string contrasena)
     {
         List<Usuario> usuarios = CargarUsuarios();
@@ -43,7 +57,12 @@ public class Usuario : IAuntenticable
         );
     }
 
-    // 🔹 Obtener Rol
+    /// <summary>
+    /// Obtener Rol
+    /// </summary>
+    /// <param name="usuario"></param>
+    /// <param name="contrasena"></param>
+    /// <returns></returns>
     public string ObtenerRolUsuario(string usuario, string contrasena)
     {
         List<Usuario> usuarios = CargarUsuarios();
@@ -51,7 +70,10 @@ public class Usuario : IAuntenticable
         return user != null ? user.Rol : "Usuario o contraseña incorrectos";
     }
 
-    // 🔹 Cargar y Guardar
+    /// <summary>
+    /// Cargar y Guardar
+    /// </summary>
+    /// <returns></returns>
     public static List<Usuario> CargarUsuarios()
     {
         if (!File.Exists(rutaArchivo)) return new List<Usuario>();
@@ -59,19 +81,30 @@ public class Usuario : IAuntenticable
         return JsonSerializer.Deserialize<List<Usuario>>(json) ?? new List<Usuario>();
     }
 
+    /// <summary>
+    /// Guardar usuario
+    /// </summary>
+    /// <param name="usuarios"></param>
     public static void GuardarUsuarios(List<Usuario> usuarios)
     {
         string json = JsonSerializer.Serialize(usuarios, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(rutaArchivo, json);
     }
 
-    // 🔹 Agregar usuario genérico (por parámetros separados)
+    /// <summary>
+    /// Agregar usuario (por parámetros separados)
+    /// </summary>
+    /// <param name="nombre"></param>
+    /// <param name="contrasena"></param>
+    /// <param name="rol"></param>
+    /// <param name="especialidad"></param>
+    /// <param name="numeroCaja"></param>
+    /// <exception cref="ArgumentException"></exception>
     public static void AgregarUsuario(string nombre, string contrasena, string rol, string especialidad = null, int numeroCaja = 0)
     {
         List<Usuario> usuarios = CargarUsuarios();
 
-        // Calcular el nuevo Id
-        int nuevoId = usuarios.Any() ? usuarios.Max(u => u.IdUsuario) + 1 : 1;
+        int nuevoId = usuarios.Any() ? usuarios.Max(u => u.IdUsuario) + 1 : 1; //Para calcular el id del usuario
 
         Usuario nuevoUsuario;
 
@@ -117,6 +150,11 @@ public class Usuario : IAuntenticable
         GuardarUsuarios(usuarios);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="nuevo"></param>
+    /// <exception cref="ArgumentNullException"></exception>
     
     public static void AgregarUsuario(Usuario nuevo)
     {

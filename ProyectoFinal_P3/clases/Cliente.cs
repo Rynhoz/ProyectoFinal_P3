@@ -1,9 +1,13 @@
 ﻿using System.Text.Json;
 
+/// <summary>
+/// 
+/// </summary>
 public class Cliente
 {
+    //ruta del archivo
     private static string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "clientes.json");
-
+     // propiedades
     public int IdCliente { get; set; }
     public string Nombre { get; set; }
     public string Direccion { get; set; }
@@ -14,6 +18,15 @@ public class Cliente
     public static int NumeroIdCliente = 0;
     public static List<Cliente> ListaClientes = new List<Cliente>();
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="nombre"></param>
+    /// <param name="direccion"></param>
+    /// <param name="telefono"></param>
+    /// <param name="email"></param>
+    /// <param name="equipo"></param>
+    /// <returns></returns>
     public static Cliente RegistrarCliente(string nombre, string direccion, string telefono, string email, Equipo equipo)
     {
         ListaClientes = CargarClientes();
@@ -35,6 +48,10 @@ public class Cliente
         return nuevo;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public static List<Cliente> CargarClientes()
     {
         if (!File.Exists(rutaArchivo)) return new List<Cliente>();
@@ -42,6 +59,10 @@ public class Cliente
         return JsonSerializer.Deserialize<List<Cliente>>(json) ?? new List<Cliente>();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="clientes"></param>
     public static void GuardarClientes(List<Cliente> clientes)
     {
         string json = JsonSerializer.Serialize(clientes, new JsonSerializerOptions { WriteIndented = true });
