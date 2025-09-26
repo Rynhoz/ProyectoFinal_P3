@@ -969,8 +969,6 @@
         private NumericUpDown numericStock;
         private NumericUpDown numericTotal;
         private ComboBox cboxEquipoCliente;
-        private ToolStripMenuItem administradorToolStripMenuItem;
-        private TabPage tabPage1;
         private TextBox txtRepuestoFactura;
         private TextBox txtEspecialidad;
         private Label lblEspecialidad;
