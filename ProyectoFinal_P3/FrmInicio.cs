@@ -14,31 +14,35 @@ namespace ProyectoFinal_P3
 {
     public partial class FrmInicio : Form
     {
+        //Variables privadas globales
         private Usuario usuarioSeleccionado;
         private List<Cliente> listaClientes;
 
         // Constructores y Carga del Formulario
         // ------------------------------------
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="RolUsuario">Se implementa una cadena de texto que verifica que usuario ingresa</param>
         public FrmInicio(string RolUsuario)
         {
             InitializeComponent();
-            if (RolUsuario == "Administrador")
+            if (RolUsuario == "Tecnico")
             {
-                // Administrador ve todas, no quitamos nada
-            }
-            else if (RolUsuario == "Tecnico")
-            {
-                // Técnico oculta 1 pestaña (ejemplo tabPage4)
                 tabInicio.TabPages.Remove(tpAdministrador);
             }
             else if (RolUsuario == "Cajero")
             {
-                // Cajero oculta 2 pestañas (ejemplo tabPage3 y tabPage4)
                 tabInicio.TabPages.Remove(tpAdministrador);
                 tabInicio.TabPages.Remove(tpClienteYEquipo);
             }
         }
 
+        /// <summary>
+        /// Metodo que actualiza objetos de la interfaz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmInicio_Load(object sender, EventArgs e)
         {
             //Clientes
@@ -60,6 +64,11 @@ namespace ProyectoFinal_P3
 
         // Funciones de Registro, Modificación y Visualización de Usuarios
         // ----------------------------------------------------------------
+        /// <summary>
+        /// Metodo de accion del boton para registrar usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntAnadirUsuario_Click_1(object sender, EventArgs e)
         {
             string nombre = txtNombreUsuario.Text.Trim();
@@ -105,6 +114,11 @@ namespace ProyectoFinal_P3
             cboxRolUsuario.Text = "";
         }
 
+        /// <summary>
+        /// Metodo del comboBox cuando se selecciona algun rol
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboxRolUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboxRolUsuario.SelectedIndex == 1)
@@ -126,6 +140,11 @@ namespace ProyectoFinal_P3
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvVerUsuarios_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvVerUsuarios.SelectedRows.Count > 0)
@@ -146,6 +165,11 @@ namespace ProyectoFinal_P3
             }
         }
 
+        /// <summary>
+        /// Metodo para el boton de guardar la modificacion del usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             if (usuarioSeleccionado != null)
@@ -184,6 +208,11 @@ namespace ProyectoFinal_P3
 
         // Funciones de Registro de Clientes y Equipos
         // --------------------------------------------
+        /// <summary>
+        /// Metodo para el boton de registrar cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrarCliente_Click(object sender, EventArgs e)
         {
             string nombre = txtNombreCliente.Text.Trim();
@@ -217,6 +246,11 @@ namespace ProyectoFinal_P3
             cboxClienteFactura.DisplayMember = "Nombre";
         }
 
+        /// <summary>
+        /// Metodo para el boton de registrar el equipo 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrarEquipo_Click(object sender, EventArgs e)
         {
             string tipo = cboxTipoDEEquipo.Text.Trim();
@@ -249,6 +283,11 @@ namespace ProyectoFinal_P3
 
         }
 
+        /// <summary>
+        /// Metodo para Guardar los cambio del cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             if (clienteSeleccionado != null)
@@ -276,8 +315,12 @@ namespace ProyectoFinal_P3
             }
         }
 
-        private Cliente clienteSeleccionado;
-
+        private Cliente clienteSeleccionado; //Variable global para 
+        /// <summary>
+        /// Metodo para el Datagrid cuando seleccione un cliente y se pueda modificar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvMostrarClientesYEquipos_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvMostrarClientesYEquipos.SelectedRows.Count > 0)
@@ -303,8 +346,11 @@ namespace ProyectoFinal_P3
 
         // Funciones de Registro de Repuestos
         // -----------------------------------
-
-
+        /// <summary>
+        /// Metodo para el boton de agregar repuestos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarRepuestos_Click(object sender, EventArgs e)
         {
             // Leer los datos de los TextBox
@@ -353,9 +399,14 @@ namespace ProyectoFinal_P3
             numericStock.Value = 0;
             numericPrecio.Value = 0;
 
-            MessageBox.Show("Repuesto agregado correctamente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Repuesto agregado correctamente");
         }
 
+        /// <summary>
+        /// Metodo para el boton de guardar la edicion del repuesto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardarRepuestos_Click_1(object sender, EventArgs e)
         {
             if (repuestoSeleccionado != null)
@@ -394,9 +445,15 @@ namespace ProyectoFinal_P3
             }
         }
 
-        private Repuesto repuestoSeleccionado;
+        private Repuesto repuestoSeleccionado; //Variable global
+        /// <summary>
+        /// Metodo para
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvRepuestos_SelectionChanged(object sender, EventArgs e)
         {
+            //Si no tiene seleccionado nada no hace nah
             if (dgvRepuestos.SelectedRows.Count > 0)
             {
                 btnGuardarRepuestos.Enabled = true;
@@ -415,9 +472,14 @@ namespace ProyectoFinal_P3
             }
         }
 
-        private string factura = "";
+        private string factura = ""; //Variable global
         // Funciones de Emisión de Facturas
         // --------------------------------
+        /// <summary>
+        /// Metodo para el boton para emitir factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEmitirFactura_Click(object sender, EventArgs e)
         {
             if (cboxClienteFactura.SelectedItem == null)
@@ -465,6 +527,11 @@ namespace ProyectoFinal_P3
             }
         }
 
+        /// <summary>
+        /// Metodo para El boton exportar factura que permite guardar un PDF de la factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExportarFactura_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog
@@ -501,6 +568,11 @@ namespace ProyectoFinal_P3
             }
         }
 
+        /// <summary>
+        /// Metodo para salir de la sesion del usuario que ingreso
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
