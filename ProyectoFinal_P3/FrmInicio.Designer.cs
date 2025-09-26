@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             tpFactura = new TabPage();
+            numericCantidadFactura = new NumericUpDown();
             txtRepuestoFactura = new TextBox();
             numericTotal = new NumericUpDown();
             txtFactura = new TextBox();
@@ -96,8 +97,9 @@
             label18 = new Label();
             label17 = new Label();
             tabInicio = new TabControl();
-            numericCantidadFactura = new NumericUpDown();
+            btnSalir = new Button();
             tpFactura.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericCantidadFactura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTotal).BeginInit();
             tpInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericPrecio).BeginInit();
@@ -108,11 +110,11 @@
             tpAdministrador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVerUsuarios).BeginInit();
             tabInicio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericCantidadFactura).BeginInit();
             SuspendLayout();
             // 
             // tpFactura
             // 
+            tpFactura.Controls.Add(btnSalir);
             tpFactura.Controls.Add(numericCantidadFactura);
             tpFactura.Controls.Add(txtRepuestoFactura);
             tpFactura.Controls.Add(numericTotal);
@@ -134,6 +136,14 @@
             tpFactura.Text = "Factura";
             tpFactura.UseVisualStyleBackColor = true;
             // 
+            // numericCantidadFactura
+            // 
+            numericCantidadFactura.Location = new Point(132, 296);
+            numericCantidadFactura.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
+            numericCantidadFactura.Name = "numericCantidadFactura";
+            numericCantidadFactura.Size = new Size(300, 23);
+            numericCantidadFactura.TabIndex = 28;
+            // 
             // txtRepuestoFactura
             // 
             txtRepuestoFactura.Location = new Point(132, 214);
@@ -146,17 +156,18 @@
             // 
             numericTotal.DecimalPlaces = 2;
             numericTotal.Location = new Point(131, 436);
+            numericTotal.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             numericTotal.Name = "numericTotal";
             numericTotal.Size = new Size(300, 23);
             numericTotal.TabIndex = 26;
             // 
             // txtFactura
             // 
-            txtFactura.Enabled = false;
             txtFactura.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFactura.Location = new Point(501, 131);
             txtFactura.Multiline = true;
             txtFactura.Name = "txtFactura";
+            txtFactura.ReadOnly = true;
             txtFactura.Size = new Size(392, 336);
             txtFactura.TabIndex = 25;
             // 
@@ -280,6 +291,7 @@
             // 
             numericPrecio.DecimalPlaces = 2;
             numericPrecio.Location = new Point(134, 459);
+            numericPrecio.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             numericPrecio.Name = "numericPrecio";
             numericPrecio.Size = new Size(261, 23);
             numericPrecio.TabIndex = 15;
@@ -287,6 +299,7 @@
             // numericStock
             // 
             numericStock.Location = new Point(136, 396);
+            numericStock.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             numericStock.Name = "numericStock";
             numericStock.Size = new Size(259, 23);
             numericStock.TabIndex = 14;
@@ -849,12 +862,15 @@
             tabInicio.Size = new Size(1069, 693);
             tabInicio.TabIndex = 1;
             // 
-            // numericCantidadFactura
+            // btnSalir
             // 
-            numericCantidadFactura.Location = new Point(132, 296);
-            numericCantidadFactura.Name = "numericCantidadFactura";
-            numericCantidadFactura.Size = new Size(300, 23);
-            numericCantidadFactura.TabIndex = 28;
+            btnSalir.Location = new Point(940, 8);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(108, 32);
+            btnSalir.TabIndex = 29;
+            btnSalir.Text = "Cerrar Sesion";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FrmInicio
             // 
@@ -870,6 +886,7 @@
             Load += FrmInicio_Load;
             tpFactura.ResumeLayout(false);
             tpFactura.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericCantidadFactura).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericTotal).EndInit();
             tpInventario.ResumeLayout(false);
             tpInventario.PerformLayout();
@@ -883,7 +900,6 @@
             tpAdministrador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVerUsuarios).EndInit();
             tabInicio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericCantidadFactura).EndInit();
             ResumeLayout(false);
         }
 
@@ -960,5 +976,6 @@
         private Label lblEspecialidad;
         private Button btnGuardarCambios;
         private NumericUpDown numericCantidadFactura;
+        private Button btnSalir;
     }
 }

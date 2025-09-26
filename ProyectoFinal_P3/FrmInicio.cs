@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+// Para trabajar con iTextSharp
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+
 
 namespace ProyectoFinal_P3
 {
@@ -304,7 +303,7 @@ namespace ProyectoFinal_P3
 
         // Funciones de Registro de Repuestos
         // -----------------------------------
-        
+
 
         private void btnAgregarRepuestos_Click(object sender, EventArgs e)
         {
@@ -416,6 +415,7 @@ namespace ProyectoFinal_P3
             }
         }
 
+        private string factura = "";
         // Funciones de Emisión de Facturas
         // --------------------------------
         private void btnEmitirFactura_Click(object sender, EventArgs e)
@@ -440,7 +440,7 @@ namespace ProyectoFinal_P3
             try
             {
                 // Hacemos la estructura de la factura
-                string factura = $"--- FACTURA ---\r\n\r\n" +
+                factura = $"--- FACTURA ---\r\n\r\n" +
                                  $"Cliente: {clienteSeleccionado.Nombre} {clienteSeleccionado.Direccion}\r\n" +
                                  $"Dirección: {clienteSeleccionado.Direccion}\r\n" +
                                  $"Teléfono: {clienteSeleccionado.Telefono}\r\n" +
@@ -457,6 +457,7 @@ namespace ProyectoFinal_P3
                                  $"Total: {total}";
                 txtFactura.Text = factura;
                 btnExportarFactura.Enabled = true;
+                btnEmitirFactura.Enabled = false;
             }
             catch
             {
@@ -466,7 +467,46 @@ namespace ProyectoFinal_P3
 
         private void btnExportarFactura_Click(object sender, EventArgs e)
         {
+            SaveFileDialog saveFile = new SaveFileDialog
+            {
+                Filter = "PDF files (*.pdf)|*.pdf",
+                Title = "Guardar PDF"
+            };
 
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Document facturaPdf = new Document(PageSize.A4, 40, 40, 40, 40); //Crear el documento
+
+                    PdfWriter.GetInstance(facturaPdf, new FileStream(saveFile.FileName, FileMode.Create)); //Crear un escritor PDF
+
+                    facturaPdf.Open(); //Abrir el documento
+
+                    var fuente = FontFactory.GetFont("Arial", 12);
+
+                    facturaPdf.Add(new Paragraph(factura, fuente)); //Añadir el contenido de la factura
+
+                    facturaPdf.Close(); //Cerrar el documento
+
+                    MessageBox.Show("PDF guardado correctamente en:\n" + saveFile.FileName);
+                    txtFactura.Text = "";
+                    btnExportarFactura.Enabled = false;
+                    btnEmitirFactura.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al exportar PDF: " + ex.Message);
+                }
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLogin formLogin = new FrmLogin();
+            formLogin.FormClosed += (s, args) => this.Close();
+            formLogin.Show();
         }
     }
 }
