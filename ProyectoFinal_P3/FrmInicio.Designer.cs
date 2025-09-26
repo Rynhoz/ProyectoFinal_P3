@@ -100,6 +100,11 @@
             label18 = new Label();
             label17 = new Label();
             tabInicio = new TabControl();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
             tpFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericCantidadFactura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTotal).BeginInit();
@@ -113,6 +118,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvVerUsuarios).BeginInit();
             tabInicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // tpFactura
@@ -467,6 +477,11 @@
             // tpClienteYEquipo
             // 
             tpClienteYEquipo.BackgroundImage = (Image)resources.GetObject("tpClienteYEquipo.BackgroundImage");
+            tpClienteYEquipo.Controls.Add(pictureBox6);
+            tpClienteYEquipo.Controls.Add(pictureBox5);
+            tpClienteYEquipo.Controls.Add(pictureBox4);
+            tpClienteYEquipo.Controls.Add(pictureBox3);
+            tpClienteYEquipo.Controls.Add(pictureBox2);
             tpClienteYEquipo.Controls.Add(btnGuardarCambios);
             tpClienteYEquipo.Controls.Add(cboxEquipoCliente);
             tpClienteYEquipo.Controls.Add(label3);
@@ -947,6 +962,56 @@
             tabInicio.Size = new Size(1069, 693);
             tabInicio.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(26, 90);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(51, 54);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 60;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(26, 163);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(51, 54);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 61;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(26, 237);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(51, 54);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 62;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(26, 310);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(51, 54);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 63;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(26, 383);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(51, 54);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 64;
+            pictureBox6.TabStop = false;
+            // 
             // FrmInicio
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
@@ -976,6 +1041,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvVerUsuarios).EndInit();
             tabInicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
@@ -1052,5 +1122,10 @@
         private NumericUpDown numericCantidadFactura;
         private Button btnSalir;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox4;
     }
 }
