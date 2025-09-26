@@ -1,17 +1,17 @@
 ﻿/// <summary>
-/// 
+/// Clase Cajero hija de Usuario
 /// </summary>
-public class Cajero : Usuario
+public sealed class Cajero : Usuario
 {
     public int NumeroDeCaja { get; set; }
 
     /// <summary>
-    /// 
+    /// Constructor de la clase
     /// </summary>
     public Cajero() { }
 
     /// <summary>
-    /// 
+    /// Constructor sobrecargado de la clase
     /// </summary>
     /// <param name="nombre"></param>
     /// <param name="contrasena"></param>

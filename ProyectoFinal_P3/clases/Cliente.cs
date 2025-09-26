@@ -1,9 +1,9 @@
 ﻿using System.Text.Json;
 
 /// <summary>
-/// 
+/// Clase cliente para registrar clientes
 /// </summary>
-public class Cliente
+public sealed class Cliente
 {
     //ruta del archivo
     private static string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "clientes.json");
@@ -19,14 +19,14 @@ public class Cliente
     public static List<Cliente> ListaClientes = new List<Cliente>();
 
     /// <summary>
-    /// 
+    /// Metodo para registrar cliente dentro de una lista
     /// </summary>
-    /// <param name="nombre"></param>
-    /// <param name="direccion"></param>
-    /// <param name="telefono"></param>
-    /// <param name="email"></param>
-    /// <param name="equipo"></param>
-    /// <returns></returns>
+    /// <param name="nombre">Nombre del cliente</param>
+    /// <param name="direccion">Direccion del cliente</param>
+    /// <param name="telefono">Telefono del cliente</param>
+    /// <param name="email">Correo del cliente </param>
+    /// <param name="equipo">Equipo del cliente</param>
+    /// <returns>Rertorna el cliente registrado en la lista</returns>
     public static Cliente RegistrarCliente(string nombre, string direccion, string telefono, string email, Equipo equipo)
     {
         ListaClientes = CargarClientes();
@@ -49,9 +49,9 @@ public class Cliente
     }
 
     /// <summary>
-    /// 
+    /// Metodo para cargar los clientes
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Retorna una lista de clientes para mostrarse en la interfaz</returns>
     public static List<Cliente> CargarClientes()
     {
         if (!File.Exists(rutaArchivo)) return new List<Cliente>();
@@ -60,9 +60,9 @@ public class Cliente
     }
 
     /// <summary>
-    /// 
+    /// Metodo para guardar clientes dentro del archivo json
     /// </summary>
-    /// <param name="clientes"></param>
+    /// <param name="clientes">Lista de clientes que se van a añadir a el archivo json</param>
     public static void GuardarClientes(List<Cliente> clientes)
     {
         string json = JsonSerializer.Serialize(clientes, new JsonSerializerOptions { WriteIndented = true });

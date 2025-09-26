@@ -1,15 +1,15 @@
-﻿public class Tecnico : Usuario
+﻿public sealed class Tecnico : Usuario
 {
     //Propiedad
     public string Especialidad { get; set; }
 
     /// <summary>
-    /// 
+    /// Constructor de la clase
     /// </summary>
     public Tecnico() { }
 
     /// <summary>
-    /// 
+    /// Constructor de la clase sobrecargado
     /// </summary>
     /// <param name="nombre"></param>
     /// <param name="contrasena"></param>

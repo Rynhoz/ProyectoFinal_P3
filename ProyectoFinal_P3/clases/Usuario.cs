@@ -14,7 +14,7 @@ public class Usuario : IAuntenticable
     public static int NumeroIdUsuario = 0;
 
     /// <summary>
-    /// 
+    /// Constructor de la clase
     /// </summary>
     public Usuario() { }
 

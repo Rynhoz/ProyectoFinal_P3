@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using ProyectoFinal_P3.clases;
 
-public class Factura
+/// <summary>
+/// Clase Factura
+/// </summary>
+public sealed class Factura
 {
     //Propiedades
 	public int IdFactura { get; set; }

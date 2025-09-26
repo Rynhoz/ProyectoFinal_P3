@@ -1,9 +1,9 @@
 ﻿using System.Text.Json;
 
 /// <summary>
-/// 
+/// Clase equipo osea Lavadora, heladera o cocina
 /// </summary>
-public class Equipo
+public sealed class Equipo
 {
     //Ruta archivo
     private static string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "equipos.json");
@@ -21,17 +21,17 @@ public class Equipo
     public string InformacionEquipo => $"{TipoDeEquipo} - {Modelo} ({NumeroDeSerie})";
 
     /// <summary>
-    /// 
+    /// Constructor de la clase
     /// </summary>
     public Equipo() { }
 
     /// <summary>
-    /// 
+    /// Constructor de la clase sobrecargado
     /// </summary>
-    /// <param name="tipo"></param>
-    /// <param name="modelo"></param>
-    /// <param name="numeroSerie"></param>
-    /// <param name="descripcion"></param>
+    /// <param name="tipo">Tipo de equipo</param>
+    /// <param name="modelo">Modelo del equipo</param>
+    /// <param name="numeroSerie">Numero de serie del equipo</param>
+    /// <param name="descripcion">Descripcion del problema que tiene el equipo</param>
     public Equipo(string tipo, string modelo, string numeroSerie, string descripcion)
     {
         IdEquipo = ++NumeroIdEquipo;
@@ -44,11 +44,11 @@ public class Equipo
     /// <summary>
     /// Registrar y guardar en JSON
     /// </summary>
-    /// <param name="tipo"></param>
-    /// <param name="modelo"></param>
-    /// <param name="numeroSerie"></param>
-    /// <param name="descripcion"></param>
-    /// <returns></returns>
+    /// <param name="tipo">Tipo de equipo</param>
+    /// <param name="modelo">Modelo del equipo</param>
+    /// <param name="numeroSerie">Numero de serie del equipo</param>
+    /// <param name="descripcion">Descripcion del problema que tiene el equipo</param>
+    /// <returns>Retorna el nuevo equipo con un nuevo id</returns>
     public static Equipo RegistrarEquipo(string tipo, string modelo, string numeroSerie, string descripcion)
     {
         ListaEquipos = CargarEquipos();
@@ -66,9 +66,9 @@ public class Equipo
     }
 
     /// <summary>
-    /// 
+    /// Metodo para cargar los usuario dentro de un objeto
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Retorna la lista de equipos para ser cargados</returns>
     public static List<Equipo> CargarEquipos()
     {
         if (!File.Exists(rutaArchivo)) return new List<Equipo>();
@@ -77,9 +77,9 @@ public class Equipo
     }
 
     /// <summary>
-    /// 
+    /// Metodo para guardar equipos en el archivo json
     /// </summary>
-    /// <param name="equipos"></param>
+    /// <param name="equipos">Lista de equipos para guardar</param>
     public static void GuardarEquipos(List<Equipo> equipos)
     {
         string json = JsonSerializer.Serialize(equipos, new JsonSerializerOptions { WriteIndented = true });

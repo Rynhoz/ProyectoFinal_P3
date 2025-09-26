@@ -1,12 +1,12 @@
 ﻿/// <summary>
-/// 
+/// Clase administrador hija de Usuario
 /// </summary>
-public class Administrador : Usuario
+public sealed class Administrador : Usuario
 {
     public List<string> PermisosEspeciales { get; set; }
 
     /// <summary>
-    /// 
+    /// Constructor del administrador
     /// </summary>
     public Administrador()
     {
@@ -14,7 +14,7 @@ public class Administrador : Usuario
     }
 
     /// <summary>
-    /// 
+    /// Constructor sobrecargado del administradror
     /// </summary>
     /// <param name="nombre"></param>
     /// <param name="contrasena"></param>

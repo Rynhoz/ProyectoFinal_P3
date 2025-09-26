@@ -1,25 +1,26 @@
 ﻿using System;
 
-public class Inventario
+/// <summary>
+/// Clase de Inventario
+/// </summary>
+public sealed class Inventario
 {
-	/// <summary>
-	/// 
-	/// </summary>
+	//Propiedad de la clase
 	public static List<Repuesto> StockRepuestos {  get; set; }
 
 	/// <summary>
-	/// 
+	/// Constructor de la clase
 	/// </summary>
 	public Inventario()
 	{
 		StockRepuestos = new List<Repuesto>();
 	}
 
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="repuesto"></param>
-	public Inventario(Repuesto repuesto)
+    /// <summary>
+    /// Constructor de la clase sobrecargado
+    /// </summary>
+    /// <param name="repuesto">Repuesto que va a ingresar al inventario</param>
+    public Inventario(Repuesto repuesto)
 	{
 		StockRepuestos.Add(repuesto);
 	}

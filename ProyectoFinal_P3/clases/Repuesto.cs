@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Windows.Forms;
 
 /// <summary>
-/// 
+/// clase Repuesto
 /// </summary>
 public sealed class Repuesto
 {
@@ -23,12 +23,12 @@ public sealed class Repuesto
     private static string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivosJson", "inventario.json");
 
     /// <summary>
-    /// 
+    /// Constructor de la clase
     /// </summary>
     public Repuesto() { }
 
     /// <summary>
-    /// 
+    /// Constructor de la clase spbrcargado 
     /// </summary>
     /// <param name="nombre"></param>
     /// <param name="descripcion"></param>
@@ -46,14 +46,14 @@ public sealed class Repuesto
     }
 
     /// <summary>
-    /// 
+    /// Metodo para que se pueda registrar Repuestos dentro de una lista
     /// </summary>
     /// <param name="nombre"></param>
     /// <param name="descripcion"></param>
     /// <param name="familia"></param>
     /// <param name="stock"></param>
     /// <param name="precioUnitario"></param>
-    /// <returns></returns>
+    /// <returns>Retorna el repuesto pero ya añadido a la lista global de repuestos</returns>
     public static Repuesto RegistrarRepuesto(string nombre, string descripcion, string familia, decimal stock, decimal precioUnitario)
     {
         ListaRepuestos = CargarRepuestos(); // recargar para no perder datos
@@ -65,9 +65,9 @@ public sealed class Repuesto
     }
 
     /// <summary>
-    /// 
+    /// Metodo que carga los repuestos
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Retorna la lista de repuestos que se van a cargar</returns>
     public static List<Repuesto> CargarRepuestos()
     {
         if (!File.Exists(rutaArchivo)) return new List<Repuesto>();
@@ -80,7 +80,7 @@ public sealed class Repuesto
     }
 
     /// <summary>
-    /// 
+    /// Metodo para guardar los repuestos en el archivo json
     /// </summary>
     /// <param name="repuestos"></param>
     public static void GuardarRepuestos(List<Repuesto> repuestos)
