@@ -32,15 +32,15 @@ namespace ProyectoFinal_P3
                     switch (rol)
                     {
                         case "Administrador":
-                            ventana = new FrmInicio(rol); 
+                            ventana = new FrmInicio(rol);
                             break;
 
                         case "Tecnico":
-                            ventana = new FrmInicio(rol); 
+                            ventana = new FrmInicio(rol);
                             break;
 
                         case "Cajero":
-                            ventana = new FrmInicio(rol); 
+                            ventana = new FrmInicio(rol);
                             break;
 
                         default:

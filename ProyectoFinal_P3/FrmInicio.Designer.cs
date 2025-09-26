@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             tpFactura = new TabPage();
+            btnSalir = new Button();
             numericCantidadFactura = new NumericUpDown();
             txtRepuestoFactura = new TextBox();
             numericTotal = new NumericUpDown();
@@ -83,6 +85,7 @@
             label2 = new Label();
             label1 = new Label();
             tpAdministrador = new TabPage();
+            pictureBox1 = new PictureBox();
             txtEspecialidad = new TextBox();
             lblEspecialidad = new Label();
             btnGuardar = new Button();
@@ -97,7 +100,6 @@
             label18 = new Label();
             label17 = new Label();
             tabInicio = new TabControl();
-            btnSalir = new Button();
             tpFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericCantidadFactura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTotal).BeginInit();
@@ -108,12 +110,14 @@
             tpClienteYEquipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMostrarClientesYEquipos).BeginInit();
             tpAdministrador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvVerUsuarios).BeginInit();
             tabInicio.SuspendLayout();
             SuspendLayout();
             // 
             // tpFactura
             // 
+            tpFactura.BackgroundImage = (Image)resources.GetObject("tpFactura.BackgroundImage");
             tpFactura.Controls.Add(btnSalir);
             tpFactura.Controls.Add(numericCantidadFactura);
             tpFactura.Controls.Add(txtRepuestoFactura);
@@ -128,24 +132,39 @@
             tpFactura.Controls.Add(label14);
             tpFactura.Controls.Add(label15);
             tpFactura.Controls.Add(label16);
-            tpFactura.Location = new Point(4, 25);
+            tpFactura.Location = new Point(4, 28);
             tpFactura.Margin = new Padding(3, 2, 3, 2);
             tpFactura.Name = "tpFactura";
-            tpFactura.Size = new Size(1061, 664);
+            tpFactura.Size = new Size(1061, 661);
             tpFactura.TabIndex = 3;
             tpFactura.Text = "Factura";
             tpFactura.UseVisualStyleBackColor = true;
             // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = Color.Gainsboro;
+            btnSalir.Location = new Point(940, 8);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(108, 32);
+            btnSalir.TabIndex = 29;
+            btnSalir.Text = "Cerrar Sesion";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // numericCantidadFactura
             // 
+            numericCantidadFactura.BackColor = Color.Gainsboro;
+            numericCantidadFactura.Font = new Font("Bell MT", 12F);
             numericCantidadFactura.Location = new Point(132, 296);
             numericCantidadFactura.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             numericCantidadFactura.Name = "numericCantidadFactura";
-            numericCantidadFactura.Size = new Size(300, 23);
+            numericCantidadFactura.Size = new Size(300, 30);
             numericCantidadFactura.TabIndex = 28;
             // 
             // txtRepuestoFactura
             // 
+            txtRepuestoFactura.BackColor = Color.Gainsboro;
+            txtRepuestoFactura.Font = new Font("Bell MT", 12F);
             txtRepuestoFactura.Location = new Point(132, 214);
             txtRepuestoFactura.Multiline = true;
             txtRepuestoFactura.Name = "txtRepuestoFactura";
@@ -154,15 +173,18 @@
             // 
             // numericTotal
             // 
+            numericTotal.BackColor = Color.Gainsboro;
             numericTotal.DecimalPlaces = 2;
+            numericTotal.Font = new Font("Bell MT", 12F);
             numericTotal.Location = new Point(131, 436);
             numericTotal.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             numericTotal.Name = "numericTotal";
-            numericTotal.Size = new Size(300, 23);
+            numericTotal.Size = new Size(300, 30);
             numericTotal.TabIndex = 26;
             // 
             // txtFactura
             // 
+            txtFactura.BackColor = Color.Gainsboro;
             txtFactura.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFactura.Location = new Point(501, 131);
             txtFactura.Multiline = true;
@@ -173,98 +195,102 @@
             // 
             // btnExportarFactura
             // 
+            btnExportarFactura.BackColor = Color.LightBlue;
             btnExportarFactura.Enabled = false;
-            btnExportarFactura.Font = new Font("Arial", 10F);
-            btnExportarFactura.Location = new Point(585, 484);
+            btnExportarFactura.Font = new Font("Bell MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExportarFactura.Location = new Point(590, 484);
             btnExportarFactura.Name = "btnExportarFactura";
             btnExportarFactura.Size = new Size(210, 46);
             btnExportarFactura.TabIndex = 24;
             btnExportarFactura.Text = "EXPORTAR FACTURA";
-            btnExportarFactura.UseVisualStyleBackColor = true;
+            btnExportarFactura.UseVisualStyleBackColor = false;
             btnExportarFactura.Click += btnExportarFactura_Click;
             // 
             // btnEmitirFactura
             // 
-            btnEmitirFactura.Font = new Font("Arial", 10F);
-            btnEmitirFactura.Location = new Point(186, 465);
+            btnEmitirFactura.BackColor = Color.LightBlue;
+            btnEmitirFactura.Font = new Font("Bell MT", 12F);
+            btnEmitirFactura.Location = new Point(191, 483);
             btnEmitirFactura.Name = "btnEmitirFactura";
             btnEmitirFactura.Size = new Size(193, 46);
             btnEmitirFactura.TabIndex = 23;
             btnEmitirFactura.Text = "EMITIR FACTURA";
-            btnEmitirFactura.UseVisualStyleBackColor = true;
+            btnEmitirFactura.UseVisualStyleBackColor = false;
             btnEmitirFactura.Click += btnEmitirFactura_Click;
             // 
             // dtpFechaFactura
             // 
-            dtpFechaFactura.Font = new Font("Arial", 10.2F);
+            dtpFechaFactura.CalendarMonthBackground = Color.Gainsboro;
+            dtpFechaFactura.Font = new Font("Bell MT", 12F);
             dtpFechaFactura.Location = new Point(131, 363);
             dtpFechaFactura.Name = "dtpFechaFactura";
-            dtpFechaFactura.Size = new Size(300, 23);
+            dtpFechaFactura.Size = new Size(300, 30);
             dtpFechaFactura.TabIndex = 21;
             // 
             // cboxClienteFactura
             // 
-            cboxClienteFactura.BackColor = SystemColors.Window;
+            cboxClienteFactura.BackColor = Color.Gainsboro;
             cboxClienteFactura.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboxClienteFactura.Font = new Font("Arial", 10.2F);
+            cboxClienteFactura.Font = new Font("Bell MT", 12F);
             cboxClienteFactura.FormattingEnabled = true;
             cboxClienteFactura.Location = new Point(132, 148);
             cboxClienteFactura.Name = "cboxClienteFactura";
-            cboxClienteFactura.Size = new Size(300, 24);
+            cboxClienteFactura.Size = new Size(300, 31);
             cboxClienteFactura.TabIndex = 19;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Arial", 10F);
+            label8.Font = new Font("Bell MT", 12F);
             label8.Location = new Point(131, 414);
             label8.Name = "label8";
-            label8.Size = new Size(122, 16);
+            label8.Size = new Size(183, 23);
             label8.TabIndex = 18;
             label8.Text = "IMPORTE TOTAL:";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Arial", 10F);
+            label13.Font = new Font("Bell MT", 12F);
             label13.Location = new Point(131, 340);
             label13.Name = "label13";
-            label13.Size = new Size(138, 16);
+            label13.Size = new Size(208, 23);
             label13.TabIndex = 17;
             label13.Text = "FECHA DE EMISIÓN:";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Arial", 10F);
+            label14.Font = new Font("Bell MT", 12F);
             label14.Location = new Point(132, 195);
             label14.Name = "label14";
-            label14.Size = new Size(86, 16);
+            label14.Size = new Size(120, 23);
             label14.TabIndex = 16;
             label14.Text = "REPUESTO:";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Arial", 10F);
+            label15.Font = new Font("Bell MT", 12F);
             label15.Location = new Point(132, 125);
             label15.Name = "label15";
-            label15.Size = new Size(68, 16);
+            label15.Size = new Size(102, 23);
             label15.TabIndex = 15;
             label15.Text = "CLIENTE:";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(455, 62);
+            label16.Font = new Font("Britannic Bold", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(436, 63);
             label16.Name = "label16";
-            label16.Size = new Size(100, 22);
+            label16.Size = new Size(162, 41);
             label16.TabIndex = 14;
             label16.Text = "FACTURA";
             // 
             // tpInventario
             // 
+            tpInventario.BackgroundImage = (Image)resources.GetObject("tpInventario.BackgroundImage");
             tpInventario.Controls.Add(numericPrecio);
             tpInventario.Controls.Add(numericStock);
             tpInventario.Controls.Add(btnGuardarRepuestos);
@@ -279,40 +305,46 @@
             tpInventario.Controls.Add(label24);
             tpInventario.Controls.Add(label23);
             tpInventario.Controls.Add(label22);
-            tpInventario.Location = new Point(4, 25);
+            tpInventario.Location = new Point(4, 28);
             tpInventario.Margin = new Padding(3, 2, 3, 2);
             tpInventario.Name = "tpInventario";
-            tpInventario.Size = new Size(1061, 664);
+            tpInventario.Size = new Size(1061, 661);
             tpInventario.TabIndex = 2;
             tpInventario.Text = "Inventario";
             tpInventario.UseVisualStyleBackColor = true;
             // 
             // numericPrecio
             // 
+            numericPrecio.BackColor = Color.Gainsboro;
             numericPrecio.DecimalPlaces = 2;
+            numericPrecio.Font = new Font("Bell MT", 12F);
             numericPrecio.Location = new Point(134, 459);
             numericPrecio.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             numericPrecio.Name = "numericPrecio";
-            numericPrecio.Size = new Size(261, 23);
+            numericPrecio.Size = new Size(261, 30);
             numericPrecio.TabIndex = 15;
             // 
             // numericStock
             // 
+            numericStock.BackColor = Color.Gainsboro;
+            numericStock.Font = new Font("Bell MT", 12F);
             numericStock.Location = new Point(136, 396);
             numericStock.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             numericStock.Name = "numericStock";
-            numericStock.Size = new Size(259, 23);
+            numericStock.Size = new Size(259, 30);
             numericStock.TabIndex = 14;
             // 
             // btnGuardarRepuestos
             // 
+            btnGuardarRepuestos.BackColor = Color.LightBlue;
             btnGuardarRepuestos.Enabled = false;
+            btnGuardarRepuestos.Font = new Font("Bell MT", 12F);
             btnGuardarRepuestos.Location = new Point(277, 539);
             btnGuardarRepuestos.Name = "btnGuardarRepuestos";
             btnGuardarRepuestos.Size = new Size(163, 48);
             btnGuardarRepuestos.TabIndex = 13;
             btnGuardarRepuestos.Text = "GUARDAR";
-            btnGuardarRepuestos.UseVisualStyleBackColor = true;
+            btnGuardarRepuestos.UseVisualStyleBackColor = false;
             btnGuardarRepuestos.Click += btnGuardarRepuestos_Click_1;
             // 
             // dgvRepuestos
@@ -331,35 +363,42 @@
             // 
             // btnAgregarRepuestos
             // 
-            btnAgregarRepuestos.Location = new Point(74, 539);
+            btnAgregarRepuestos.BackColor = Color.LightBlue;
+            btnAgregarRepuestos.Font = new Font("Bell MT", 12F);
+            btnAgregarRepuestos.Location = new Point(82, 539);
             btnAgregarRepuestos.Name = "btnAgregarRepuestos";
             btnAgregarRepuestos.Size = new Size(148, 48);
             btnAgregarRepuestos.TabIndex = 11;
             btnAgregarRepuestos.Text = "AGREGAR";
-            btnAgregarRepuestos.UseVisualStyleBackColor = true;
+            btnAgregarRepuestos.UseVisualStyleBackColor = false;
             btnAgregarRepuestos.Click += btnAgregarRepuestos_Click;
             // 
             // label27
             // 
             label27.AutoSize = true;
+            label27.Font = new Font("Bell MT", 12F);
             label27.Location = new Point(134, 437);
             label27.Name = "label27";
-            label27.Size = new Size(129, 16);
+            label27.Size = new Size(197, 23);
             label27.TabIndex = 10;
             label27.Text = "PRECIO UNITARIO:";
             // 
             // cboxFamiliaRepuesto
             // 
+            cboxFamiliaRepuesto.BackColor = Color.Gainsboro;
             cboxFamiliaRepuesto.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboxFamiliaRepuesto.Font = new Font("Bell MT", 12F);
             cboxFamiliaRepuesto.FormattingEnabled = true;
             cboxFamiliaRepuesto.Items.AddRange(new object[] { "Electronica", "Mecanica", "Sistemas de Potencia", "Consumibles" });
             cboxFamiliaRepuesto.Location = new Point(134, 327);
             cboxFamiliaRepuesto.Name = "cboxFamiliaRepuesto";
-            cboxFamiliaRepuesto.Size = new Size(259, 24);
+            cboxFamiliaRepuesto.Size = new Size(259, 31);
             cboxFamiliaRepuesto.TabIndex = 9;
             // 
             // txtDescripcionRepuesto
             // 
+            txtDescripcionRepuesto.BackColor = Color.Gainsboro;
+            txtDescripcionRepuesto.Font = new Font("Bell MT", 12F);
             txtDescripcionRepuesto.Location = new Point(134, 163);
             txtDescripcionRepuesto.Multiline = true;
             txtDescripcionRepuesto.Name = "txtDescripcionRepuesto";
@@ -368,59 +407,66 @@
             // 
             // txtNombreRepuesto
             // 
+            txtNombreRepuesto.BackColor = Color.Gainsboro;
+            txtNombreRepuesto.Font = new Font("Bell MT", 12F);
             txtNombreRepuesto.Location = new Point(134, 100);
             txtNombreRepuesto.Name = "txtNombreRepuesto";
-            txtNombreRepuesto.Size = new Size(261, 23);
+            txtNombreRepuesto.Size = new Size(261, 30);
             txtNombreRepuesto.TabIndex = 5;
             // 
             // label26
             // 
             label26.AutoSize = true;
+            label26.Font = new Font("Bell MT", 12F);
             label26.Location = new Point(132, 374);
             label26.Name = "label26";
-            label26.Size = new Size(63, 16);
+            label26.Size = new Size(85, 23);
             label26.TabIndex = 4;
             label26.Text = "STOCK: ";
             // 
             // label25
             // 
             label25.AutoSize = true;
+            label25.Font = new Font("Bell MT", 12F);
             label25.Location = new Point(132, 305);
             label25.Name = "label25";
-            label25.Size = new Size(66, 16);
+            label25.Size = new Size(107, 23);
             label25.TabIndex = 3;
             label25.Text = "FAMILIA: ";
             // 
             // label24
             // 
             label24.AutoSize = true;
+            label24.Font = new Font("Bell MT", 12F);
             label24.Location = new Point(134, 141);
             label24.Name = "label24";
-            label24.Size = new Size(104, 16);
+            label24.Size = new Size(150, 23);
             label24.TabIndex = 2;
             label24.Text = "DESCRIPCIÓN:";
             // 
             // label23
             // 
             label23.AutoSize = true;
+            label23.Font = new Font("Bell MT", 12F);
             label23.Location = new Point(134, 78);
             label23.Name = "label23";
-            label23.Size = new Size(74, 16);
+            label23.Size = new Size(107, 23);
             label23.TabIndex = 1;
             label23.Text = "NOMBRE: ";
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label22.Location = new Point(460, 21);
+            label22.Font = new Font("Britannic Bold", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.Location = new Point(388, 21);
             label22.Name = "label22";
-            label22.Size = new Size(129, 22);
+            label22.Size = new Size(208, 41);
             label22.TabIndex = 0;
             label22.Text = "REPUESTOS";
             // 
             // tpClienteYEquipo
             // 
+            tpClienteYEquipo.BackgroundImage = (Image)resources.GetObject("tpClienteYEquipo.BackgroundImage");
             tpClienteYEquipo.Controls.Add(btnGuardarCambios);
             tpClienteYEquipo.Controls.Add(cboxEquipoCliente);
             tpClienteYEquipo.Controls.Add(label3);
@@ -445,42 +491,45 @@
             tpClienteYEquipo.Controls.Add(label4);
             tpClienteYEquipo.Controls.Add(label2);
             tpClienteYEquipo.Controls.Add(label1);
-            tpClienteYEquipo.Location = new Point(4, 25);
+            tpClienteYEquipo.Location = new Point(4, 28);
             tpClienteYEquipo.Margin = new Padding(3, 2, 3, 2);
             tpClienteYEquipo.Name = "tpClienteYEquipo";
             tpClienteYEquipo.Padding = new Padding(3, 2, 3, 2);
-            tpClienteYEquipo.Size = new Size(1061, 664);
+            tpClienteYEquipo.Size = new Size(1061, 661);
             tpClienteYEquipo.TabIndex = 1;
             tpClienteYEquipo.Text = "Cliente y Equipo";
             tpClienteYEquipo.UseVisualStyleBackColor = true;
             // 
             // btnGuardarCambios
             // 
-            btnGuardarCambios.Font = new Font("Arial", 10F);
+            btnGuardarCambios.BackColor = Color.LightBlue;
+            btnGuardarCambios.Font = new Font("Bell MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardarCambios.Location = new Point(658, 579);
             btnGuardarCambios.Margin = new Padding(3, 2, 3, 2);
             btnGuardarCambios.Name = "btnGuardarCambios";
             btnGuardarCambios.Size = new Size(179, 58);
             btnGuardarCambios.TabIndex = 59;
             btnGuardarCambios.Text = "GUARDAR";
-            btnGuardarCambios.UseVisualStyleBackColor = true;
+            btnGuardarCambios.UseVisualStyleBackColor = false;
             btnGuardarCambios.Click += btnGuardarCambios_Click;
             // 
             // cboxEquipoCliente
             // 
+            cboxEquipoCliente.BackColor = Color.Gainsboro;
             cboxEquipoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboxEquipoCliente.Font = new Font("Bell MT", 12F);
             cboxEquipoCliente.Location = new Point(83, 417);
             cboxEquipoCliente.Name = "cboxEquipoCliente";
-            cboxEquipoCliente.Size = new Size(153, 24);
+            cboxEquipoCliente.Size = new Size(153, 31);
             cboxEquipoCliente.TabIndex = 0;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Arial", 10F);
+            label3.Font = new Font("Bell MT", 12F);
             label3.Location = new Point(83, 383);
             label3.Name = "label3";
-            label3.Size = new Size(63, 16);
+            label3.Size = new Size(92, 23);
             label3.TabIndex = 58;
             label3.Text = "EQUIPO:";
             // 
@@ -488,7 +537,7 @@
             // 
             dgvMostrarClientesYEquipos.AllowUserToAddRows = false;
             dgvMostrarClientesYEquipos.AllowUserToDeleteRows = false;
-            dgvMostrarClientesYEquipos.BackgroundColor = Color.LightGray;
+            dgvMostrarClientesYEquipos.BackgroundColor = Color.Gainsboro;
             dgvMostrarClientesYEquipos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMostrarClientesYEquipos.GridColor = Color.DimGray;
             dgvMostrarClientesYEquipos.Location = new Point(658, 81);
@@ -496,13 +545,14 @@
             dgvMostrarClientesYEquipos.Name = "dgvMostrarClientesYEquipos";
             dgvMostrarClientesYEquipos.ReadOnly = true;
             dgvMostrarClientesYEquipos.RowHeadersWidth = 51;
-            dgvMostrarClientesYEquipos.Size = new Size(354, 494);
+            dgvMostrarClientesYEquipos.Size = new Size(354, 478);
             dgvMostrarClientesYEquipos.TabIndex = 57;
             dgvMostrarClientesYEquipos.SelectionChanged += dgvMostrarClientesYEquipos_SelectionChanged;
             // 
             // txtDescripcionDelProblemaEquipo
             // 
-            txtDescripcionDelProblemaEquipo.Font = new Font("Arial", 10F);
+            txtDescripcionDelProblemaEquipo.BackColor = Color.Gainsboro;
+            txtDescripcionDelProblemaEquipo.Font = new Font("Bell MT", 12F);
             txtDescripcionDelProblemaEquipo.Location = new Point(343, 331);
             txtDescripcionDelProblemaEquipo.Margin = new Padding(3, 2, 3, 2);
             txtDescripcionDelProblemaEquipo.Multiline = true;
@@ -512,197 +562,208 @@
             // 
             // cboxTipoDEEquipo
             // 
+            cboxTipoDEEquipo.BackColor = Color.Gainsboro;
             cboxTipoDEEquipo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboxTipoDEEquipo.Font = new Font("Arial", 10F);
+            cboxTipoDEEquipo.Font = new Font("Bell MT", 12F);
             cboxTipoDEEquipo.FormattingEnabled = true;
             cboxTipoDEEquipo.Items.AddRange(new object[] { "Heladera", "Lavadora", "Cocina" });
             cboxTipoDEEquipo.Location = new Point(338, 113);
             cboxTipoDEEquipo.Margin = new Padding(3, 2, 3, 2);
             cboxTipoDEEquipo.Name = "cboxTipoDEEquipo";
-            cboxTipoDEEquipo.Size = new Size(196, 24);
+            cboxTipoDEEquipo.Size = new Size(196, 31);
             cboxTipoDEEquipo.TabIndex = 55;
             // 
             // btnRegistrarEquipo
             // 
-            btnRegistrarEquipo.Font = new Font("Arial", 10F);
+            btnRegistrarEquipo.BackColor = Color.LightBlue;
+            btnRegistrarEquipo.Font = new Font("Bell MT", 12F);
             btnRegistrarEquipo.Location = new Point(385, 517);
             btnRegistrarEquipo.Margin = new Padding(3, 2, 3, 2);
             btnRegistrarEquipo.Name = "btnRegistrarEquipo";
             btnRegistrarEquipo.Size = new Size(179, 58);
             btnRegistrarEquipo.TabIndex = 54;
             btnRegistrarEquipo.Text = "REGISTRAR EQUIPO";
-            btnRegistrarEquipo.UseVisualStyleBackColor = true;
+            btnRegistrarEquipo.UseVisualStyleBackColor = false;
             btnRegistrarEquipo.Click += btnRegistrarEquipo_Click;
             // 
             // txtNumeroDESerieEquipo
             // 
-            txtNumeroDESerieEquipo.Font = new Font("Arial", 10F);
+            txtNumeroDESerieEquipo.BackColor = Color.Gainsboro;
+            txtNumeroDESerieEquipo.Font = new Font("Bell MT", 12F);
             txtNumeroDESerieEquipo.Location = new Point(343, 261);
             txtNumeroDESerieEquipo.Margin = new Padding(3, 2, 3, 2);
             txtNumeroDESerieEquipo.Name = "txtNumeroDESerieEquipo";
-            txtNumeroDESerieEquipo.Size = new Size(196, 23);
+            txtNumeroDESerieEquipo.Size = new Size(196, 30);
             txtNumeroDESerieEquipo.TabIndex = 53;
             // 
             // txtModeloEquipo
             // 
-            txtModeloEquipo.Font = new Font("Arial", 10F);
+            txtModeloEquipo.BackColor = Color.Gainsboro;
+            txtModeloEquipo.Font = new Font("Bell MT", 12F);
             txtModeloEquipo.Location = new Point(343, 187);
             txtModeloEquipo.Margin = new Padding(3, 2, 3, 2);
             txtModeloEquipo.Name = "txtModeloEquipo";
-            txtModeloEquipo.Size = new Size(196, 23);
+            txtModeloEquipo.Size = new Size(196, 30);
             txtModeloEquipo.TabIndex = 52;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Arial", 10F);
-            label9.Location = new Point(343, 299);
+            label9.Font = new Font("Bell MT", 12F);
+            label9.Location = new Point(338, 301);
             label9.Name = "label9";
-            label9.Size = new Size(214, 16);
+            label9.Size = new Size(311, 23);
             label9.TabIndex = 51;
             label9.Text = "DESCRIPCIÓN DEL PROBLEMA:";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Arial", 10F);
+            label10.Font = new Font("Bell MT", 12F);
             label10.Location = new Point(338, 228);
             label10.Name = "label10";
-            label10.Size = new Size(93, 16);
+            label10.Size = new Size(133, 23);
             label10.TabIndex = 50;
             label10.Text = "N° DE SERIE:";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Arial", 10F);
+            label11.Font = new Font("Bell MT", 12F);
             label11.Location = new Point(338, 155);
             label11.Name = "label11";
-            label11.Size = new Size(71, 16);
+            label11.Size = new Size(103, 23);
             label11.TabIndex = 49;
             label11.Text = "MODELO:";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Arial", 10F);
+            label12.Font = new Font("Bell MT", 12F);
             label12.Location = new Point(345, 81);
             label12.Name = "label12";
-            label12.Size = new Size(122, 16);
+            label12.Size = new Size(179, 23);
             label12.TabIndex = 48;
             label12.Text = "TIPO DE EQUIPO:";
             // 
             // btnRegistrarCliente
             // 
+            btnRegistrarCliente.BackColor = Color.LightBlue;
             btnRegistrarCliente.Enabled = false;
-            btnRegistrarCliente.Font = new Font("Arial", 10F);
+            btnRegistrarCliente.Font = new Font("Bell MT", 12F);
             btnRegistrarCliente.Location = new Point(83, 515);
             btnRegistrarCliente.Margin = new Padding(3, 2, 3, 2);
             btnRegistrarCliente.Name = "btnRegistrarCliente";
             btnRegistrarCliente.Size = new Size(184, 60);
             btnRegistrarCliente.TabIndex = 47;
             btnRegistrarCliente.Text = "REGISTRAR CLIENTE";
-            btnRegistrarCliente.UseVisualStyleBackColor = true;
+            btnRegistrarCliente.UseVisualStyleBackColor = false;
             btnRegistrarCliente.Click += btnRegistrarCliente_Click;
             // 
             // txtEmailCliente
             // 
-            txtEmailCliente.Font = new Font("Arial", 10F);
+            txtEmailCliente.BackColor = Color.Gainsboro;
+            txtEmailCliente.Font = new Font("Bell MT", 12F);
             txtEmailCliente.Location = new Point(83, 334);
             txtEmailCliente.Margin = new Padding(3, 2, 3, 2);
             txtEmailCliente.Name = "txtEmailCliente";
-            txtEmailCliente.Size = new Size(156, 23);
+            txtEmailCliente.Size = new Size(156, 30);
             txtEmailCliente.TabIndex = 46;
             // 
             // txtTelefonoCliente
             // 
-            txtTelefonoCliente.Font = new Font("Arial", 10F);
+            txtTelefonoCliente.BackColor = Color.Gainsboro;
+            txtTelefonoCliente.Font = new Font("Bell MT", 12F);
             txtTelefonoCliente.Location = new Point(83, 261);
             txtTelefonoCliente.Margin = new Padding(3, 2, 3, 2);
             txtTelefonoCliente.Name = "txtTelefonoCliente";
-            txtTelefonoCliente.Size = new Size(156, 23);
+            txtTelefonoCliente.Size = new Size(156, 30);
             txtTelefonoCliente.TabIndex = 45;
             // 
             // txtDireccionCliente
             // 
-            txtDireccionCliente.Font = new Font("Arial", 10F);
+            txtDireccionCliente.BackColor = Color.Gainsboro;
+            txtDireccionCliente.Font = new Font("Bell MT", 12F);
             txtDireccionCliente.Location = new Point(83, 187);
             txtDireccionCliente.Margin = new Padding(3, 2, 3, 2);
             txtDireccionCliente.Name = "txtDireccionCliente";
-            txtDireccionCliente.Size = new Size(156, 23);
+            txtDireccionCliente.Size = new Size(156, 30);
             txtDireccionCliente.TabIndex = 44;
             // 
             // txtNombreCliente
             // 
-            txtNombreCliente.Font = new Font("Arial", 10F);
+            txtNombreCliente.BackColor = Color.Gainsboro;
+            txtNombreCliente.Font = new Font("Bell MT", 12F);
             txtNombreCliente.Location = new Point(83, 113);
             txtNombreCliente.Margin = new Padding(3, 2, 3, 2);
             txtNombreCliente.Name = "txtNombreCliente";
-            txtNombreCliente.Size = new Size(156, 23);
+            txtNombreCliente.Size = new Size(156, 30);
             txtNombreCliente.TabIndex = 43;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Arial", 10F);
+            label7.Font = new Font("Bell MT", 12F);
             label7.Location = new Point(83, 301);
             label7.Name = "label7";
-            label7.Size = new Size(51, 16);
+            label7.Size = new Size(80, 23);
             label7.TabIndex = 42;
             label7.Text = "EMAIL:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Arial", 10F);
+            label6.Font = new Font("Bell MT", 12F);
             label6.Location = new Point(83, 229);
             label6.Name = "label6";
-            label6.Size = new Size(86, 16);
+            label6.Size = new Size(124, 23);
             label6.TabIndex = 41;
             label6.Text = "TELÉFONO:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Arial", 10F);
+            label5.Font = new Font("Bell MT", 12F);
             label5.Location = new Point(83, 155);
             label5.Name = "label5";
-            label5.Size = new Size(86, 16);
+            label5.Size = new Size(128, 23);
             label5.TabIndex = 40;
             label5.Text = "DIRECCIÓN:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial", 10F);
+            label4.Font = new Font("Bell MT", 12F);
             label4.Location = new Point(83, 81);
             label4.Name = "label4";
-            label4.Size = new Size(70, 16);
+            label4.Size = new Size(102, 23);
             label4.TabIndex = 39;
             label4.Text = "NOMBRE:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(391, 27);
+            label2.Font = new Font("Britannic Bold", 22.2F);
+            label2.Location = new Point(377, 20);
             label2.Name = "label2";
-            label2.Size = new Size(84, 22);
+            label2.Size = new Size(141, 41);
             label2.TabIndex = 38;
             label2.Text = "EQUIPO";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(97, 27);
+            label1.Font = new Font("Britannic Bold", 22.2F);
+            label1.Location = new Point(83, 20);
             label1.Name = "label1";
-            label1.Size = new Size(93, 22);
+            label1.Size = new Size(151, 41);
             label1.TabIndex = 37;
             label1.Text = "CLIENTE";
             // 
             // tpAdministrador
             // 
+            tpAdministrador.BackgroundImage = (Image)resources.GetObject("tpAdministrador.BackgroundImage");
+            tpAdministrador.Controls.Add(pictureBox1);
             tpAdministrador.Controls.Add(txtEspecialidad);
             tpAdministrador.Controls.Add(lblEspecialidad);
             tpAdministrador.Controls.Add(btnGuardar);
@@ -716,111 +777,135 @@
             tpAdministrador.Controls.Add(dgvVerUsuarios);
             tpAdministrador.Controls.Add(label18);
             tpAdministrador.Controls.Add(label17);
-            tpAdministrador.Location = new Point(4, 25);
+            tpAdministrador.Location = new Point(4, 28);
             tpAdministrador.Margin = new Padding(3, 2, 3, 2);
             tpAdministrador.Name = "tpAdministrador";
             tpAdministrador.Padding = new Padding(3, 2, 3, 2);
-            tpAdministrador.Size = new Size(1061, 664);
+            tpAdministrador.Size = new Size(1061, 661);
             tpAdministrador.TabIndex = 0;
             tpAdministrador.Text = "Administrador";
             tpAdministrador.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(723, 71);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(182, 176);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            // 
             // txtEspecialidad
             // 
+            txtEspecialidad.BackColor = Color.Gainsboro;
             txtEspecialidad.Enabled = false;
-            txtEspecialidad.Location = new Point(398, 217);
+            txtEspecialidad.Font = new Font("Bell MT", 12F);
+            txtEspecialidad.Location = new Point(394, 218);
             txtEspecialidad.Name = "txtEspecialidad";
-            txtEspecialidad.Size = new Size(256, 23);
+            txtEspecialidad.Size = new Size(256, 30);
             txtEspecialidad.TabIndex = 13;
             // 
             // lblEspecialidad
             // 
             lblEspecialidad.AutoSize = true;
             lblEspecialidad.Enabled = false;
-            lblEspecialidad.Location = new Point(394, 195);
+            lblEspecialidad.Font = new Font("Bell MT", 12F);
+            lblEspecialidad.Location = new Point(390, 196);
             lblEspecialidad.Name = "lblEspecialidad";
-            lblEspecialidad.Size = new Size(105, 16);
+            lblEspecialidad.Size = new Size(157, 23);
             lblEspecialidad.TabIndex = 12;
             lblEspecialidad.Text = "ESPECIALIDAD";
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(615, 308);
+            btnGuardar.BackColor = Color.LightBlue;
+            btnGuardar.Location = new Point(60, 315);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(168, 46);
             btnGuardar.TabIndex = 11;
             btnGuardar.Text = "GUARDAR";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Visible = false;
             btnGuardar.Click += btnGuardar_Click_1;
             // 
             // bntAnadirUsuario
             // 
-            bntAnadirUsuario.Location = new Point(732, 162);
+            bntAnadirUsuario.BackColor = Color.LightBlue;
+            bntAnadirUsuario.Location = new Point(723, 253);
             bntAnadirUsuario.Name = "bntAnadirUsuario";
-            bntAnadirUsuario.Size = new Size(189, 49);
+            bntAnadirUsuario.Size = new Size(182, 49);
             bntAnadirUsuario.TabIndex = 9;
             bntAnadirUsuario.Text = "AÑADIR USUARIO";
-            bntAnadirUsuario.UseVisualStyleBackColor = true;
+            bntAnadirUsuario.UseVisualStyleBackColor = false;
             bntAnadirUsuario.Click += bntAnadirUsuario_Click_1;
             // 
             // cboxRolUsuario
             // 
+            cboxRolUsuario.BackColor = Color.Gainsboro;
             cboxRolUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboxRolUsuario.Font = new Font("Bell MT", 12F);
             cboxRolUsuario.FormattingEnabled = true;
             cboxRolUsuario.Items.AddRange(new object[] { "Administrador", "Tecnico", "Cajero" });
-            cboxRolUsuario.Location = new Point(394, 148);
+            cboxRolUsuario.Location = new Point(390, 149);
             cboxRolUsuario.Name = "cboxRolUsuario";
-            cboxRolUsuario.Size = new Size(256, 24);
+            cboxRolUsuario.Size = new Size(256, 31);
             cboxRolUsuario.TabIndex = 8;
             cboxRolUsuario.SelectedIndexChanged += cboxRolUsuario_SelectedIndexChanged;
             // 
             // txtContrasenaUsuario
             // 
-            txtContrasenaUsuario.Location = new Point(66, 217);
+            txtContrasenaUsuario.BackColor = Color.Gainsboro;
+            txtContrasenaUsuario.Font = new Font("Bell MT", 12F);
+            txtContrasenaUsuario.Location = new Point(62, 218);
             txtContrasenaUsuario.Name = "txtContrasenaUsuario";
-            txtContrasenaUsuario.Size = new Size(256, 23);
+            txtContrasenaUsuario.Size = new Size(256, 30);
             txtContrasenaUsuario.TabIndex = 7;
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(62, 149);
+            txtNombreUsuario.BackColor = Color.Gainsboro;
+            txtNombreUsuario.Font = new Font("Bell MT", 12F);
+            txtNombreUsuario.Location = new Point(58, 150);
             txtNombreUsuario.Name = "txtNombreUsuario";
-            txtNombreUsuario.Size = new Size(260, 23);
+            txtNombreUsuario.Size = new Size(260, 30);
             txtNombreUsuario.TabIndex = 6;
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(394, 126);
+            label21.Font = new Font("Bell MT", 12F);
+            label21.Location = new Point(390, 127);
             label21.Name = "label21";
-            label21.Size = new Size(44, 16);
+            label21.Size = new Size(60, 23);
             label21.TabIndex = 5;
             label21.Text = "ROL: ";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(62, 195);
+            label20.Font = new Font("Bell MT", 12F);
+            label20.Location = new Point(58, 196);
             label20.Name = "label20";
-            label20.Size = new Size(110, 16);
+            label20.Size = new Size(156, 23);
             label20.TabIndex = 4;
             label20.Text = "CONTRASEÑA: ";
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(62, 127);
+            label19.Font = new Font("Bell MT", 12F);
+            label19.Location = new Point(58, 127);
             label19.Name = "label19";
-            label19.Size = new Size(161, 16);
+            label19.Size = new Size(236, 23);
             label19.TabIndex = 3;
             label19.Text = "NOMBRE DE USUARIO: ";
             // 
             // dgvVerUsuarios
             // 
-            dgvVerUsuarios.BackgroundColor = Color.LightGray;
+            dgvVerUsuarios.BackgroundColor = Color.Gainsboro;
             dgvVerUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVerUsuarios.Location = new Point(62, 365);
+            dgvVerUsuarios.Location = new Point(60, 377);
             dgvVerUsuarios.Name = "dgvVerUsuarios";
             dgvVerUsuarios.RowHeadersWidth = 51;
             dgvVerUsuarios.Size = new Size(940, 263);
@@ -830,20 +915,20 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Font = new Font("Arial", 13.8F, FontStyle.Bold);
-            label18.Location = new Point(62, 319);
+            label18.Font = new Font("Britannic Bold", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.Location = new Point(690, 324);
             label18.Name = "label18";
-            label18.Size = new Size(152, 22);
+            label18.Size = new Size(236, 37);
             label18.TabIndex = 1;
             label18.Text = "VER USUARIOS";
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Font = new Font("Arial", 13.8F, FontStyle.Bold);
-            label17.Location = new Point(394, 25);
+            label17.Font = new Font("Britannic Bold", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.Location = new Point(371, 33);
             label17.Name = "label17";
-            label17.Size = new Size(171, 22);
+            label17.Size = new Size(291, 41);
             label17.TabIndex = 0;
             label17.Text = "AÑADIR USUARIO";
             // 
@@ -862,19 +947,9 @@
             tabInicio.Size = new Size(1069, 693);
             tabInicio.TabIndex = 1;
             // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(940, 8);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(108, 32);
-            btnSalir.TabIndex = 29;
-            btnSalir.Text = "Cerrar Sesion";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
-            // 
             // FrmInicio
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1069, 693);
             Controls.Add(tabInicio);
@@ -898,6 +973,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvMostrarClientesYEquipos).EndInit();
             tpAdministrador.ResumeLayout(false);
             tpAdministrador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvVerUsuarios).EndInit();
             tabInicio.ResumeLayout(false);
             ResumeLayout(false);
@@ -975,5 +1051,6 @@
         private Button btnGuardarCambios;
         private NumericUpDown numericCantidadFactura;
         private Button btnSalir;
+        private PictureBox pictureBox1;
     }
 }
