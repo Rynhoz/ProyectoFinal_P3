@@ -156,6 +156,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Font = new Font("Arial", 9F);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
