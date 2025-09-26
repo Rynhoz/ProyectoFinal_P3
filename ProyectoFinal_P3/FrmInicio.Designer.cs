@@ -105,6 +105,15 @@
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
+            pictureBox7 = new PictureBox();
+            pictureBox8 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            pictureBox10 = new PictureBox();
+            pictureBox11 = new PictureBox();
+            pictureBox12 = new PictureBox();
+            pictureBox13 = new PictureBox();
+            pictureBox14 = new PictureBox();
+            pictureBox15 = new PictureBox();
             tpFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericCantidadFactura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTotal).BeginInit();
@@ -123,11 +132,24 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
             SuspendLayout();
             // 
             // tpFactura
             // 
             tpFactura.BackgroundImage = (Image)resources.GetObject("tpFactura.BackgroundImage");
+            tpFactura.Controls.Add(pictureBox15);
+            tpFactura.Controls.Add(pictureBox14);
+            tpFactura.Controls.Add(pictureBox13);
+            tpFactura.Controls.Add(pictureBox12);
             tpFactura.Controls.Add(btnSalir);
             tpFactura.Controls.Add(numericCantidadFactura);
             tpFactura.Controls.Add(txtRepuestoFactura);
@@ -153,9 +175,9 @@
             // btnSalir
             // 
             btnSalir.BackColor = Color.Gainsboro;
-            btnSalir.Location = new Point(940, 8);
+            btnSalir.Location = new Point(888, 592);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(108, 32);
+            btnSalir.Size = new Size(144, 45);
             btnSalir.TabIndex = 29;
             btnSalir.Text = "Cerrar Sesion";
             btnSalir.UseVisualStyleBackColor = false;
@@ -301,6 +323,11 @@
             // tpInventario
             // 
             tpInventario.BackgroundImage = (Image)resources.GetObject("tpInventario.BackgroundImage");
+            tpInventario.Controls.Add(pictureBox11);
+            tpInventario.Controls.Add(pictureBox10);
+            tpInventario.Controls.Add(pictureBox9);
+            tpInventario.Controls.Add(pictureBox8);
+            tpInventario.Controls.Add(pictureBox7);
             tpInventario.Controls.Add(numericPrecio);
             tpInventario.Controls.Add(numericStock);
             tpInventario.Controls.Add(btnGuardarRepuestos);
@@ -1012,6 +1039,96 @@
             pictureBox6.TabIndex = 64;
             pictureBox6.TabStop = false;
             // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(54, 78);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(51, 54);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 61;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(54, 172);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(51, 54);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 62;
+            pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(54, 305);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(51, 54);
+            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox9.TabIndex = 63;
+            pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(54, 374);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(51, 54);
+            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox10.TabIndex = 64;
+            pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
+            pictureBox11.Location = new Point(54, 437);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(51, 54);
+            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox11.TabIndex = 65;
+            pictureBox11.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
+            pictureBox12.Location = new Point(50, 125);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(51, 54);
+            pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox12.TabIndex = 61;
+            pictureBox12.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+            pictureBox13.Location = new Point(50, 214);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(51, 54);
+            pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox13.TabIndex = 64;
+            pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
+            pictureBox14.Location = new Point(50, 414);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(51, 54);
+            pictureBox14.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox14.TabIndex = 66;
+            pictureBox14.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            pictureBox15.Image = (Image)resources.GetObject("pictureBox15.Image");
+            pictureBox15.Location = new Point(50, 339);
+            pictureBox15.Name = "pictureBox15";
+            pictureBox15.Size = new Size(51, 54);
+            pictureBox15.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox15.TabIndex = 67;
+            pictureBox15.TabStop = false;
+            // 
             // FrmInicio
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
@@ -1046,6 +1163,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
             ResumeLayout(false);
         }
 
@@ -1127,5 +1253,14 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox5;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox11;
+        private PictureBox pictureBox14;
+        private PictureBox pictureBox13;
+        private PictureBox pictureBox12;
+        private PictureBox pictureBox15;
     }
 }
